@@ -1,0 +1,81 @@
+macro read "P+.plot"
+erase
+makeplot
+macro read "P+.plot"
+erase
+makeplot
+macro read "P+.plot"
+erase
+makeplot
+macro read "P+.plot"
+erase
+makeplot
+macro read "P+.plot"
+erase
+makeplot
+macro read "P-.plot"
+erase
+makeplot
+macro read "P-.plot"
+erase
+makeplot
+macro read "P-.plot"
+erase
+makeplot
+macro read "P-.plot"
+erase
+makeplot
+quit
+macro read "P-.plot"
+device x11
+macro read "P-.plot"
+makeplot
+macro read PS.plot
+erase
+makeplot
+macro read Kerr.plot
+erase
+makeplot
+macro read Jc.plot
+erase
+makeplot
+macro read Jc.plot
+erase
+makeplot
+quit
+device x11
+macro read Jc.plot
+makeplot
+device postport Jc.eps
+makeplot
+device x11
+macro read "P-.plot"
+erase
+makeplot
+device postport P-.eps
+makeplot
+device x11
+macro read "P+.plot"
+erase
+makeplot
+device postport P+.eps
+makeplot
+device x11
+quit
+macro read "P+.plot"
+device x11
+makeplot
+device postport P+.eps
+makeplot
+device x11
+macro read "P-.plot"
+makeplot
+device postport P-.eps
+makeplot
+device x11
+macro read "Jc.plot"
+erase makeplot
+device postport Jc.eps
+makeplot
+device x11
+quit

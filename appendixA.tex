@@ -1,0 +1,212 @@
+\chapterhead {Appendix~A:  The Multigrid Algorithm}
+
+The problem of numerically solving an elliptic boundary value problem is usually
+reduced to the problem of solving a large matrix equation.  The task of solving
+this system of equations can be handled in a variety of ways.  The equations can
+be solved by direct matrix inversion or by iterative techniques.  The accuracy
+of direct solutions is usually limited by the computational storage
+requirements of large matrices, although the number of computational operations
+is also a limiting factor.  For iterative schemes, it is the number of
+computational operations which usually limits the accuracy of solutions.  Some
+of the most promising approaches for bypassing the time and memory problems and
+finding fast, accurate solutions are offered by multigrid techniques ({\it cf}.
+Brandt [1977], Hackbusch and Trottenberg [1982], Choptuik [1982], Hackbusch
+[1985], Choptuik and Unruh [1986], and Cook [1989]).
+
+Probably the most widely used multigrid algorithm for non-linear problems is the
+full approximation storage (FAS) algorithm proposed by Brandt [1977].  Its use
+in numerical relativity has been advocated by Choptuik and Unruh [1986] and
+Cook [1989].  The following discussion closely follows Cook [1989].
+
+Let the differential equation to be solved be denoted by
+$$
+\vecfunct\varphi = f, \apeqn{A}{}
+$$
+where $\vecfunct$ is a non-linear differential operator acting on $\varphi$, and
+$f$ is a source term.  Now let $\Pc^k$ be an operator which projects a scalar
+function onto a discrete mesh $\Mc^k$ labeled by $k$ and covering the
+computational domain.  The representation of the source function $f$ on the mesh
+$\Mc^k$ is thus $\Pc^kf = f^k$.  The finite difference approximation of
+(A.1) on $\Mc^k$ will be denoted by
+$$
+{\vecfunct}^{k}{\varphi }^{k}={f}^{k}. \apeqn{A}{}
+$$
+$\vecfunct^k$ is the set of possibly non-linear algebraic equations obtained
+from finite differencing $\vecfunct$ and $\varphi^k \not= \Pc^k\varphi$ since
+$\varphi^k$ is the set of values which must satisfy the difference equations
+(A.2).  The difference $\varphi^k - \Pc^k\varphi$ is known as the
+discretization error in the solution and results from the truncation error
+inherent in the finite difference approximation.  The {\it local truncation
+error} $\tau^k$ of the finite difference operator $\vecfunct^k$ is given by
+$$
+{\tau }^{k} \equiv {\vecfunct}^{k}({\Pc}^{k}\varphi )-{f}^{k} =
+{\vecfunct}^{k}({\Pc}^{k}\varphi )-{\Pc}^{k}(\vecfunct\varphi ). \apeqn{A}{}
+$$
+If, somehow, $\tau^k$ could be found without knowing the exact solution
+$\varphi$, then the solution to
+$$
+{\vecfunct}^{k}{\varphi }^{k}={f}^{k}+{\tau }^{k} \apeqn{A}{}
+$$
+would be the projection of the exact solution $\varphi$ and there would be no
+discretization error.
+
+While it is not possible, in general, to determine $\tau^k$ exactly, there is a
+great deal of information about the discretization which is not used in
+traditional direct or iterative solution techniques which can be used to
+approximate $\tau^k$.  Consider two different discretizations of the
+computational domain, $\Mc^k$ and $\Mc^{k-1}$, where the discretization of
+$\Mc^{k-1}$ is coarser than that of $\Mc^k$.  Now define two operators which
+smoothly interpolate values from one mesh to the other.  The prolongation
+operator $\Iind^k_{k-1}$ takes values from the coarse mesh to the finer mesh, and
+the restriction operator $\Iind_k^{k-1}$ takes values from the fine mesh to the
+coarse mesh.  If we have a solution on the fine mesh satisfying (A.2), then we
+can define, in a manner similar to (A.3), the {\it relative local truncation
+error} $\tau_k^{k-1}$
+$$
+{\tau }_{k}^{k-1}\equiv {\vecfunct}^{k-1}({\Iind}_{k}^{k-1}{\varphi
+}^{k})-{\Iind}_{k}^{k-1}({\vecfunct}^{k}{\varphi }^{k}). \apeqn{A}{}
+$$
+The relative local truncation error can be used as an estimate of the local
+truncation error of the difference operator on $\Mc^{k-1}$.  If we now solve
+$$
+{F}^{k-1}{\tilde{\varphi }}^{k-1}={f}^{k-1}+{\tau }_{k}^{k-1}, \apeqn{A}{}
+$$
+then $\tilde\varphi^{k-1}$ will be a better approximation of $\Pc^{k-1}\varphi$
+since the discretization error of (A.6) will be on the order of that on $\Mc^k$,
+as opposed to that on $\Mc^{k-1}$.
+
+To this point, solving (A.6) does not aid in the solution of the problem on
+$\Mc^k$ since the solution on $\Mc^k$ was needed to generate $\tau_k^{k-1}$.  To
+proceed, instead of using an actual solution to (A.2) in (A.5) consider
+$\varphi^k$ now to be only an approximate solution.  If the approximate solution
+is sufficiently close to the true solution, then the solution to (A.6) will be a
+good approximation of the solution to (A.2) and, since (A.6) is defined on the
+coarser mesh, it will require less work than (A.2) to solve.  Once the solution
+$\tilde\varphi^{k-1}$ is known, then subtracting $\Iind_k^{k-1}\varphi^k$ gives
+the amount by which the approximate solution on $\Mc^k$ has been corrected.  The
+{\it coarse grid correction} is thus defined as
+$$
+{\tilde{\varphi }}^{k-1}-{I}_{k}^{k-1}{\varphi }^{k}. \apeqn{A}{}
+$$
+Projecting this onto the finer mesh $\Mc^k$ gives an update to the approximate
+solution given by
+$$
+{\varphi }^{k}\rightarrow {\varphi }^{k}+{\Iind}_{k-1}^{k}\left({{\tilde{\varphi
+}}^{k-1}-{I}_{k}^{k-1}{\varphi }^{k}}\right). \apeqn{A}{}
+$$
+
+The update (A.8) gives a substantially improved solution on $\Mc^k$ without ever
+solving the equations on $\Mc^k$.  Of course, it may be the case that the
+difference equations on $\Mc^{k-1}$ are, like those on $\Mc^k$, too difficult to
+solve efficiently.  If this is the case, then the problem can be shifted to mesh
+$\Mc^{k-2}$ which is coarser yet.  In this way, the problem of solving the
+finite difference equations can always be pushed to a grid which is coarse
+enough for the difference equations to be solved efficiently.
+
+An alternate, and somewhat more general, derivation of the multigrid approach
+for non-linear problems is given by Hackbusch [1985].  Consider again the
+two-level system labeled by $\Mc^k$ and $\Mc^{k-1}$.  Let $\varphi^k$ be an
+approximate solution to (A.2) which satisfies
+$$
+{\vecfunct}^{k}{\varphi }^{k}-{f}^{k}={d}^{k}, \apeqn{A}{}
+$$
+where $d^k$ is the residual or defect in the solution which is assumed to be a
+smooth function over the mesh.  If $\varphi^k + \delta\varphi^k$ is the actual
+solution to (A.2), then the correction can be written (remembering that
+$\vecfunct^k$ is non-linear) as
+$$
+\delta {\varphi
+}^{k}={({\vecfunct}^{k})}^{-1}{f}^{k}-{({\vecfunct}^{k})}^{-1}({d}^{k}+{f}^{k}), \apeqn{A}{}
+$$
+where $(\vecfunct^k)^{-1}$ denotes the operator inverse of $\vecfunct^k$. 
+Expanding (A.10) in a Taylor series about $f^k$ gives
+$$
+\eqalign{\delta {\varphi }^{k} &={({\vecfunct}^{k})}^{-1}{f}^{k} -
+{({\vecfunct}^{k})}^{-1}{f}^{k} -
+{\left({{({\vecfunct}^{k})}^{-1}}\right)}_{({f}^{k})}^{\prime}{d}^{k} + \cdots\cr
+&\approx
+-{\left({{({\vecfunct}^{k})}^{-1}}\right)}_{({f}^{k})}^{\prime}{d}^{k}\cr},
+\apeqn{A}{}
+$$
+where $\left({(\vecfunct^k)^{-1}}\right)^\prime_{(f^k)}$ is the Jacobian of
+$(\vecfunct^k)^{-1}$ evaluated at $f^k$.  Solving (A.11) is, of course, no easier
+than solving (A.2).  We will want to solve, not for $\delta\varphi^k$, but for a
+quantity $\delta\varphi^{k-1}$ which approximates it on $\Mc^{k-1}$.
+
+Let $\varphi^{k-1}$ be a solution to the following equation on $\Mc^{k-1}$
+$$
+{\vecfunct}^{k-1}{\varphi }^{k-1}={\Phi }^{k-1}, \apeqn{A}{}
+$$
+where $\Phi^{k-1}\not= f^{k-1}$, but is constructed to satisfy (A.12) exactly
+for the given $\varphi^{k-1}$ .  Next, define a coarse grid defect by
+$$
+{d}^{k-1}\equiv {\Phi }^{k-1}-s({\Iind}_{k}^{k-1}{d}^{k}), \apeqn{A}{}
+$$
+where $s$ is simply a weighting coefficient in the linear combination.  Finally,
+the coarse grid function $\tilde\varphi^{k-1}$ is defined by
+$$
+\eqalign{{\tilde{\varphi }}^{k-1}&\equiv {({\vecfunct}^{k-1})}^{-1}{d}^{k-1}\cr
+&={({\vecfunct}^{k-1})}^{-1}({\Phi }^{k-1}-s{\Iind}_{k}^{k-1}{d}^{k})\cr}.
+\apeqn{A}{}
+$$
+Expanding (A.14) in a Taylor series about $\Phi^{k-1}$ gives
+$$
+\eqalign{{\tilde{\varphi }}^{k-1}&={({\vecfunct}^{k-1})}^{-1}{\Phi
+}^{k-1}-s{\left({{({\vecfunct}^{k-1})}^{-1}}\right)}_{({\Phi
+}^{k})}^{\prime}({\Iind}_{k}^{k-1}{d}^{k})+\cdots\cr &\approx {\varphi
+}^{k-1}-s{\left({{({\vecfunct}^{k-1})}^{-1}}\right)}_{({\Phi
+}^{k})}^{\prime}({\Iind}_{k}^{k-1}{d}^{k})\cr}. \apeqn{A}{}
+$$
+Comparing (A.15) to (A.11) leads us to define the coarse grid correction as
+$$
+\delta {\varphi }^{k-1}\equiv {1 \over s}({\tilde{\varphi }}^{k-1}-{\varphi
+}^{k-1}). \apeqn{A}{}
+$$
+Projecting this onto the fine mesh gives the update to the approximate solution
+$$
+{\varphi }^{k}\rightarrow {\varphi }^{k}+{\Iind}_{k-1}^{k}\left({{1 \over
+s}({\tilde{\varphi }}^{k-1}-{\varphi }^{k-1})}\right). \apeqn{A}{}
+$$
+As in the FAS algorithm, the problem of solving a set of difference equations on
+a fine mesh is transferred to a coarser mesh where it is either solved or passed
+to an even coarser mesh.
+
+As mentioned previously, this second derivation of the multigrid approach is
+more general than the FAS algorithm.  In fact, it contains the FAS algorithm. 
+If the weighting parameter $s$ is taken to be one, and if $\varphi^{k-1} =
+\Iind^{k-1}_k\varphi^k$, then this second approach reduces identically to the FAS
+algorithm.  Even though the second method contains the first, the philosophy of
+the two algorithms is quite different.  In the case of the FAS algorithm, the
+quantity added to the source term on each level (the relative local truncation
+error) is chosen to correct for the truncation error in the difference equations
+on that level.  In this way, the solutions of the difference equations
+constructed on each level are always approximations of the same differential
+equation.  This leads to the name of the method, since the full approximation of
+the solution is solved and stored on each level.  This is not the case in the
+second approach except in the limiting case mentioned above.  Here, the coarse
+grid solution $\tilde\varphi^{k-1}$ can be thought of as resulting from a
+perturbation of the solution to (A.12).  The perturbation is driven by the
+defect in the approximate solution on $\Mc^k$ and is weighted by $s$.  The size
+of this weighting parameter is restricted only by the need for the Taylor
+expansion in (A.15) to be well defined.  In practice, it can be made quite small
+so that the perturbation from $\tilde\varphi^{k-1}$ is small.  One approach
+which I have used for fixing a value for $s$ is to choose it to satisfy
+$$
+\|s({\Iind}_{k}^{k-1}{d}^{k})\|={\varepsilon }_{s}\|{\Phi
+}^{k-1}\|\qquad\hbox{or}\qquad s={{\varepsilon }_{s}\|{\Phi }^{k-1}\| \over
+\|({\Iind}_{k}^{k-1}{d}^{k})\|}, \apeqn{A}{}
+$$
+where $\|\bullet\|$ is some appropriate vector norm and $\varepsilon_s$ is an
+``adaptive scaling'' parameter.
+
+Appendix~B contains the results for the solutions to the one-hole
+Hamiltonian constraint described in Chapter~8.  These solutions were obtained
+from a multigrid code based on the approach outlined above.  (For a detailed
+description of the construction of a multigrid code, see Brandt [1977], [1982]
+and Choptuik [1982].)  The solutions to the model problem were obtained using the
+FAS limit of the code.  The solutions to the physical problem of a hole with
+linear or angular momentum were obtained both in the FAS limit and using adaptive
+scaling as described above, where $\varepsilon_s = 0.1$.
+
+\vfill
+\eject

@@ -1,0 +1,658 @@
+\chapterhead{Chapter~\the\chapnum:  The Conformal Imaging Approach}
+%%%%%%%%%%%%%%%%%%%%%%%%
+The {\it conformal imaging approach} encompasses the $(3+1)$ and conformal
+decomposition techniques described in the previous chapters, along with a set of
+assumptions for choosing the freely specifiable data and the topology of the
+initial slice, taken in order to calculate initial-data sets which represent one
+or more black holes in an astrophysical setting.  The $(3+1)$ decomposition of
+Einstein's equations and York's conformal decomposition of the constraints
+provide a foundation for specifying initial-data sets for a wide range of
+problems of astrophysical interest.  If we restrict ourselves to considering only
+four-dimensional, pseudo-Riemannian space-times foliated by spacelike
+hypersurfaces, then the Hamiltonian and momentum constraints can be expressed
+respectively as:
+$$
+8{\overline{\nabla }}^{2}\psi -\psi \bar{R}-{2 \over 3}{\psi
+}^{5}{K}^{2}+{\psi
+}^{-7}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}=-2\kappa {\psi
+}^{-3}\bar{\rho }, \eqn{}
+$$
+and
+$$
+{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}-{2 \over 3}{\psi
+}^{6}{\bar{\gamma }}{}^{i}{}^{j}{\bar{D}}{}_{j}K=\kappa
+{\bar{\jmath}}{}^{i} \eqn{a}
+$$
+or
+$$
+{\left({{\Delta }_{\scriptscriptstyle L}W}\right)}{}^{i}-{2 \over 3}{\psi
+}^{6}{\bar{\gamma }}{}^{i}{}^{j}{\bar{D}}{}_{j}K=\kappa
+{\bar{\jmath}}{}^{i}. \eqnb{b}
+$$
+Note that (4.2b) is the most restricted form of the momentum constraint,
+however, we will also have use for the form given in (4.2a).
+
+In order to solve the constraints for $\psi$ and $W^i$, we must {\it first}
+specify the unconstrained portions of the initial data.  We must choose first the
+conformal {\it background} metric $\bar\gamma_{ij}$.  Given this background
+metric, we must choose the transverse-traceless part of the {\it background} extrinsic
+curvature so as to satisfy (3.24).  Next, we must choose the trace of the
+extrinsic curvature in the physical space.  Finally, we must choose values for the
+{\it background} sources $\bar\rho$ and $\bar\jmath^i$.
+
+While these choices determine all of the freely
+specifiable fields present in an initial-data set, there is one other choice
+which must be made.  This final choice is the prescription of the topology of
+the initial-data slice.  Einstein's equations in no way determine the topology
+of the initial manifold.  It can be chosen, for example, to be closed, if one is
+interested in cosmological models.  Alternately, it can be chosen to be
+unbounded and, perhaps, asymptotically flat.  In any case, the manifold can
+be simply connected or multiply connected.  These are just some of the possible
+choices and the physical consequences of these choices can be fully determined
+only after initial data has been constructed.
+
+In order to represent astrophysical situations, the first assumption is that the
+initial slice is asymptotically flat.  Since we want to investigate black holes,
+we choose that there be no matter sources, so
+$$
+\bar{\rho }=0 \eqn{}
+$$
+and
+$$
+{\bar{\jmath}}{}^{i}=0. \eqn{}
+$$
+We also demand that the trace of the extrinsic curvature vanish on the initial
+slice, so
+$$
+K=0. \eqn{}
+$$
+This condition implies that the hypersurface is maximally embedded in the full
+space-time ({\it cf}. York and Piran [1982]) and decouples the momentum constraint
+from the Hamiltonian constraint.  The final assumptions on the data are that the
+hypersurface be conformally flat and that the transverse-traceless part of the
+background extrinsic curvature vanish.  The first assumption means we choose the
+conformal background metric to be a flat metric
+$$
+{\bar{\gamma }}{}_{i}{}_{j}={f}{}_{i}{}_{j}. \eqn{}
+$$
+The second assumption is
+$$
+{\bar{A}}_{\scriptscriptstyle TT}^{ij}=0, \eqn{}
+$$
+and it should be noted here that assumption (4.7) will be relaxed when multiple
+black holes are considered.  These last two choices affect the gravitational
+wave content of the initial-data slice.  We recognize this from the fact that
+the conformal three-geometry and the transverse-traceless part of the extrinsic
+curvature represent the dynamical degrees of freedom of the gravitational
+field.  In the case of a single Schwarzschild black hole, initial data can be
+chosen on an asymptotically and conformally flat, maximally embedded initial
+slice.  In this case, the full extrinsic curvature vanishes and the initial
+slice contains no gravitational waves.  However, in general, if the
+configuration is not static, there will be gravitational radiation present in
+initial slices constructed with (4.6) and (4.7).  More will be said about this
+later.
+
+Given these assumptions, the constraint equations now take the following
+form:
+$$
+{\overline{\nabla }}^{2}\psi =-{1 \over 8}{\psi
+}^{-7}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}, \eqn{}
+$$
+and
+$$
+{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}=0, \eqn{a}
+$$
+or
+$$
+{\left({{\Delta }_{\scriptscriptstyle L}W}\right)}{}^{i}=0. \eqnb{b}
+$$
+Note that the full trace-free background extrinsic curvature ${\bar A}_{ij}$ is
+used in (4.8) and (4.9a) instead of just the longitudinal part.  This is a
+reflection of the earlier comment on relaxing condition (4.7).
+
+The only assumptions left to
+be made are those which fix the topology of the initial slice.  Assume first
+that the topology is taken to be a simply connected, Euclidean $E^3$ topology. 
+Asymptotic flatness implies (York [1979]) that
+$$
+\psi =1+\Order({{ r}^{-1}}) \eqn{}
+$$
+and
+$$
+{\bar{K}}{}^{i}{}_{j}=\Order({{r}^{-2}}). \eqn{}
+$$
+Since there are no sources to support a non-trivial solution, the only regular
+solution to Einstein's equations is empty, flat space, so there is no
+gravitational field.  In order to represent black holes (and therefore strong
+gravitational fields) in vacuum, non-trivial topologies must be used.  The
+simplest example of this comes from the Schwarzschild solution.  If we choose a
+$t = constant$ slice of the Schwarzschild solution in isotropic coordinates, the
+metric and extrinsic curvature on the slice are
+$$
+{\gamma }{}_{i}{}_{j}={\left({1+{\kappa M \over
+16\pi r}}\right)}^{4}{f}{}_{i}{}_{j} \eqn{} $$
+and
+$$
+{K}{}_{i}{}_{j}=0. \eqn{}
+$$
+This slice is asymptotically and conformally flat and maximally embedded in the
+full space-time.  The conformal factor is
+$$
+\psi =1+{\kappa M \over 16\pi r}, \eqn{}
+$$
+and it is singular at $r = 0$.  In order for the manifold to be regular, the
+origin is cut out and the manifold becomes ``non-contractable''.
+
+It appears at
+first that this geometry simply represents a single asymptotically flat
+hypersurface with the origin removed.  This situation would not represent a
+complete manifold.  Consider, however, the line element of (4.12) using
+spherical coordinates,
+$$
+{ds}^{2}={\left({1+{\kappa M \over
+16\pi r}}\right)}^{4}\left({{dr}^{2}+{r}^{2}{d\Omega }^{2}}\right), \eqn{}
+$$
+and then change to a new radial coordinate
+$$
+r^\prime={\left({\kappa M \over 16\pi}\right)}^{2}{1 \over r}. \eqn{}
+$$
+(Note that $r = r^\prime = \kappa M/16\pi$ is a fixed point set in this
+transformation and coincides with the location of the Schwarzschild event
+horizon.)  In terms of this new coordinate the line element becomes
+$$
+{ds}^{2}={\left({1+{\kappa M \over 16\pi
+r^\prime}}\right)}^{4}\left({{dr^\prime}^{2}+{r^\prime}^{2}{d\Omega
+}^{2}}\right), \eqn{} 
+$$
+which is identical to (4.15) except that it is in terms of the new radial
+coordinate $r^\prime$.  We see now that the initial slice is asymptotically flat
+as $r^\prime\rightarrow \infty$ in just the same way that it is asymptotically
+flat as $r \rightarrow \infty$.  $r^\prime\rightarrow \infty$ is, of course, the
+same as $r \rightarrow 0$ and it can now be seen that the geometry of (4.12) is
+actually that of {\it two} asymptotically flat spaces joined at the spherical
+surface $r = r^\prime = \kappa M/16\pi$ (see Figure~4.1), and this implies that
+the manifold is complete.
+
+%\figlabel{3.5truein}{Figure~4.1:  Embedding diagram of time-symmetric, maximal
+%slice \cr of Schwarzschild geometry in isotropic coordinates.}
+\figlabelpdf{3.5truein}{Figure~4.1:  Embedding diagram of time-symmetric, maximal
+slice \cr of Schwarzschild geometry in isotropic coordinates.}{Figures/Figure4_1.pdf}
+
+These two asymptotically flat spaces are often referred to as the ``top'' and
+``bottom'' sheets of the manifold and the region connecting them is known as an
+Einstein-Rosen bridge (Einstein and Rosen [1935]).  The region interior to the
+event horizon on the top sheet, $r < \kappa M/16\pi$, is not the interior of the
+black hole, but is an identical ``second'' or ``alternate'' universe.  This can
+be seen most easily by plotting the initial slice in the familiar Kruskal
+coordinates (Figure~4.2).
+
+%\figlabel{3truein}{Figure~4.2:  Time-symmetric, maximal slice of Kruskal
+%space-time, \cr labeled in isotropic coordinates and showing ``top'' and
+%\cr``bottom'' sheets in the two different universes.}
+\figlabelpdf{3truein}{Figure~4.2:  Time-symmetric, maximal slice of Kruskal
+space-time, \cr labeled in isotropic coordinates and showing ``top'' and
+\cr``bottom'' sheets in the two different universes.}{Figures/Figure4_2.pdf}
+
+This example illustrates the main principle followed in constructing vacuum,
+black-hole initial-data sets:  we use multiple asymptotically flat sheets
+connected by Einstein-Rosen bridges.  In doing this, two criteria must be
+satisfied in the resulting initial-data sets.  The first is regularity and the
+second is completeness of the manifold ({\it cf}. Brill and Lindquist [1963]).
+
+If we want to represent more than one black hole on the initial slice, then
+there are essentially two avenues which can be taken in choosing the topology of
+the initial slice.  Let us assume that there are to be $N$ black holes in our
+``universe''.  One approach for modeling this is to allow each of the holes to
+connect to its own isolated, asymptotically flat universe through an
+Einstein-Rosen bridge.  This produces an $N + 1$ sheeted manifold (Figure~4.3a). 
+The second approach is to allow all $N$ holes to connect to the {\it same}
+alternate, asymptotically flat universe through $N$ Einstein-Rosen bridges.  This
+produces a multiply-connected, two-sheeted manifold (Figure~4.3b).
+
+%\figlabel{2truein}{Figure~4.3:  Initial slice topologies for two black holes. 
+%\cr a) Topology of an $N+1$ sheeted manifold.  \cr b) Topology of a two-sheeted
+%manifold.}
+\figlabelpdf{2truein}{Figure~4.3:  Initial slice topologies for two black holes. 
+\cr a) Topology of an $N+1$ sheeted manifold.  \cr b) Topology of a two-sheeted
+manifold.}{Figures/Figure4_3.pdf}
+
+Analytic solutions to the initial-value equations on both topologies have been
+found which represent multiple black holes at a moment of time symmetry (Misner
+[1963], Lindquist [1963], and Brill and Lindquist [1963]).  If all of the holes
+are momentarily at rest, then the extrinsic curvature vanishes everywhere on the
+initial slice and the Hamiltonian constraint (4.8) reduces to Laplace's
+equation.  A solution representing $N$ black holes is
+$$
+\psi =1+\sum\nolimits\limits_{\alpha =1}^{N} {{\mu }_{\alpha } \over
+\left|{\bf x\rm -{\bf C}_{\alpha }}\right|}, \eqn{}
+$$
+where $\mu_\alpha$  are constants related to the masses of the holes and the
+points ${\bf C}_\alpha$ are the positions of the centers of the holes in the
+background space.  The points ${\bf C}_\alpha$ are deleted from the manifold so
+that it is regular, and if they are sufficiently far apart, then each corresponds
+to asymptotic infinity on a connecting sheet, as in Figure~4.3a, so the manifold
+is complete.  In order to produce a two-sheeted solution, as in Figure~4.3b,
+Misner [1963] demanded that the top and bottom sheets be identical.  Enforcing
+this required the addition of an infinite number of poles to (4.18) with the
+weights and locations of the poles determined by the method of spherical-inversion
+imaging from electrostatics.  Misner showed that the infinite series converges to
+an analytic function and is a solution to Laplace's equation so long as the holes
+are not too close to each other.
+
+In order to construct initial data which represents more physically interesting
+situations, it is necessary to consider cases which are not time-symmetric and,
+so, have non-vanishing extrinsic curvature.  This requires solving both the
+Hamiltonian constraint (4.8) and the momentum constraint (4.9) on one of the two
+topologies discussed above.  Analytically, the $N+1$ sheeted topology offers a
+simpler approach since solutions to the constraints naturally produce this
+topology with no additional effort.  Construction of initial data on the
+two-sheeted manifold requires that the initial data satisfy an isometry
+condition which enforces Misner's requirement that the two sheets be identical. 
+On the other hand, we note that in general the Hamiltonian constraint (4.8) is a
+quasi-linear, elliptic, differential equation and it will be necessary, in most
+cases, to solve it numerically.  From this point of view, we find that
+constructing initial data on an $N+1$ sheeted topology will require numerical
+solutions on all $N+1$ asymptotically flat sheets.  The two-sheeted topology
+requires solution on only one sheet since the other is identical. Thus, the
+two-sheeted manifold proves to be computationally more convenient.
+
+Thornburg [1987] has argued for the use of $N+1$ sheeted manifolds by suggesting
+that the Hamiltonian constraint be solved only on the top sheet.  He argues that
+the apparent horizons, which are present around the black holes, form a natural
+boundary for the region in which the Hamiltonian constraint must be solved. 
+Doing this, however, ignores the remainder of the initial-data slice.  While
+information can never cross the apparent horizons into the top sheet during the
+time evolution, this does not preclude the existence of global structures which
+can be located only by knowing the initial data on the complete manifold as I
+will show later ({\it cf}. Cook and York [1990]).
+
+The final assumption of the conformal imaging approach is to assume that the
+initial-data manifold has a two-sheeted topology and that the sheets are related
+by an isometry which requires the two sheets, and any fields on them, to be
+identical.  The approach, for the case of a single hole, was detailed by Bowen
+[1979b] and Bowen and York [1980].  The extension for multiple holes was carried
+out by Kulkarni, Shepley, and York [1983].  In the remainder of this chapter, I
+will outline the approach, closely following Kulkarni {\it et al}. [1983].
+
+Let $M_{\scriptscriptstyle N}$ denote the two-sheeted manifold containing $N$
+Einstein-Rosen bridges, each representing a single black hole.  To construct the
+manifold, take two identical, three-dimensional Euclidean spaces $E^3$ with $N$
+non-intersecting spheres, located at ${\bf C}_\alpha$ and with radii $a_\alpha\,
+(\alpha=1,\ldots,N)$, removed.  The two spaces will represent the top and bottom
+sheets of $M_{\scriptscriptstyle N}$ and will be labeled, respectively, by $Y$
+and $Z$.  If ${\bf p} = (p^1,p^2,p^3)$ represents a point in either sheet, then
+the sheets are defined by
+$$
+Y=Z\equiv \left\{{\,{\bf p} \in {E}^{3}:\left|{{\bf p} -{\bf C}_{\alpha
+}}\right|>{a}_{\alpha },\alpha =1,\ldots,N}\right\}. \eqn{}
+$$
+The collection of boundaries $B$ is defined as
+$$
+B\equiv \bigcup\limits_{\alpha =1}^{N} {B}_{\alpha
+}\qquad\hbox{where}\qquad{B}_{\alpha }\equiv \left\{{\,{\bf p} \in
+{E}^{3}:\left|{{\bf p} -{\bf C}_{\rm \alpha }}\right|={a}_{\alpha }}\right\}.
+\eqn{}
+$$
+Let the union of the top sheet and the boundary be $\bar{Y}\equiv Y\cup B$, and
+similarly $\bar{Z}\equiv Z\cup B$.  The manifold $M_{\scriptscriptstyle N}$ is
+now defined as $M_N \equiv \bar{Y}\cup\bar{Z}$, with the boundaries $B_\alpha$
+(each representing a throat or bridge) identified.  To put coordinates on the
+manifold, we define a collection of coordinate maps $\Psi_\alpha$ on
+$M_{\scriptscriptstyle N}$, each covering $Y$ and $Z$ through the $\alpha^{th}$
+throat.  Let ${\bf x}$ denote the range of points in $E^3$ covered by the maps
+and define
+$$
+X\equiv \left\{{\,{\bf x} \in {E}^{3}:\left|{{\bf x} -{\bf C}_{\alpha
+}}\right|>{a}_{\alpha },\alpha =1,\ldots,N}\right\} \eqn{}
+$$
+and
+$$
+{S}_{\alpha }\equiv \left\{{\,{\bf x} \in {E}^{3}:\left|{{\bf x} -{\bf
+C}_{\alpha }}\right|={a}_{\alpha }}\right\}. \eqn{} 
+$$
+
+We can now define the maps ${\bf J}_\alpha$ which identify the two sheets through
+each of the throats
+$$
+{\bf J}_{\alpha }:{E}^{3}-\left\{{{a}_{\alpha }}\right\}\rightarrow
+{E}^{3}-\left\{{{a}_{\alpha }}\right\} \eqn{}
+$$
+by
+$$
+{\bf J}_{\alpha }\left({\bf x}\right)\equiv \left({{{a}_{\alpha }^{2}
+\over {r}_{\alpha }}}\right){\bf n}_{\alpha }+{\bf C}_{\alpha }, \eqn{}
+$$
+where
+$$
+{r}_{\alpha }=\left|{{\bf x} -{\bf C}_{\alpha }}\right| \eqn{}
+$$
+and
+$$
+{\bf n}_{\alpha }={\left({{\bf x} -{\bf C}_{\alpha }}\right) \over
+{r}_{\alpha }}. \eqn{}
+$$
+We now define the $\alpha^{th}$ image of $X$ as
+$$
+{I}_{\alpha }={\bf J}_{\alpha }\left[{\bf X}\right], \eqn{}
+$$
+and the $\alpha^{th}$ coordinate map as
+$$
+{\Psi }_{\alpha }:\left({Y\cup {B}_{\alpha }\cup Z}\right)\rightarrow
+\left({X\cup {S}_{\alpha }\cup {I}_{\alpha }}\right), \eqn{}
+$$
+where
+%$$
+%\eqalign{{\Psi }_{\alpha }\left({\bf p}\right)
+%&=\left({{p}^{1},{p}^{2},{p}^{3}}\right)\in \left({X\cup {S}_{\alpha
+%}}\right),\quad\hbox{if}\quad{\bf p} \in \left({Y\cup {B}_{\alpha }}\right)\cr
+%&={\bf J}_{\alpha }\left({{p}^{1},{p}^{2},{p}^{3}}\right)\in {I}_{\alpha
+%},\quad\hbox{if}\quad{\bf p} \in Z\cr}. \eqn{} 
+%$$
+$$
+\Psi_\alpha({\bf p}) = \cases{(p^1,p^2,p^3)\in (X\cup S_\alpha),&if ${\bf p}\in
+(Y\cup B_\alpha)$\cr
+{\bf J}_\alpha(p^1,p^2,p^3)\in I_\alpha,&if ${\bf p}\in Z$.\cr} \eqn{}
+$$
+Note that ${\bf J}_\alpha^2$ is the identity operator since
+$$
+{\bf J}_{\alpha }\left[{{\bf J}_{\alpha }\left[{X}\right]}\right]=X,
+\eqn{}
+$$
+and so ${\bf J}_\alpha$ is its own inverse.
+
+For the case of one hole, we recover exactly the manifold structure seen
+previously for the Schwarzschild black hole.  In this case, one coordinate patch
+will smoothly cover the entire manifold.  If we consider the two sheets
+separately, we have points on the top sheet labeled by $(r,\theta,\phi)$, and on
+the bottom sheet by $(r^\prime,\theta^\prime,\phi^\prime)$.  From (4.29), points
+on the top sheet will have coordinates $(r,\theta,\phi)$, while a point on the
+bottom sheet will have coordinates ${\bf
+J}_1(r^\prime,\theta^\prime,\phi^\prime)$.  In terms of spherical coordinates
+this yields
+$$
+\left({r={{a}_{1}^{2} \over r'},\theta =\theta ',\phi =\phi '}\right), \eqn{}
+$$
+which is just the coordinate transformation (4.16) with $a_1 = \kappa M/16\pi$. 
+So spherical coordinates with the origin removed correspond, in this case, to the
+single coordinate patch for a single Einstein-Rosen bridge topology, with the
+region interior to $r=\kappa M/16\pi$ being the bottom sheet.
+
+In addition to having a two-sheeted manifold, it is required that any
+fields on the two sheets of the manifold must be identical.  More precisely, we
+require that the isometry between the sheets be generated by the maps ${\bf
+J}_\alpha$ via the pull-back maps ${\bf
+J}_\alpha^\ast$.  That is,
+$$
+\left({\hbox{data at}\,{\bf x} \in X}\right)=\pm {\bf J}_{\alpha
+}^{\ast}\left({\hbox{data at}\,{\bf J}_{\alpha }\left({\bf x}\right)}\right).
+\eqn{}
+$$
+The change of sign is allowed since the square of a map is the identity (4.30)
+and since it will give physically meaningful results.  Since the second sheet is
+covered in its entirety by $N$ different coordinate maps $I_\alpha$ (4.27), it is
+required for consistency that (4.32) be satisfied not for a single $\alpha$ but
+for {\it all} $\alpha=1,\ldots,N$.  This guarantees that fields on the bottom
+sheet will be identical to the fields on the top sheet no matter which coordinate
+map is used.
+
+In the case of a scalar field $\Phi$ on the manifold, the isometry condition
+(4.32) requires
+$$
+\Phi \left({\bf x}\right) =\pm \Phi \left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right). \eqn{}
+$$
+For a one-form $\omega_i$, (4.32) requires
+$$
+{\omega }{}_{i}\left({\bf x}\right) =\pm {\left({{\bf J}_{\alpha
+}}\right)}_{i}{}^{j}{\omega }{}_{j}\left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right), \eqn{}
+$$
+where
+$$
+{\left({{\bf J}_{\alpha }}\right)}_i{}^j\equiv {\partial
+{\left({{\bf J}_{\alpha }}\right)}{}^{j} \over \partial {x}{}^{i}} \eqn{}
+$$
+is the Jacobian of the map ${\bf J}_\alpha$.  For a vector field $V^i$, (4.32)
+requires $$
+{V}{}^{i}\left({\bf x}\right) =\pm {\left({{\bf J}_{\alpha
+}^{-1}}\right)}_j{}^i{V}{}^{j}\left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right), \eqn{}
+$$
+where the inverse Jacobian, defined by
+$$
+{\left({{\bf J}_{\alpha }^{-1}}\right)}_k{}^i{\left({{\bf J}_{
+\alpha }}\right)}_j{}^k={\delta }_{j}^{k}, \eqn{}
+$$
+is used.  The extension to other tensor fields is obvious.
+
+The two fields of importance for gravitational initial data are the metric and
+extrinsic curvature.  These must satisfy
+$$
+{\gamma }{}_{i}{}_{j}\left({\bf x}\right) =\pm {\left({{\bf J}_{\alpha
+}}\right)}{}_{i}{}^{k}{\left({{\bf J}_{\alpha }}\right)}{}_{j}{}^{\ell
+}{\gamma }{}_{k}{}_{\ell }\left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right) \eqn{}
+$$
+and
+$$
+{A}{}_{i}{}_{j}\left({\bf x}\right) =\pm {\left({{\bf J}_{\alpha
+}}\right)}{}_{i}{}^{k}{\left({{\bf J}_{\alpha }}\right)}{}_{j}{}^{\ell
+}{A}{}_{k}{}_{\ell }\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right).
+\eqn{}
+$$
+To explore the isometry conditions on the background fields, consider the form
+that the Jacobian (4.35) and the inverse Jacobian take in Cartesian coordinates:
+$$
+{\left({{\bf J}_{\alpha }}\right)}{}_{i}{}^{j}={{a}_{\alpha }^{2} \over
+{r}_{\alpha }^{2}}\left({{\delta }_{i}^{j}-2{n}_{\alpha }^{j}{n}^{\alpha
+}_{i}}\right) \eqn{a}
+$$
+and
+$$
+{\left({{\bf J}_{\alpha }^{-1}}\right)}{}_{i}{}^{j}={{r}_{\alpha }^{2} \over
+{a}_{\alpha }^{2}}\left({{\delta }_{i}^{j}-2{n}_{\alpha }^{j}{n}^{\alpha
+}_{i}}\right). \eqnb{b}
+$$
+Using the conformal decomposition of the metric (3.1) and the assumption that
+the background metric is flat (4.6), the isometry condition on the metric becomes
+$$
+{\psi }^{4}\left({\bf x}\right){f}{}_{i}{}_{j}=\pm {\left({{\bf J}_{
+\alpha }}\right)}{}_{i}{}^{k}{\left({{\bf J}_{\alpha }}\right)}{}_{j}{}^{\ell
+}{\psi }^{4}\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right){
+f}{}_{k}{}_{\ell }. \eqn{}
+$$
+Using the explicit form of the Jacobian (4.40), this reduces to
+$$
+{\psi }^{4}\left({\bf x}\right){f}{}_{i}{}_{j}=\pm {\left({{{a}_{\alpha }
+\over {r}_{\alpha }}}\right)}^{4}{\psi }^{4}\left({{\bf J}_{\alpha
+}\left({\bf x}\right)}\right){f}{}_{i}{}_{j}, \eqn{}
+$$
+or more simply
+$$
+\psi \left({\bf x}\right) ={{a}_{\alpha } \over {r}_{\alpha }}\psi
+\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right). \eqn{}
+$$
+Note that the isometry condition with a minus sign is not allowed since this
+would imply the conformal factor vanishes on each throat which would make the
+metric singular.  Now, if we consider the conformal transformation of the
+extrinsic curvature, we find from (3.9) and (4.39)
+$$
+\eqalign{{\psi }^{-2}\left({\bf x}\right){\bar{
+A}}{}_{i}{}_{j}\left({\bf x}\right) &=\pm {\left({{\bf J}_{\alpha
+}}\right)}{}_{i}{}^{k}{\left({{\bf J}_{\alpha }}\right)}{}_{j}{}^{\ell }{\psi
+}^{-2}\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right){\bar{
+A}}{}_{k}{}_{\ell }\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right)\cr
+ &=\pm {\left({{\bf J}_{\alpha }}\right)}{}_{i}{}^{k}{\left({{\bf J}_{
+\alpha }}\right)}{}_{j}{}^{\ell }{\left({{{a}_{\alpha } \over {r}_{\alpha
+}}}\right)}^{2}{\psi }^{-2}\left({\bf x}\right){\bar{A}}{}_{k}{}_{\ell
+}\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right)\cr}, \eqn{}
+$$
+or using (4.40),
+$$
+{\bar{A}}{}_{i}{}_{j}\left({\bf x}\right) =\pm {\left({{{a}_{\alpha }
+\over {r}_{\alpha }}}\right)}^{6}\left({{\delta }_{i}^{k}-2{n}_{\alpha
+}^{k}{n}^{\alpha }_{i}}\right)\left({{\delta }_{j}^{\ell }-2{n}_{\alpha
+}^{\ell }{n}^{\alpha }_{j}}\right){\bar{A}}{}_{k}{}_{\ell
+}\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right). \eqn{}
+$$
+
+Equations (4.43) and (4.45) are conditions which solutions to the two constraint
+equations (4.8) and (4.9)  must satisfy in order to represent inversion-symmetric
+initial data on a regular, complete, two-sheeted initial slice.  Since the
+background fields on the two sheets of the manifold are related by (4.43) and
+(4.45), it is only necessary to solve the constraints on one sheet, provided
+these relations are compatible with the constraints.  Assume that $\psi({\bf x})$
+and $\bar{A}_{ij}({\it x})$ are solutions of (4.8) and (4.9a) in the region
+$\bar{X}$ defined by 
+$$
+\bar{X}=X\,\bigcup\limits_{\alpha =1}^{N} {S}_{\alpha }, \eqn{}
+$$
+that is, the top sheet plus all of the throats.  Now consider the coordinate
+patch $\Psi_\alpha$ and let  $\tilde\psi({\it x})$ and $\tilde{A}_{ij}({\it x})$
+be defined for ${\bf x}$ in the region $I_\alpha$.  They will take values via the
+two relations (4.43) and (4.45) for the $\alpha^{th}$ hole: 
+$$
+\tilde{\psi }\left({\bf x}\right) ={{a}_{\alpha } \over {r}_{\alpha }}\psi
+\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right) \eqn{}
+$$
+$$
+{\tilde{A}}{}_{i}{}_{j}\left({\bf x}\right) =\pm {\left({{{a}_{\alpha }
+\over {r}_{\alpha }}}\right)}^{6}\left({{\delta }_{i}^{k}-2{n}_{\alpha
+}^{k}{n}^{\alpha }_{i}}\right)\left({{\delta }_{j}^{\ell }-2{n}_{\alpha
+}^{\ell }{n}^{\alpha }_{j}}\right){\bar{A}}{}_{k}{}_{\ell
+}\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right) \eqn{}
+$$
+To simplify notation, let ${\bf x}^\prime\equiv {\bf J}_\alpha({\bf x})$.  From
+(4.30), this gives 
+$$
+{\bf x} ={\bf J}_{\alpha }({\bf x}^\prime). \eqn{}
+$$
+Using the following definitions,
+$$
+r^\prime_{\alpha }\equiv \left|{{\bf x}^\prime-{\bf C}_{\alpha
+}}\right|\qquad\hbox{and}\qquad{\bf n}^\prime_{\alpha }\equiv {\left({{\bf
+x}^\prime-{\bf C}_{\alpha }}\right) \over {r^\prime_{\alpha }}}, \eqn{} 
+$$
+one finds:
+$$
+{r}_{\alpha }={r}_{\alpha }\left({{\bf J}_{\alpha }\left({{\bf
+x}^\prime}\right)}\right)={{a}_{\alpha }^{2} \over {r^\prime_{\alpha }}} \eqn{} 
+$$
+and
+$$
+{\bf n}_{\alpha }={\bf n}_{\alpha }\left({{\bf J}_{\alpha
+}\left({{\bf x}^\prime}\right)}\right)={\bf n}^\prime_{\alpha }. \eqn{}
+$$
+The data on the bottom sheet can now be written as
+$$
+\tilde{\psi }\left({\bf x}\right) ={r^\prime_{\alpha } \over {a}_{\alpha }}\psi
+\left({{\bf x}^\prime}\right) \eqn{}
+$$
+and
+$$
+{\tilde{A}}{}_{i}{}_{j}\left({\bf x}\right) =\pm {\left({{r^\prime_{\alpha }
+\over {a}_{\alpha }}}\right)}^{6}\left({{\delta }_{i}^{k}-2n^{\prime k}_{\alpha
+}n^{\prime\alpha }_{i}}\right)\left({{\delta }_{j}^{\ell
+}-2n^{\prime\ell}_{\alpha }n^{\prime\alpha }_{j}}\right){\bar{A}}{}_{k}{}_{\ell
+}\left({{\bf x}^\prime}\right). \eqn{}
+$$
+
+Checking to see if the extrinsic curvature on the bottom sheet satisfies the
+momentum constraint, we find
+$$
+\eqalign{{\bar{D}}{}_{j}{\tilde{A}}{}^{i}{}^{j}\left({\bf x}\right) &=\pm
+{\left({{\bf J}_{\alpha
+}}\right)}{}_{j}{}^{m}{\bar{D}^\prime_{m}}\left({{\left({{r^\prime_{\alpha }
+\over {a}_{\alpha }}}\right)}^{6}\left({{f}{}^{k}{}^{i}-2n^{\prime k}_{\alpha
+}n^{\prime i}_{\alpha }}\right)\left({{f}{}^{\ell }{}^{j}-2n^{\prime\ell}_{\alpha
+}n^{\prime j}_{\alpha }}\right){\bar{A}}{}_{k}{}_{\ell }\left({{\bf
+x}^\prime}\right)}\right)\cr &=\pm {\left({{r^\prime_{\alpha } \over {a}_{\alpha
+}}}\right)}^{8}\left({{\delta }_{k}^{i}-2n^{\prime\alpha }_{k}n^{\prime i}_{\alpha
+}}\right){\bar{D}^\prime_{j}}{\bar{A}}{}^{k}{}^{j}\left({{\bf
+x}^\prime}\right),\cr} \eqn{} 
+$$
+where ${\bar{D}^\prime}_m$ is the background covariant derivative with respect to
+${\bf x}^\prime$.  Thus, the extrinsic curvature on the bottom sheet, as given by
+(4.48), satisfies the momentum constraint (4.9), if the top-sheet extrinsic
+curvature defining it satisfies the momentum constraint.
+
+To check the Hamiltonian constraint, we first
+examine the right-hand side of (4.8).  From (4.54), we find
+$$
+\eqalign{{\tilde{A}}{}_{i}{}_{j}\left({\bf x}\right){\tilde{
+A}}{}^{i}{}^{j}\left({\bf x}\right) &={f}{}^{i}{}^{k}{f}{}^{j}{}^{\ell
+}{\tilde{A}}{}_{i}{}_{j}\left({\bf x}\right){\tilde{A}}{}_{k}{}_{\ell }\left({\bf
+x}\right)\cr &={\left({{r^\prime_{\alpha } \over {a}_{\alpha
+}}}\right)}^{12}{\bar{A}}{}_{i}{}_{j}\left({{\bf
+x}^\prime}\right){\bar{A}}{}^{i}{}^{j}\left({{\bf x}^\prime}\right),\cr} \eqn{} 
+$$
+and, together with (4.53), this gives
+$$
+{\tilde{\psi }}^{-7}\left({\bf x}\right){\tilde{A}}{}_{i}{}_{j}\left({\bf
+x}\right){\tilde{A}}{}^{i}{}^{j}\left({\bf x}\right) ={\left({{r^\prime_{\alpha
+} \over {a}_{\alpha }}}\right)}^{5}\psi^{-7} \left({{\bf
+x}^\prime}\right){\bar{A}}{}_{i}{}_{j}\left({{\bf
+x}^\prime}\right){\bar{A}}{}^{i}{}^{j}\left({{\bf x}^\prime}\right). \eqn{}
+$$
+Next,  the Laplacian of the conformal factor gives
+$$
+\eqalign{{\overline{\nabla }}^{2}\tilde{\psi }\left({\bf x}\right)
+&={f}{}^{i}{}^{j}{\left({{\bf J}_{\alpha
+}}\right)}{}_{i}{}^{k}{\bar{D}^\prime_{k}}\left[{{\left({{\bf J}_{\alpha
+}}\right)}{}_{j}{}^{\ell }{\bar{D}^\prime_{\ell }}\left({{r^\prime_{\alpha }
+\over {a}_{\alpha }}}\right)\psi \left({{\bf x}^\prime}\right)}\right]\cr
+&={\left({{r^\prime_{\alpha } \over {a}_{\alpha
+}}}\right)}^{5}{\hbox{$\overline{\nabla }^\prime$}}^{2}\psi \left({{\bf
+x}^\prime}\right).\cr} \eqn{} 
+$$
+Thus, the Hamiltonian constraint for the conformal factor on the bottom sheet,
+$$
+\eqalign{{\overline{\nabla }}^{2}\tilde{\psi }\left({\bf x}\right) +{1 \over
+8}{\tilde{\psi }}^{-7}\left({\bf x}\right)&{\tilde{A}}{}_{i}{}_{j}\left({\bf
+x}\right){\tilde{A}}{}^{i}{}^{j}\left({\bf x}\right)\cr
+&={\left({{r^\prime_{\alpha } \over {a}_{\alpha
+}}}\right)}^{5}\left({{\hbox{$\overline{\nabla }^\prime$}}^{2}\psi \left({{\bf
+x}^\prime}\right)+{1 \over 8}{\psi }^{-7}\left({{\bf
+x}^\prime}\right){\bar{A}}{}_{i}{}_{j}\left({{\bf
+x}^\prime}\right){\bar{A}}{}^{i}{}^{j}\left({{\bf x}^\prime}\right)}\right),\cr}
+\eqn{} 
+$$
+is satisfied if the top-sheet conformal factor defining it satisfies the
+Hamiltonian constraint and if the extrinsic curvature is inversion-symmetric.
+
+We can now summarize the conformal imaging method as an approach for computing
+initial data which represents multiple black holes with non-vanishing initial
+linear and angular momenta in an asypmtotically flat universe.  First, demand
+that the initial-data slice consist of two asymptotically flat universes
+connected via $N$ Einstein-Rosen bridges, one for each black hole.  Next, demand
+that physical fields in the two universes be ``identical''.  We choose the
+initial-data slice to be conformally flat and maximally embedded in the full
+space-time manifold.
+
+Working in the flat conformal background space, we start by taking  a full
+three-dimensional Eulcidean three-manifold $E^3$ as the domain in which we must
+determine the initial data.  For each black hole which will be present in our
+universe, we choose its ``position'' ${\bf C}_\alpha$ and its ``radius''
+$a_\alpha\, (\alpha=1,\ldots,N)$.  The $N$ spheres of radius $a_\alpha$ are
+removed from the manifold $E^3$ and the remainder, $E^3 - \{a_\alpha\}$, is the
+domain in which we must determine the initial data.
+
+In the domain $E^3 - \{a_\alpha\}$, we first find solutions to the momentum
+constraint (4.9) which satisfy the isometry condition (4.45).  By satisfying the
+isometry condition (4.45), the background extrinsic curvature is said to be
+inversion symmetric.  It is guaranteed to generate a solution on the second sheet
+which satisfies the momentum constraint, and when combined with an
+inversion-symmetric conformal factor, will yield a physical extrinsic curvature
+which is regular everywhere and satisfies the condition (4.39) that it be
+``identical'' on the two sheets.
+
+Given an inversion-symmetric background extrinsic curvature, a solution
+must be found for the Hamiltonian constraint (4.8) which satisfies the isometry
+condition (4.43).  By satisfying the isometry condition (4.43), the conformal
+factor is said to be inversion symmetric.  It is guaranteed to generate a
+solution on the second sheet which satisfies the Hamiltonian constraint and, when
+combined with the flat Euclidean background metric, yields a physical metric
+which is regular everywhere and represents a complete manifold consisting of two
+``identical'', asymptotically flat sheets.
+\vfill
+\eject

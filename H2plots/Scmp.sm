@@ -1,0 +1,106 @@
+#
+mywindow 4
+    define pw 8.5
+    define ph 11
+    define t (int(32767*$4/$ph))
+    define b (int(32767*$3/$ph))
+    define l (int(32767*$1/$pw))
+    define r (int(32767*$2/$pw))
+    location $l $r $b $t
+#
+myylabel 1
+    define y (($t + $b)/2)
+    define x ($l - 32767*(0.45)/$pw)
+    relocate ($x $y)
+    angle 90
+    putlabel 5 $1
+    angle 0
+#
+myplot 1
+    define x (($l + $r)/2)
+    define y ($b - 32767*(0.7)/$pw)
+    relocate ($x $y)
+    expand 0.8 
+    putlabel 5 $1
+#
+#
+compplot
+    macro read rdata.sm
+    erase
+    mywindow 1.95 7.7 4 10
+	limits 0 1.1 0.7 2
+	ltype 2
+    makeEplots
+	relocate 0.05 1.0
+	draw 0.2 1.0
+	expand 0.75
+	putlabel 6  anti-parallel
+	ltype 0
+    makeEplots2
+	relocate 0.05 0.9
+	draw 0.2 0.9
+	expand 0.75
+	putlabel 6  parallel
+#
+#
+makeEplots
+	expand 0.6
+	box
+	xlabel S/M^2
+	myylabel E/M
+	readdata "TS-.b3.rich"
+	sdraw SoM2 EoM
+	blabel 3
+	readdata "TS-.b4.rich"
+	sdraw SoM2 EoM
+	blabel 4
+	readdata "TS-.b5.rich"
+	sdraw SoM2 EoM
+	blabel 5
+	readdata "TS-.b6.rich"
+	sdraw SoM2 EoM
+	blabel 6
+	readdata "TS-.b7.rich"
+	sdraw SoM2 EoM
+	blabel 7
+	readdata "TS-.b8.rich"
+	sdraw SoM2 EoM
+	blabel 8
+	readdata "TS-.b9.rich"
+	sdraw SoM2 EoM
+	blabel 9
+	readdata "TS-.b10.rich"
+	sdraw SoM2 EoM
+	blabel 10
+	readdata "TS-.b11.rich"
+	sdraw SoM2 EoM
+	blabel 11
+	readdata "TS-.b12.rich"
+	sdraw SoM2 EoM
+	blabel 12
+#
+#
+makeEplots2
+	expand 0.6
+	readdata "TS-2.b3.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b4.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b5.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b6.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b7.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b8.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b9.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b10.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b11.rich"
+	sdraw SoM2 EoM
+	readdata "TS-2.b12.rich"
+	sdraw SoM2 EoM
+#
+#

@@ -1,0 +1,259 @@
+\chapterhead{Chapter~{\the\chapnum}: The Conformal and Transverse-Traceless\cr
+Decompositions}
+%%%%%%%%%%%%%%%%%%%%%
+The Hamiltonian or scalar constraint equation, (2.82), and the momentum or
+vector constraint equation, (2.83), represent integrability conditions which the
+two fields $\gamma_{ij}$ and $K_{ij}$ and any matter fields must satisfy on a
+spacelike hypersurface $\Sigma$.  These fields are the initial data which must
+be given to solve Einstein's equations as a Cauchy problem and, as a necessary
+condition, they must satisfy the constraints.  Since Einstein's equations are
+dynamical, the constraints cannot restrict all of the components of the metric
+and extrinsic curvature.  Since $\gamma_{ij}$ and $K_{ij}$ are symmetric,
+three-dimensional tensors, they each have six independent components.  There are
+four constraint equations and so four of the 12 components are not independent. 
+But which four?  York has developed a method of  breaking up the metric and
+extrinsic curvature into constrained and unconstrained pieces.  This method
+involves the conformal decomposition of the initial data and relies on a certain
+decomposition of symmetric tensors (York [1972], [1973a], and [1979]).
+
+For generality, I start by considering an $n$ dimensional spacelike hypersurface
+$\Sigma$, and restrict $n$ later to be three.  To begin, we conformally relate
+the metric $\gamma_{ij}$ to a conformal background metric $\bar\gamma_{ij}$ by
+$$
+\gamma_{ij} \equiv \psi^{4/(n-2)} \bar\gamma_{ij} \qquad \hbox{and}  \qquad
+\gamma^{ij} \equiv {\psi }^{-4/(n-2)}\bar\gamma ^{ij}.\eqn{}
+$$
+Here, to avoid confusion, I mark tensors in the conformal background space with
+an overbar.  This relationship forces other relationships between certain
+quantities on the physical hypersurface and the background space.  For example,
+from the definition of the connection,
+$$
+\eqalign{{\Gamma^i}_{jk}&={1 \over 2}\gamma^{i\ell}
+\left({\gamma_{j\ell,k}+\gamma_{k\ell,j}-\gamma_{jk,\ell}}\right)\cr
+&=\bar\Gamma^{i}{}_{jk}+{2 \over n-2}{\psi }^{-1}\left({{\delta
+}_{j}^{i}{\overline{\nabla }}{}_{k}\psi +{\delta }_{k}^{i}{\overline{\nabla
+}}{}_{j}\psi -{\bar{\gamma }}{}_{j}{}_{k}{\overline{\nabla }}{}^{i}\psi
+}\right),\cr}\eqn{}
+$$
+we define the change in the connection as
+$$
+\delta {\Gamma }{}^{i}{}_{j}{}_{k}\equiv {\Gamma
+}{}^{i}{}_{j}{}_{k}-{\bar{\Gamma }}{}^{i}{}_{j}{}_{k}={2 \over
+n-2}\left({{\delta }_{j}^{i}{\overline{\nabla }}{}_{k}\ln\psi +{\delta
+}_{k}^{i}{\overline{\nabla }}{}_{j}\ln\psi -{\bar{\gamma
+}}{}_{j}{}_{k}{\bar{\gamma }}{}^{i}{}^{\ell }{\overline{\nabla }}{}_{\ell
+}\ln\psi }\right),\eqn{}
+$$
+where $\overline\nabla_k$ is the covariant derivative compatible with
+$\bar\gamma_{ij}$.  If we consider the Riemann tensor
+$$
+{R_{ijk}}^\ell = {\Gamma^\ell}_{ki,j} - {\Gamma^\ell}_{kj,i} +
+{\Gamma^m}_{ki}{\Gamma^\ell}_{mj} - {\Gamma^m}_{kj}{\Gamma^\ell}_{mi}, \eqn{}
+$$
+we find
+$$
+\delta{R_{ijk}}^\ell \equiv {R_{ijk}}^\ell - \bar{R}_{ijk}{}^\ell =
+\delta{\Gamma^\ell}_{ki,j} - \delta{\Gamma^\ell}_{kj,i} +
+\delta{\Gamma^m}_{ki}\delta{\Gamma^\ell}_{mj} -
+\delta{\Gamma^m}_{kj}\delta{\Gamma^\ell}_{mi}. \eqn{}
+$$
+The change in the Ricci tensor is defined easily by
+$$
+\eqalign{\delta {R}{}_{i}{}_{j}&\equiv {R}{}^{\ell }{}_{i}{}_{\ell
+}{}_{j}-{\bar{R}}{}^{\ell }{}_{i}{}_{\ell }{}_{j}={R}{}_{i}{}_{\ell
+}{}_{j}{}^{\ell }-{\bar{R}}{}_{i}{}_{\ell }{}_{j}{}^{\ell }=\delta
+{R}{}_{i}{}_{\ell }{}_{j}{}^{\ell }\cr &=\delta {\Gamma }{}^{\ell
+}{}_{i}{}_{j}{}_{;\ell }-\delta {\Gamma }{}^{\ell }{}_{j}{}_{\ell
+}{}_{;i}+\delta {\Gamma }{}^{m}{}_{j}{}_{i}\delta {\Gamma }{}^{\ell }{}_{\ell
+}{}_{m}-\delta {\Gamma }{}^{m}{}_{\ell }{}_{i}\delta {\Gamma }{}^{\ell
+}{}_{j}{}_{m}\cr &={2 \over n-2}\left[{\left({2-n}\right){\overline{\nabla
+}}{}_{i}{\overline{\nabla }}{}_{j}\ln\psi -{\bar{\gamma
+}}{}_{i}{}_{j}{\bar{\gamma }}{}^{\ell }{}^{m}{\overline{\nabla }}{}_{\ell
+}{\overline{\nabla }}{}_{m}\ln\psi }\right]\cr &\qquad+{4 \over
+n-2}\left[{\left({{\overline{\nabla }}{}_{i}\ln\psi }\right){\overline{\nabla
+}}{}_{j}\ln\psi -{\bar{\gamma }}{}_{i}{}_{j}{\bar{\gamma }}{}^{\ell
+}{}^{m}\left({{\overline{\nabla }}{}_{\ell }\ln\psi }\right){\overline{\nabla
+}}{}_{m}\ln\psi }\right].\cr} \eqn{}
+$$
+Finally, if we consider the effect on the Ricci scalar, we find
+$$
+\eqalign{R&={\gamma }{}^{i}{}^{j}{R}{}_{i}{}_{j}={\psi
+}^{-4/(n-2)}{\bar{\gamma }}{}^{i}{}^{j}{R}{}_{i}{}_{j}\cr &={\psi
+}^{-4/(n-2)}\bar{R}-{4\left({n-1}\right) \over n-2}{\psi
+}^{-\left({n+2}\right)/\left({n-2}\right)}{\overline{\nabla }}^{2}\psi. \cr}
+\eqn{}
+$$
+
+With these relations, we can consider a conformal decomposition of the
+constraint equations of Einstein's theory.  Here, we will take $n=3$ and the
+covariant derivative compatible with $\bar\gamma_{ij}$ is $\bar D_i$.  We also
+specify conformal transformations for the extrinsic curvature, the energy
+density, and the momentum density.  The trace and trace-free parts of the
+extrinsic curvature are considered separately so
+$$
+{K}{}^{i}{}^{j}={A}{}^{i}{}^{j}+{1 \over 3}{\gamma }{}^{i}{}^{j}K. \eqn{}
+$$
+For now, we assign the following arbitrary weights to the conformal
+transformations.  Values for these will be determined later:
+$$
+{A}{}^{i}{}^{j}\equiv {\psi }^{\alpha }{\bar{A}}{}^{i}{}^{j}\qquad
+\hbox{or}\qquad{A}{}_{i}{}_{j}={\psi }^{\alpha +8}{\bar{A}}{}_{i}{}_{j},\eqn{} 
+$$
+$$
+K\equiv {\psi }^{\beta }\bar{K}, \eqn{}
+$$
+$$
+\rho \equiv {\psi }^{\gamma }\bar{\rho }, \eqn{}
+$$
+and
+$$
+{j}{}^{i}\equiv {\psi }^{\delta }{\bar{\jmath}}{}^{i}.
+\eqn{}
+$$
+
+The Hamiltonian constraint, (2.82), becomes
+$$
+8{\overline{\nabla }}^{2}\psi -\psi \bar{R}+\epsilon {2 \over 3}{\psi
+}^{2\beta +5}{\bar{K}}^{2}-\epsilon {\psi }^{2\alpha
++13}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}=\epsilon
+2\kappa {\psi }^{\gamma +5}\bar{\rho }. \eqn{}
+$$
+The momentum constraint equation, (2.83), takes the form
+$$
+{D}{}_{j}\left({{A}{}^{i}{}^{j}-{2 \over 3}{\gamma
+}{}^{i}{}^{j}K}\right)=-\epsilon \kappa {j}{}^{i}. \eqn{}
+$$
+If we consider the first term on the left-hand side, we find that for any
+symmetric, traceless tensor $A^{ij}$ which transforms as (3.9),
+$$
+{D}{}_{j}{A}{}^{i}{}^{j}={\psi }^{-10}{\bar{D}}{}_{j}\left({{\psi
+}^{10+\alpha }{\bar{A}}{}^{i}{}^{j}}\right). \eqn{}
+$$
+Thus, if we choose $\alpha=-10$, we see that
+$$
+{D}{}_{j}{A}{}^{i}{}^{j}={\psi
+}^{-10}{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}, \eqn{}
+$$
+and if $\bar A^{ij}$ is divergenceless, then $A^{ij}$ will be as well.  With
+(3.16), the momentum constraint becomes
+$$
+{\psi }^{-10}{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}-{2 \over 3}{\psi
+}^{\beta -4}{\bar{\gamma }}{}^{i}{}^{j}{\bar{D}}{}_{j}\bar{K}-{2
+\over 3}\beta {\psi }^{\beta -5}\bar{K}{\bar{\gamma
+}}{}^{i}{}^{j}{\bar{D}}{}_{j}\psi =-\epsilon \kappa {\psi }^{\delta
+}{\bar{\jmath}}{}^{i}. \eqn{}
+$$
+If we choose $\beta=0$ so that the trace of the extrinsic curvature has no
+conformal scaling and choose $\delta=-10$, then the momentum constraint
+simplifies to
+$$
+{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}-{2 \over 3}{\psi
+}^{6}{\bar{\gamma }}{}^{i}{}^{j}{\bar{D}}{}_{j}K=-\epsilon \kappa
+{\bar{\jmath}}{}^{i}. \eqn{}
+$$
+The conformal relations of all quantities have now been defined except for
+those of $\rho$.  At this point, the Hamiltonian constraint takes the form
+$$
+8{\overline{\nabla }}^{2}\psi -\psi \bar{R}+\epsilon {2 \over 3}{\psi
+}^{5}{K}^{2}-\epsilon {\psi
+}^{-7}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}=\epsilon
+2\kappa {\psi }^{\gamma +5}\bar{\rho }. \eqn{}
+$$
+A simplifying choice for $\gamma$ would be $\gamma=-5$.  However, this choice
+does not lead to a well posed problem for the linearized Hamiltonian
+constraint on asymptotically flat hypersurfaces ({\it cf}. York [1979]).  This would
+require $\gamma<-5$.  A good choice for $\gamma$ can be found by demanding
+that the dominance of energy condition be maintained locally.  This requires
+that
+$$
+{\rho }^{2}-{\gamma }{}_{i}{}_{j}{j}{}^{i}{j}{}^{j}={\psi }^{-16}\left({{\psi
+}^{2\gamma +16}{\bar{\rho }}^{2}-{\bar{\gamma
+}}{}_{i}{}_{j}{\bar{\jmath}}{}^{i}{\bar{\jmath}}{}^{j}}\right)\ge 0,
+\eqn{}
+$$
+and we take $\gamma=-8$.  The Hamiltonian constraint now takes the form
+$$
+8{\overline{\nabla }}^{2}\psi -\psi \bar{R}+\epsilon {2 \over 3}{\psi
+}^{5}{K}^{2}-\epsilon {\psi
+}^{-7}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}=\epsilon
+2\kappa {\psi }^{-3}\bar{\rho }. \eqn{}
+$$
+The final step which may be taken in simplifying the constraints is to note that
+in the momentum constraint, $\bar A^{ij}$ only occurs in a divergence term so
+that the transverse part of $\bar A^{ij}$ is not restricted by the equations. 
+Thus, we may split the tensor into its transverse and longitudinal parts. 
+Recalling that $\bar A^{ij}$ is traceless, the longitudinal part of $\bar
+A^{ij}$ is defined as the symmetric, traceless gradient of a vector ``potential''
+$W^i$:
+$$
+{\bar{A}}_{\scriptscriptstyle L}^{ij}=
+{\bar{D}}{}^{i}{W}{}^{j}+{\bar{D}}{}^{j}{W}{}^{i}-{2 \over 3}{\bar{\gamma
+}}{}^{i}{}^{j}{\bar{D}}{}_{k}{W}{}^{k}\equiv {\left({LW}\right)}{}^{i}{}^{j}.
+\eqn{}
+$$
+We then find
+$$
+{\bar{A}}{}^{i}{}^{j}= \bar{A}_{\scriptscriptstyle
+TT}^{ij}+{\left({LW}\right)}{}^{i}{}^{j}, \eqn{}
+$$
+where $\bar A_{\scriptscriptstyle TT}^{ij}$ is the transverse traceless part of
+$\bar A^{ij}$ and satisfies 
+$$
+{\bar{D}}{}_{j} \bar A_{\scriptscriptstyle TT}^{ij}=0. \eqn{}
+$$
+The divergence of the traceless part of the extrinsic curvature then reduces to
+$$
+\eqalign{{\bar{D}}{}_{j}{\bar{A}}{}^{i}{}^{j}&={\bar{D}}{}_{j}
+{\left({LW}\right)}{}^{i}{}^{j}={\bar{D}}{}_{j}{\bar{D}}{}^{j}{W}{}^{i}+
+{1\over3}{\bar{D}}{}^{i}\left({{\bar{D}}{}_{j}{W}{}^{j}}\right)+
+{\bar{R}}{}_{j}{}^{i}{W}{}^{j}\cr&\equiv
+{\left({{\Delta }_{\scriptscriptstyle L} W}\right)}{}^{i},\cr} \eqn{} 
+$$
+and the momentum constraint is
+$$
+{\left({{\Delta }_{\scriptscriptstyle L} W}\right)}{}^{i}-{2 \over 3}{\psi
+}^{6}{\bar{\gamma }}{}^{i}{}^{j}{\bar{D}}{}_{j}K=-\epsilon \kappa
+{\bar{\jmath}}{}^{i}. \eqn{}
+$$
+
+While the background field $\bar A^{ij}$ is naturally split into its transverse
+and longitudinal parts, it should be noted that the split in the physical field
+is not so distinct.  Equation (3.16) guarantees that the transversality of
+$\bar{A}_{\scriptscriptstyle TT}^{ij}$ is preserved under the conformal
+transformation to the physical space.  However, York [1973b] has shown that the
+``longitudinal'' part of $A^{ij}$, given by
+$$
+A_{\scriptscriptstyle L}^{ij}={\psi }^{-10}{\left({LW}\right)}{}^{i}{}^{j},
+\eqn{}
+$$
+is not orthogonal to $\psi^{-10}\bar{A}_{\scriptscriptstyle TT}^{ij}$ ({\it
+cf}. Evans [1984]) and so $\bar{A}_{\scriptscriptstyle L}^{ij}$ is {\it not}, in
+general, purely longitudinal.
+
+The constraint equations (3.21) and (3.26) determine the conformal factor $\psi$
+and the vector potential $W^i$.  We are free to choose the remaining parts of the
+gravitational initial data in any way we like.  Specifically, the conformal
+background metric $\bar\gamma_{ij}$, the trace of the extrinsic curvature $K$, and
+the transverse-traceless part of the background extrinsic curvature $\bar
+A_{\scriptscriptstyle TT}^{ij}$ are all freely specifiable fields, as are the
+background sources $\bar\rho$ and $\bar \jmath^i$.  In fact, these {\it must} be
+specified before the constraint equations can be solved.
+
+If we recall that $\gamma_{ij}$ has six independent components and use the
+Hamiltonian constraint to fix the conformal factor $\psi$, then the background
+metric $\bar\gamma_{ij}$ must have five independent components.  These are not,
+however, all dynamical degrees of freedom.  We must remember that there is
+coordinate freedom within the hypersurface $\Sigma$ and this eliminates three of
+the remaining five independent components from being dynamical degrees of
+freedom.  This tells us that the equivalence class of conformal three-geometries
+represents the two freely specifiable, dynamical degrees of freedom of the metric
+$\gamma_{ij}$.  Similarly, with the extrinsic curvature, the momentum constraint
+governs three of the six independent components of $K^{ij}$.  Remaining are the
+transverse-traceless part,  $\bar A_{\scriptscriptstyle TT}^{ij}$, with two
+degrees of freedom and the trace, $K$, with one.  The trace of the extrinsic
+curvature is taken as a condition on the time coordinate and is not considered as
+a dynamical degree of freedom.  Thus, the two freely specifiable, dynamical
+degrees of freedom of the extrinsic curvature are carried by its
+transverse-traceless parts.
+\vfill
+\eject

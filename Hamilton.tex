@@ -1,0 +1,476 @@
+\chapterhead{Chapter~\the\chapnum:  The Hamiltonian Constraint and\cr
+Boundary Conditions}
+%%%%%%%%%%%%%%%%%%%
+The final step in the construction of initial-data sets via the conformal
+imaging approach is the solution of the Hamiltonian constraint (4.8).  As shown
+in Chapter 4, the domain in which a solution of the Hamiltonian constraint must
+be found is $E^3-\{a_\alpha\}$.  That is, a three-dimensional Euclidean
+flat space with $N$ spheres cut out, one for each black hole.  If proper boundary
+conditions can be posed on the surfaces of these deleted spheres and at
+infinity, then the Hamiltonian constraint can be posed as a quasi-linear,
+elliptic boundary value problem.  Bowen and York [1980] have derived such
+boundary conditions and these will be described below.  I will also discuss some
+known, exact solutions to the Hamiltonian constraint and the approach taken for
+finding numerical solutions.
+
+In order to pose the Hamiltonian constraint as a boundary value problem,
+boundary conditions must be found for all surfaces.  The boundary condition at
+infinity has been discussed in Chapter~4.  It is fixed by the assumption that
+the initial-data slice is asymptotically flat.  This, together with the choice
+of a flat background metric, demands that the conformal factor behave like
+(4.10).  Thus, the first boundary condition is that the conformal factor is
+{\it one} at infinity.  Along with the demand that the metric be regular, this
+implies that the conformal factor always be greater than zero.  In practice,
+infinity is often not part of the domain of solution for the conformal factor
+when numerical solutions are found.  In this case, an approximate boundary
+condition must be used at large distances from the holes.  York and Piran [1982]
+have suggested and used an approximate boundary condition which has become
+widely accepted.  I will discuss it later in this chapter along with an
+improvement which I have derived.
+
+In order for the solution of the Hamiltonian constraint to be inversion
+symmetric, it must satisfy the isometry condition (4.43) for every hole in the
+system.  Consider the $\alpha^{th}$ coordinate patch and take a derivative of the
+isometry condition.  The result is
+$$
+{\bar{D}}{}_{i}\psi \left({\bf x}\right) =-{{a}_{\alpha } \over
+{r}_{\alpha }^{2}}{n}^{\alpha }_{i}\psi \left({{\bf J}_{\alpha
+}\left({\bf x}\right)}\right) +{{a}_{\alpha } \over {r}_{\alpha
+}}{\left({{\bf J}_{\alpha
+}}\right)}{}_{i}{}^{j}{\left[{{\bar{D}}{}_{j}\psi \left({\bf
+x}\right)}\right]}_{{\bf J}_{\alpha }\left({\bf x}\right)}. \eqn{}
+$$
+If this is contracted with the $\alpha^{th}$ unit normal and evaluated on the
+$\alpha^{th}$ inversion boundary, the result is
+$$
+{\left.{{n}_{\alpha }^{i}{\bar{D}}{}_{i}\psi }\right|}_{{a}_{\alpha
+}}=-{\left.{{\psi  \over 2{r}_{\alpha }}}\right|}_{{a}_{\alpha }}, \eqn{}
+$$
+where the fact that $r_\alpha = a_\alpha$ is a fixed point set of the isometry
+has been used.  That is, ${\bf J}_\alpha(a_\alpha) = a_\alpha$.  (7.2)
+represents a boundary condition which can be used on the surface of each deleted
+sphere.  This reduces directly to the boundary condition derived by Bowen and
+York [1980] in the case of a single hole and to the form shown by Kulkarni
+{\it et al}. [1983] for the case of multiple holes.
+
+Bowen and York [1980] have shown, in the case of a single hole, that the area of
+the inversion boundary, or ``throat'', is extremal.  This result holds for the
+case of multiple holes as well and can be seen as follows.  Consider the area of
+a sphere of radius $r_\alpha$ centered around the $\alpha^{th}$ throat.
+$$
+{A}_{\alpha }=\oint_{}^{}{\psi }^{4}{r}_{\alpha }^{2}{d}^{2}{\Omega }_{\alpha
+} \eqn{}
+$$
+The condition for extremal area is found by varying the area and setting the
+variation to zero.
+$$
+\delta {A}_{\alpha }=2\oint_{}^{}{r}_{\alpha }{\psi }^{3}\left({2{r}_{\alpha
+}{\bar{D}}{}_{i}\psi +\psi {n}^{\alpha }_{i}}\right){\delta
+x}{}^{i}{d}^{2}{\Omega }_{\alpha }=0 \eqn{}
+$$
+Considering only changes normal to the surface, (7.4) gives
+$$
+{n}_{\alpha }^{i}{\bar{D}}{}_{i}\psi +{\psi  \over 2{r}_{\alpha }}=0,
+\eqn{}
+$$
+which, together with (7.2), shows that the throats must be extremal surfaces.
+
+The Hamiltonian constraint, together with the boundary conditions of asymptotic
+flatness at infinity and inversion symmetry on the throats, constitutes a
+quasi-linear, elliptic boundary value problem.  In order for this boundary value
+problem to be well posed, it is necessary to show that any solution satisfying
+the boundary conditions is unique.  Two difficulties arise in trying to prove
+this.  One arises from the non-linearity of the Hamiltonian constraint and the
+other from the inversion symmetry boundary condition (7.2).  In order to deal
+with the non-linearity, one can consider a local uniqueness proof.  That is, it
+is shown that no other solutions lie in the neighborhood of a given solution. 
+This does not preclude the existence of other solutions which are
+``significantly different''.  If a standard, local uniqueness proof is attempted,
+it is found that the relative sign in (7.2) prevents any conclusion.  This is
+because (7.2) is an ``anti-Robin'' boundary condition, although it appears at
+first sight to be a standard Robin condition ({\it cf}. Bergman and Schiffer
+[1953]).  The problem arises because $n^i_\alpha$ points inward, into the domain
+of the solution, not outward.
+
+In spite of these problems, York [1989] has proven that the solution for a
+single hole is locally unique.  This proof depends explicitly on the inversion
+symmetry of both the conformal factor and the background extrinsic curvature. 
+My attempts to generalize this proof to the case of multiple holes have been
+unsuccessful.  The presence of extra holes makes the method inconclusive.  I
+believe that the solution may depend on limits on the maximum hole-radius to
+hole-separation ratio as do the convergence proofs of Misner [1963]  and
+Kulkarni [1984] for the case of the infinite series which arise when multiple
+holes are present.
+
+In spite of the lack of any uniqueness proof in the case of multiple holes, I
+will continue on the belief any solutions found will be locally unique and search
+for solutions.  I will begin by looking at the asymptotic behavior of the
+solutions to the Hamiltonian constraint.  In doing this, I will follow Bowen,
+Rauber, and York [1984] and use a ``Newtonian'' potential $\Phi$ instead of the
+conformal factor, where $\Phi$ is defined by
+$$
+\psi =1-{1 \over 2}\Phi . \eqn{}
+$$
+
+The Hamiltonian constraint is very much like a Poisson equation except that the
+source term is coupled non-linearly to the conformal factor.  In terms of
+$\Phi$, the Hamiltonian constraint is written
+$$
+{\overline{\nabla }}^{2}\Phi ={1 \over 4}{\psi
+}^{-7}{\bar{A}}_{ij}{\bar{A}}{}^{i}{}^{j}\equiv {\kappa \over 2}{\rho
+}_{\scriptscriptstyle eff}, \eqn{}
+$$
+where $\rho_{\scriptscriptstyle eff}$ is defined as an effective energy density
+source.  If we assume for a moment that $\rho_{\scriptscriptstyle eff}$
+has compact support, then a multipole expansion of $\Phi$ is well defined
+outside the support and is given by 
+$$
+\Phi =-{\kappa  \over 8\pi }\left[{{E \over r}+{{d}{}_{i}{n}{}^{i} \over
+{r}^{2}}+{3 \over 2}{{I}{}_{i}{}_{j}\left({{n}{}^{i}{n}{}^{j}-{1 \over
+3}{f}{}^{i}{}^{j}}\right) \over {r}^{3}}+\Order\left({{r}^{-4}}\right)}\right].
+\eqn{}
+$$
+
+The monopole coefficient $E$ is the total ADM energy contained in the
+initial-data slice ({\it cf}. Arnowitt {\it et al}. [1962]).  The other multipole
+coefficients are associated with the energy distribution on the initial slice. 
+These multipole coefficients are defined in terms of the following standard
+Cartesian surface integrals:
+$$
+E={2 \over \kappa }\oint_{\infty }^{}{\bar{D}}{}^{i}\Phi
+{d}^{2}{\bar{S}}{}_{i}, \eqn{}
+$$
+$$
+{d}{}_{i}={2 \over \kappa }\oint_{\infty
+}^{}\left({{x}{}_{i}{\bar{D}}{}^{j}\Phi -{\delta }_{i}^{j}\Phi
+}\right){d}^{2}{\bar{S}}{}_{j}, \eqn{}
+$$
+and
+$$
+{I}{}_{i}{}_{j}={2 \over \kappa }\oint_{\infty
+}^{}\left[{\left({{x}{}_{i}{x}{}_{j}-{1 \over
+3}{r}^{2}{f}{}_{i}{}_{j}}\right){\bar{D}}{}^{k}\Phi
+-\left({{x}{}_{i}{\delta }_{j}^{k}+{x}{}_{j}{\delta }_{i}^{k}-{2 \over
+3}{x}{}^{k}{f}{}_{i}{}_{j}}\right)\Phi }\right]{d}^{2}{\bar{S}}{}_{k}.
+\eqn{}
+$$
+
+The effective source does not, of course, have compact support.  Because of
+this, the multipole expansion will only be well defined through some given order
+defined by the radial fall off rate of the source.  From the conditions for
+asymptotic flatness (4.10) and (4.11), it is seen that the effective source
+behaves as
+$$
+{\rho }_{\scriptscriptstyle eff}=\Order\left({{r}^{-4}}\right). \eqn{}
+$$
+This means that the monopole term, and thus the total energy, is always well
+defined on an asymptotically flat slice.
+
+The well behaved nature of the multipole expansion through monopole order is the
+basis of an approximate boundary condition proposed by York and Piran [1982]. 
+The conformal factor takes the form
+$$
+\psi =1+{\kappa  \over 16\pi }{E \over r}+\Order\left({{r}^{-2}}\right). \eqn{}
+$$
+Taking the radial derivative of (7.13) and eliminating the total energy term
+results in the following Robin boundary condition:
+$$
+{\partial \psi  \over \partial r}={1-\psi  \over r}+{1 \over
+r}\Order\left({{r}^{-2}}\right). \eqn{}
+$$
+Applied at large distances from the holes, (7.14) provides a good approximate
+outer boundary condition.  Exactly how far away the outer boundary must be for
+(7.14) to be a good approximation depends on the explicit form of the effective
+source.
+
+Evans [1989] has suggested that an improvement in the order of accuracy of the
+outer boundary condition would be of great use in numerical solutions as it would
+allow the outer boundary to be placed closer to the holes and reduce the size of
+the numerical problem.  Prompted by this, I have explored the possibility of
+incorporating higher order terms into the approximation.  In general, (7.8) is a
+valid expansion for $\Phi$ only through the monopole term.  In order to make it
+valid for higher order terms, it must be modified.  Consider a function
+$\Lambda$ which is not annihilated by the Laplacian and which satisfies the
+following: $$
+{\overline{\nabla }}^{2}\Lambda =\Order\left({{r}^{-4}}\right)=4\pi {\rho
+}_{\scriptscriptstyle eff}+\Order\left({{r}^{-5}}\right). \eqn{}
+$$
+$\Lambda$ is thus chosen to compensate for the highest order effects of the
+effective source.  I demand that it have the following properties, in addition to
+(7.15): 
+$$
+\Lambda =\Order\left({{r}^{-2}}\right) \eqn{}
+$$
+and
+$$
+{\bar{D}}{}_{i}\Lambda =\Order\left({{r}^{-3}}\right). \eqn{}
+$$
+
+Now consider expanding $\Phi$ as
+$$
+\Phi =-{\kappa  \over 8\pi }\left[{{E \over r}+{{\tilde{d}}{}_{i}{n}{}^{i}
+\over {r}^{2}}-\Lambda +\Order\left({{r}^{-3}}\right)}\right]. \eqn{}
+$$
+The total energy given by the monopole coefficient is still defined by (7.9)
+because of the fall-off condition (7.17).  The dipole term is modified and, in
+terms of (7.10), is given by
+$$
+{\tilde{d}}{}_{i}={d}{}_{i}-{2 \over \kappa }\oint_{\infty
+}^{}\left({{x}{}_{i}{\bar{D}}{}^{j}\Lambda -{\delta }_{i}^{j}\Lambda
+}\right){d}^{2}{\bar{S}}{}_{j}. \eqn{}
+$$
+Given the fall-off conditions (7.16) and (7.17), the correction to the dipole
+moment will not, in general, vanish and, thus, the ``dipole moment'' of (7.18) no
+longer represents a multipole moment of the initial energy distribution.  If the
+integral over $\Lambda$ in (7.19) were to vanish either by some symmetry or
+because (7.16) and (7.17) fall off faster than necessary, then the dipole moment
+would retain its original interpretation and the multipole expansion would be
+well defined through dipole order.
+
+To proceed, we must have an explicit form for the function $\Lambda$.  In order to
+determine this, we must explore the asymptotic form of the effective source.
+Since the potential $\Phi$ is always well defined through monopole order for
+asymptotically flat initial data, the asymptotic form of the effective source is
+given by
+$$
+{\rho }_{\scriptscriptstyle eff}={1 \over 2\kappa
+}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}+\Order\left({{r}^{-5}}\right).
+\eqn{}
+$$
+Thus, in order to fix $\Lambda$, we need only consider the behavior of the
+background extrinsic curvature.  The asymptotic behavior of the extrinsic
+curvature is 
+$$
+{\bar{A}}{}_{i}{}_{j}={3\kappa  \over 16\pi
+{r}^{2}}\sum\limits_{\alpha =1}^{N} \left[{{P}^{\alpha
+}_{i}{n}{}_{j}+{P}^{\alpha
+}_{j}{n}{}_{i}-\left({{f}{}_{i}{}_{j}-{n}{}_{i}{n}{}_{j}}\right){P}_{\alpha
+}^{k}{n}{}_{k}}\right]+\Order\left({{r}^{-3}}\right). \eqn{}
+$$
+Using (7.21) in (7.20), the effective energy density is
+$$
+{4\pi \rho }_{\scriptscriptstyle eff}={9\kappa  \over 64\pi
+{r}^{4}}\sum\limits_{\alpha =1}^{N} \sum\limits_{\beta =1}^{N}
+\left\{{{P}^{\alpha }_{i}{P}_{\beta }^{i}+2{P}^{\alpha
+}_{i}{n}{}^{i}{P}^{\beta
+}_{j}{n}{}^{j}}\right\}+\Order\left({{r}^{-5}}\right). \eqn{} 
+$$
+The solution of (7.15) for $\Lambda$ is found by inspection to be
+$$
+\Lambda ={9\kappa  \over 128\pi {r}^{2}}\sum\limits_{\alpha =1}^{N}
+\sum\limits_{\beta =1}^{N} \left\{{{P}^{\alpha }_{i}{P}_{\beta
+}^{i}-2{P}^{\alpha }_{i}{n}{}^{i}{P}^{\beta
+}_{j}{n}{}^{j}}\right\}. \eqn{}
+$$
+Taking the gradient of $\Lambda$ gives
+$$
+{\bar{D}}{}^{k}\Lambda =-{2{n}{}^{k} \over r}\Lambda -{9\kappa{n}{}^{k} \over
+64\pi {r}^{3}}\sum\limits_{\alpha =1}^{N} \sum\limits_{\beta
+=1}^{N} \left\{{{P}_{\alpha }^{k}{P}^{\beta }_{i}{n}{}^{i}+{P}_{\beta
+}^{k}{P}^{\alpha }_{i}{n}^{i}-2{n}{}^{k}{P}^{\alpha
+}_{i}{n}^{i}{P}^{\beta }_{j}{n}^{j}}\right\}, \eqn{}
+$$
+and so (7.16) and (7.17) are satisfied.
+
+We can now examine the effect of (7.23) on the dipole term defined by (7.19). 
+Straightforward calculation shows
+$$
+\eqalign{{\tilde{d}}{}_{i}&={d}{}_{i}+{6 \over \kappa }\oint_{\infty
+}^{}{n}{}_{i}\Lambda {r}^{2}{d}^{2}\Omega \cr &={d}{}_{i}+{27 \over
+16}\sum\limits_{\alpha =1}^{N} \sum\limits_{\beta =1}^{N}
+\left\{{{P}^{\alpha }_{j}{P}_{\beta
+}^{j}\left\langle{{n}{}_{i}}\right\rangle-2{P}^{\alpha }_{j}{P}^{\beta
+}_{k}\left\langle{{{{n}{}_{i}n}{}^{j}n}{}^{k}}\right\rangle}\right\}\cr
+&={d}{}_{i},\cr} \eqn{}
+$$
+where $\langle\bullet\rangle$ denotes averaging over a unit two-sphere.  Since
+the correction to the dipole term vanishes, we find that the dipole moment is
+well defined and retains its original meaning as a moment of the initial energy
+distribution, and we find that the asymptotic form for the conformal factor can
+be written as 
+$$
+\psi =1+{\kappa  \over 16\pi }\left\{{{E \over r}+{{d}{}_{i}{n}{}^{i} \over
+{r}^{2}}-{9 \over 16{r}^{2}}\sum\nolimits\limits_{\alpha =1}^{N}
+\sum\limits_{\beta =1}^{N} \left({{P}^{\alpha }_{i}{P}_{\beta
+}^{i}-2{P}^{\alpha }_{i}{n}{}^{i}{P}^{\beta
+}_{j}{n}{}^{j}}\right)}\right\}+\Order\left({{r}^{-3}}\right). \eqn{}
+$$
+
+I should note that both of the $\Order(r^{-2})$ terms in (7.26) can be made to
+vanish by an appropriate choice for the frame of the observer.  The dipole term
+arises if the observer is not in the ``center of energy'' frame.  The total
+energy is the lowest order, non-vanishing multipole moment and is, thus,
+independent of the choice of the origin of coordinates.  The dipole moment
+explicitly depends on the location of the origin of coordinates and can be made
+to vanish by an appropriate choice for the origin of coordinates.  The second
+term arises if the observer is not in the ``center of momentum'' frame.  If the
+observer is boosted into a frame in which the sum of the linear momenta for all
+$N$ holes vanishes, then the effective energy density is, asymptotically,
+$\Order(r^{-6})$.  In this case, the multipole expansion (7.8) is well defined
+through quadrupole order with no correction terms.
+
+We can use (7.26) as the basis of an approximate outer boundary condition.  As
+with (7.13), by taking the radial derivative of (7.26) and eliminating the
+monopole term, we find
+$$
+{\partial \psi  \over \partial r}={1-\psi  \over r}-{\kappa  \over 16\pi
+{r}^{3}}\left\{{{d}{}_{i}{n}{}^{i}-{9 \over 16}\sum\limits_{\alpha
+=1}^{N} \sum\limits_{\beta =1}^{N} \left({{P}^{\alpha
+}_{i}{P}_{\beta }^{i}-2{P}^{\alpha }_{i}{n}{}^{i}{P}^{\beta
+}_{j}{n}{}^{j}}\right)}\right\}+{1 \over r}\Order\left({{r}^{-3}}\right).
+\eqn{} 
+$$
+This boundary condition is of higher order than (7.14) whenever the system is
+not in a center of energy {\it and} a center of momentum frame.  The extra
+accuracy, however, comes at a cost.  This boundary condition depends explicitly
+on the dipole moment which can only be determined from the solution to the
+Hamiltonian constraint.  Thus, the boundary condition depends on the solution. 
+This does not, however, prevent (7.27) from being a useful approximation for the
+outer boundary condition.  The boundary condition can be used in an iterative
+fashion in numerical solutions to the Hamiltonian constraint.  Because the
+dipole term in (7.27) occurs at one orders in $r$ below the dominant term, it
+will constitute only a small correction and the iterative scheme will be
+convergent.
+
+Before resorting to numerical methods, all analytic avenues should be explored. 
+The only known analytic solutions to the inversion-symmetric Hamiltonian
+constraint which represent physical situations are time symmetric.  That is, the
+extrinsic curvature vanishes identically and the Hamiltonian constraint reduces
+to a {\it linear} Laplace equation.  In the case of a single hole, the
+inversion-symmetric, time-symmetric solution of the Hamiltonian constraint is a
+slice of the Schwarzschild solution in isotropic coordinates: 
+$$
+\psi =1+{\kappa E \over 16\pi r}. \eqn{}
+$$
+$E$ is the total energy of the solution as defined by (7.9) and there are no
+higher order multipole moments.
+
+For the case of multiple holes, Misner [1963] has described the construction of
+inversion-symmetric, time-symmetric solutions to the Hamiltonian constraint.  In
+the case of two holes of equal size, Misner's solution can be cast into the form
+of an infinite series of terms, each consisting of combinations of hyperbolic
+and trigonometric functions.  I will generalize this to the case of two holes of
+any arbitrary size through the use of recurrence relations.  I have not seen
+this calculation anywhere else, although it may have been carried out before.
+
+In order to be inversion symmetric, the conformal factor must satisfy (4.43) for
+every hole.  As with the extrinsic curvature tensor, we can define an inversion
+operator which acts on scalars.  I define the inversion operator acting through
+the $\alpha^{th}$ hole by
+$$
+{\aleph }_{\alpha }\actson\psi \left({\bf x}\right) \equiv {{a}_{\alpha }
+\over {r}_{\alpha }}\psi \left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right) \eqn{}
+$$
+and
+$$
+{\aleph }_{\alpha }\actson1\equiv {{a}_{\alpha } \over {r}_{\alpha }}. \eqn{}
+$$
+An $N$ hole inversion-symmetric and time-symmetric solution of the Hamiltonian
+constraint is then represented formally by
+$$
+\psi \left({\bf x}\right)=1+\sum\nolimits\limits_{\left\{{{\alpha
+}_{i}}\right\}}^{} \left({\prod\nolimits\limits_{i=1}^{N} {\aleph }_{{\alpha
+}_{i}}}\right). \eqn{}
+$$
+In order to evaluate (7.31) for the case of two holes, I will follow Chapter 6
+and use cylindrical coordinates scaled relative to the radius of the first hole,
+$a_1$.  The positions of the two holes will be given by (6.16) and the radius of
+the second hole will be defined by (6.27).  A straightforward but tedious
+calculation (Bowen {\it et al}. [1984] defines a useful notation for simplifying
+the calculation) reduces (7.31) to
+$$
+\psi \left({\bf x}\right) =1+\sum\nolimits\limits_{n=1}^{\infty }
+\left\{{{{W}_{1}^{n} \over {r}_{1}^{n}}+{{W}_{2}^{n} \over
+{r}_{2}^{n}}}\right\}, \eqn{}
+$$
+based on the following recursively defined quantities.
+%$$
+%{\zeta }_{1}^{n}\equiv \left\{{\eqalign{{1 \over {\zeta }_{1}^{n-1}-{\zeta
+%}_{1}}+{\zeta }_{1}\quad&:\quad\hbox{for $n$ odd}\cr {{\alpha }^{-2} \over
+%{\zeta }_{1}^{n-1}-{\zeta }_{2}}+{\zeta }_{2}\quad&:\quad\hbox{for $n$ even}\cr
+%{\zeta }_{1}\quad&:\quad\hbox{for $n=1$}\cr}}\right. \eqn{}
+%$$
+$$
+{\zeta }_{1}^{n}\equiv \cases{{1 \over {\zeta }_{1}^{n-1}-{\zeta }_{1}}+{\zeta
+}_{1}&: for $n$ odd\cr {{\alpha }^{-2} \over {\zeta }_{1}^{n-1}-{\zeta
+}_{2}}+{\zeta }_{2}&: for $n$ even\cr \hfill{\zeta }_{1}&: for $n=1$\cr} \eqn{}
+$$
+$$
+{\zeta }_{2}^{n}\equiv \cases{{{\alpha }^{-2} \over {\zeta }_{2}^{n-1}-{\zeta
+}_{2}}+{\zeta }_{2}&: for $n$ odd\cr {1 \over {\zeta }_{2}^{n-1}-{\zeta
+}_{1}}+{\zeta }_{1}&: for $n$ even\cr \hfill{\zeta }_{2}&: for $n=1$\cr} \eqn{} 
+$$
+$$
+{W}_{1}^{n}\equiv \cases{{{W}_{1}^{n-1} \over \left|{{\zeta }_{1}^{n-1}-{\zeta
+}_{1}}\right|}&: for $n$ odd\cr {{\alpha }^{-1}{W}_{1}^{n-1} \over \left|{{\zeta
+}_{1}^{n-1}-{\zeta }_{2}}\right|}&: for $n$ even\cr \hfill 1&: for $n=1$ \cr}
+\eqn{}
+$$
+$$
+{W}_{2}^{n}\equiv \cases{{{\alpha }^{-1}{W}_{2}^{n-1} \over \left|{{\zeta
+}_{2}^{n-1}-{\zeta }_{2}}\right|}&: for $n$ odd\cr {{W}_{2}^{n-1} \over
+\left|{{\zeta }_{2}^{n-1}-{\zeta }_{1}}\right|}&: for $n$ even\cr \hfill{\alpha
+}^{-1}&: for $n=1$\cr} \eqn{}
+$$
+$$
+{r}_{1}^{n}\equiv \sqrt {{\rho }^{2}+{\left({z-{\zeta }_{1}^{n}}\right)}^{2}}
+\eqn{}
+$$
+$$
+{r}_{2}^{n}\equiv \sqrt {{\rho }^{2}+{\left({z-{\zeta }_{2}^{n}}\right)}^{2}}
+\eqn{}
+$$
+
+The series expansion for the conformal factor (7.32) differs for the expansion
+for the extrinsic curvature (6.15) in the crucial point that each term in (7.32)
+is evaluated at the same spatial point.  In (6.15), the point of evaluation for
+each term is imaged.  This complication was necessary in the case of the
+extrinsic curvature in order to make the solution tractable.  Since the position
+dependence of (7.32) is not imaged, the series expansion can be used directly in
+the integrals for the multipole moments.  The results for the total energy and
+dipole moment are
+$$
+{E \over {a}_{1}}={16\pi\over\kappa}\sum\nolimits\limits_{n=1}^{\infty }
+\left({{W}_{1}^{n}+{W}_{2}^{n}}\right) \eqn{}
+$$
+and
+$$
+{{d}{}_{z} \over {a}_{1}^{2}}
+={16\pi\over\kappa}\sum\nolimits\limits_{n=1}^{\infty } \left({{W}_{1}^{n}{\zeta
+}_{1}^{n}+{W}_{2}^{n}{\zeta }_{2}^{n}}\right). \eqn{}
+$$
+
+Since I know of no analytic methods for finding solutions to the Hamiltonian
+constraint in time-asymmetric situations, I will turn now to numerical
+techniques.  The problem of solving a partial differential equation consists of
+two basic parts:  the discretization of the continuous problem into a set of
+algebraic equations and the solution of the resulting large set of possibly
+non-linear equations.  Though distinct, the two components are often treated
+together ({\it cf}. Ames [1977], Mitchel and Griffiths [1980], and Allen
+[1954]).  The problem of discretization can be handled by several different
+techniques.  The two main techniques are the method of finite differences and
+the method of finite elements and  I choose to use the method of finite
+differences.
+
+The problem of solving the large set of algebraic equations is the prime
+difficulty in finding numerical solutions.  In the case of an elliptic partial
+differential equation, one is always faced, in the end, with the task of
+solving a very large matrix equation.  The size of the matrix is determined by
+the number of spatial dimensions on which the equation depends and on the spatial
+resolution of the discretization, the latter determining the accuracy of the
+approximation.  In order to reduce the size of the matrix which must be
+inverted, one often considers problems with sufficient symmetry to reduce the
+dimensional dependence of the differential equation to one or two dimensions. 
+In subsequent chapters, I will do just this by considering only axisymmetric
+configurations.  In the case of a single hole, this is not a serious
+restriction.  If you do not consider the situation of a hole with {\it both}
+linear and angular momenta, then the situation is naturally axisymmetric.  In
+the case of two holes, the restriction to axisymmetry eliminates, among other
+things, the possibility of exploring initial-data sets with non-zero orbital
+angular momentum.  Such configurations are of great physical interest and will
+certainly be examined in the future, however, in subsequent chapters I will
+consider only axisymmetric configurations which can be dealt with by
+two-dimensional numerical techniques.
+\vfill
+\eject

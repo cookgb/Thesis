@@ -1,0 +1,65 @@
+\chapterhead{TABLE OF CONTENTS}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tc#1{\hangindent=40pt\hangafter=#1}
+\line{\hfil{\bf Page}}
+\tocc{89}{LIST OF TABLES}{ix}
+
+\tocc{95}{LIST OF FIGURES}{x}
+
+\tocc{166}{NOTATION AND CONVENTIONS}{xii}
+
+\vskip 0.25truein
+
+\line{{\bf Chapter}\hfill}
+
+\toca{1.}{Introduction}{1}
+
+\toca{2.}{The $(3+1)$ Decomposition}{6}
+
+\toca{3.}{The Conformal and Transverse-Traceless Decompositions}{19}
+
+\toca{4.}{The Conformal Imaging Approach}{24}
+
+\toca{5.}{Solutions of the Momentum Constraint}{38}
+
+\toca{6.}{Inversion-Symmetric Extrinsic Curvature for Two Black
+Holes}{46}
+
+\toca{7.}{The Hamiltonian Constraint and Boundary Conditions}{53}
+
+\toca{8.}{Numerical Solution of the Hamiltonian Constraint for a
+Single, Axisymmetric Black Hole}{63}
+
+\toca{9.}{Axisymmetric Numerical Solutions of the Hamiltonian
+Constraint for Two Black Holes}{75}
+
+\toca{10.}{The Hamiltonian Constraint for Two Black Holes Using
+\v{C}ade\v{z} Coordinates}{89}
+
+\toca{11.}{Apparent Horizons on Inversion-Symmetric Initial-Data
+Sets}{106}
+
+\toca{12.}{Apparent Horizons for a Single Black Hole with Linear or
+Angular Momentum}{111}
+
+\toca{13.}{Inversion-Symmetric, Single-Hole Initial-Data Sets}{122}
+
+\toca{14.}{Inversion-Symmetric, Two-Hole Initial-Data Sets}{131}
+
+\toca{15.}{Conclusion}{145}
+
+\tocb{Appendix~A:}{The Multigrid Algorithm}{151}
+
+\tocb{Appendix~B:}{Numerical Solutions of the One-Hole Hamiltonian
+Constraint}{156}
+
+\tocb{Appendix~C:}{Numerical Solutions of the Two-Hole Hamiltonian Constraint in
+Bispherical Coordinates}{172}
+
+\tocb{Appendix~D:}{Numerical Solutions of the Two-Hole Hamiltonian Constraint in
+\v{C}ade\v{z} Coordinates}{193}
+
+\tocc{50}{References}{214}
+
+\vfill
+\eject

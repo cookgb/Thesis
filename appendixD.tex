@@ -1,0 +1,48 @@
+\chapterhead{Appendix~D:  Numerical Solutions of the Two-Hole\cr Hamiltonian
+Constraint in \v{C}ade\v{z} Coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This appendix contains the most important details from the numerical solution
+of the two-hole Hamiltonian constraint described in Chapter~10.  The difference
+equations for this approach were solved by Newton's method for systems of
+equations and each linearized equation for the iterative correction was solved
+directly by means of the LINPACK routines for factoring (DGBFA) and solving
+(DGBSL) general banded matrices.  The solution for each configuration (except as
+noted) was obtained at three different mesh resolutions.  The resolution of the
+mesh is parameterized by $\Iind^+$ as defined in (10.28).  When computational
+memory requirements allowed, meshes defined by $\Iind^+ = \Iind^- = 6,9,12$ were
+used.  The values of the angular discretization for these three meshes were,
+respectively, $\Sind^+ = \Sind^- = 16, 24, 32$. It was not always possible to use
+all three meshes because the number of mesh points in Region~3 (see Chapter~10)
+depends on the value of $\beta$.  For $\beta < 6$ it was not feasable to use
+$\Iind^+=12$.  For $\beta=3$ it was not feasable to use $ \Iind^+=9$ either. 
+This is indicated in the tables by the notation N/A.
+
+The 60 tables which follow can be considered as ten groups of six tables.  Each
+group of six tables corresponds to the six cases described in Chapter~14.  The
+ten groups of six tables represent ten values of the separation parameter
+$\beta=3\to12$.  Finally, each table lists results from the numerical
+computations for the scaled total energy $E/a_1$, the scaled minimal surface
+mass $M/a_1$, and the scaled proper separation $L/a_1$ as the linear or angular
+momentum parameter is varied.
+
+The 60 tables presented below correspond directly to configurations for each of
+the tables in Appendix~C.  These can be directly compared to judge the accuracy
+of solutions found using \v{C}ade\v{z} coordinates.  Note that for $\beta=8$,
+all values for $\Iind^+=6$ are unreasonable.  This occurs because the  matrix
+used to construct the differencing scheme for the singular point (see (10.53))
+is numerically ill-conditioned for this configuration.  The difficulty can be
+eliminated by choosing a different radial discretization.
+
+\vfill
+\eject
+
+\input Tables/2-Hole.cd/cd3
+\input Tables/2-Hole.cd/cd4
+\input Tables/2-Hole.cd/cd5
+\input Tables/2-Hole.cd/cd6
+\input Tables/2-Hole.cd/cd7
+\input Tables/2-Hole.cd/cd8
+\input Tables/2-Hole.cd/cd9
+\input Tables/2-Hole.cd/cd10
+\input Tables/2-Hole.cd/cd11
+\input Tables/2-Hole.cd/cd12

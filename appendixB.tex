@@ -1,0 +1,65 @@
+\chapterhead{Appendix~B:  Numerical Solutions of the One-Hole\cr
+Hamiltonian Constraint}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+This appendix contains the most important details from the numerical solutions
+of the one-hole Hamiltonian constraint described in Chapter~8.  The code which
+produced these results was a multigrid code based on the ideas outlined in
+Appendix~A.  In all cases, the solutions were found on a multigrid hierarchy
+consisting of seven separate grids or meshes.  The coarsest mesh, labeled level
+zero, was discretized into 16 radial zones and six angular zones.  This
+discretization was doubled for each finer mesh and the finest mesh on level six
+was discretized into 1024 radial zones and 384 angular zones.  The outer
+boundary on which the approximate outer boundary condition was specified was
+placed at $x = 10$ which places it at $\sim22,000$ radii in the conformal
+space.
+
+Seven sets of output are listed below.  To gauge the accuracy of the code, the
+first set of outputs lists the results from the numerical solution of the model
+problem described in Chapter~8.  The total energy and minimal surface mass were
+computed for nine separate values of the ``momentum'' parameter.  The values of
+these quantities are listed for each multigrid level and the analytic solution
+is listed at the bottom of each table.  Also listed for each level are two
+values for  the $L_1$ norm of the relative error in the conformal factor.  Since
+the solution is known analytically, the exact $L_1$ error is given as well as an
+estimated error for level $\ell$ computed by comparing the result on level
+$\ell$  with that on level $\ell-1$.  The code was configured to solve the
+difference equations using the FAS limit of the code described in Appendix~A.
+
+The next three sets of output tables contain, respectively, the results for a
+hole with linear momentum based on an extrinsic curvature obeying the isometry
+condition with a plus sign, a hole with linear momentum based on an extrinsic
+curvature obeying the isometry condition with a minus sign, and a hole with
+angular momentum based on an extrinsic curvature obeying the isometry condition
+with a minus sign.  The code was configured to solve the difference equations
+using adaptive scaling as described in Appendix~A. The adaptive scaling
+parameter was set at $\varepsilon_s = 0.1$.  The final three sets of output
+tables consist of the same solution set as the previous three except that the
+code was configured to solve the difference equations using the FAS limit of the
+code.
+\bigskip
+\bigskip
+\goodbreak
+\noindent{\bf $-$ Model Problem Set $-$}
+\input Tables/1-Hole/1H-P.test.tex
+\goodbreak
+\line{\bf $-$ Physical Problem Sets (Adaptive Scaling) $-$\hfill}
+\nobreak\line{\indent \bf Linear Momentum, $+$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-P+.adaptive.tex
+\goodbreak
+\line{\indent \bf Linear Momentum, $-$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-P-.adaptive.tex
+\goodbreak
+\line{\indent \bf Angular Momentum, $-$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-J.adaptive.tex
+\goodbreak
+\line{\bf $-$ Physical Problem Sets (FAS) $-$\hfill}
+\nobreak\line{\indent \bf Linear Momentum, $+$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-P+.fas.tex
+\goodbreak
+\line{\indent \bf Linear Momentum, $-$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-P-.fas.tex
+\goodbreak
+\line{\indent \bf Angular Momentum, $-$ isometry\hfill}\nobreak
+\input Tables/1-Hole/1H-J.fas.tex
+\vfill
+\eject

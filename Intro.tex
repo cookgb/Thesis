@@ -1,0 +1,152 @@
+\chapterhead{Chapter~{\the\chapnum}:  Introduction}
+%%%%%%%%%%%%%%%
+The most widely accepted theory of the dynamics of classical gravitational
+interactions is the theory of general relativity.\footnote*{Here, the term
+classical gravitation is meant to imply that in any problem to which general
+relativity is applied; the length, energy, and time scales are in the classical
+and not in the quantum regime.}  Proposed in 1916 by Albert Einstein, it
+forever changed our understanding of what gravity is and how it shapes our
+universe.  The Newtonian view of gravity held it as a force which acted through
+space and affected the course of matter through time.  General relativity, on
+the other hand, intimately links gravity with space and time by considering our
+universe as a four-dimensional, pseudo-Riemannian manifold in which curvature in
+the space-time metric {\it is} the manifestation of gravity.
+
+Any theory of gravity is meant to describe the basic attractive interaction
+between massive objects.  The most fundamental dynamical interaction in any
+theory of gravity, then, is that between two massive bodies.  The two-body
+problem, from the point of view of Newtonian gravity, is well understood.  One
+can easily specify the masses, initial positions, and initial velocities of two
+point particles and determine the time development of this initial
+configuration.   The Newtonian equations of motion for two massive point
+particles are exactly solvable.  The analogous problem in general relativity is
+not well understood.
+
+The two-body problem of general relativity has been studied through many
+approximations.  The most familiar general relativistic solution to the two-body
+problem is the prediction of the precession of the perihelion of an orbit.  This
+is one example of an approximate solution which can be obtained by assuming the
+gravitational field is weak.  The general formalisms for obtaining such
+solutions are known as the post-Newtonian and the post-Minkowskian approximation
+methods.  The collision of two Schwarzschild black holes has been studied,
+analytically, in the limit that one hole is much smaller than the other so that
+it can be treated as a perturbation.  There are certainly other approximation
+methods for studying the two-body problem, but to date there are no known exact
+or approximate analytic solutions to the problem of the strong field,
+relativistic interaction of two massive bodies.  Currently, the only known avenue
+for the investigation of these very interesting situations is through the use of
+numerical techniques.
+
+An important consequence of the theory of general relativity is the production
+and propagation of gravitational waves from dynamic gravitational
+configurations.  Violent astrophysical events, such as binary coalescence, will
+most likely be the strongest emitters of gravitational radiation.  It is
+believed that the detection and study of gravitational waves from these events
+will play an important role in the understanding of such astrophysical
+phenomena.  Because of this, a vigorous experimental and theoretical
+investigation of methods for detecting gravitational waves is under way,
+stemming from the early 1960s.  The latest generation of detectors, known as
+Laser Interferometer Gravity Wave Observatories (LIGOs), should be sensitive
+enough to have a high probability of detecting gravitational waves.  As of this
+writing, the National Science Foundation has included funding for the LIGOs in
+the budget for fiscal year 1991, with an estimated four-year expenditure of
+\$192 million.
+
+The numerical study of Einstein's equations has been under exploration since the
+early 1960s (Hahn and Lindquist [1964]), and has been vigorously pursued since
+the mid 1970s.  To quote Thorne [1987], ``The effort may absorb almost as many
+person-years as the development of gravitational-wave detectors; but it will be
+well worthwhile:  the payoffs will include the ability to compute in detail the
+waveforms from the strongest gravity-wave sources in the universe, such as the
+spiraling together and coalescence of two black holes---waveforms that will be
+crucial to the interpretation of gravity-wave observations and to their use in
+strong-field, highly dynamical tests of general relativity.''
+
+Considering the statements above, I feel that the study of the fully
+relativistic, strong-field, two-body problem is of prime concern to the fields of
+classical general relativity and relativistic astrophysics.  There are
+essentially two avenues for pursuing this problem.  The first involves a study
+of the collision of two compact material objects such as neutron stars.  Efforts
+in this line have been made by Evans [1986b], [1987].  The second avenue
+involves the purely geometrodynamic collision of two black holes.  In this case,
+one of the pioneering numerical relativistic calculations was undertaken by Smarr
+[1977] in exploring the head-on collision of two black holes.  In the first
+case, matter is present in quantities sufficient to produce strong gravitational
+fields.  The matter fields evolve in a tightly coupled manner with the
+gravitational field and, given the proper initial conditions, produce a
+collision.  A numerical calculation of this kind involves solving the full
+Einstein field equations and the relativistic hydrodynamic equations on a simply
+connected topology.  In the case of a purely geometrodynamic collision, only the
+Einstein field equations need to be solved since the space-time is considered to
+contain no matter.  On the other hand, to support the strong gravitational
+fields, we must use non-trivial topologies.  With this second approach, the
+interaction of black holes can be modeled and it is the interaction of two black
+holes which is the closest relativistic analog of the Newtonian two-body problem
+for point masses.
+
+The aim of this dissertation is to advance the understanding of the relativistic
+two-body problem for black holes.  A great deal of theoretical and computational
+work has already been done toward this goal.  Misner [1963], Lindquist [1963],
+and Brill and Lindquist [1963] found a set of analytic solutions to the
+initial-value equations of general relativity which represented any number of
+black holes initially at rest in a vacuum.  Hahn and Lindquist [1964] and \v
+Cade\v z [1971] made early attempts to evolve this initial data numerically but
+met with little success.  Besides the computational resources available, the
+major hindrance in these early calculations stemmed from a poor formal
+understanding of both the initial-value problem and the dynamics and kinematics
+of the Einsteinian evolution equations.  York [1971], [1972], [1973a], [1979],
+\'{O} Murchada and York [1973], [1974a], [1974b], [1974c] and Smarr and York
+[1978a], [1978b] made many advances in the theoretical understanding of these
+problems and Smarr {\it et al}. [1976] and Smarr [1977] performed the first
+successful numerical simulation of black hole collisions.  Smarr's calculations
+started with Misner's initial data for two black holes initially at rest and
+followed the holes as they fell into a head-on collision while emitting
+gravitational radiation.
+
+In order to simulate more realistic and interesting situations, it is necessary
+to specify initial conditions which represent black holes with non-zero linear
+and angular momenta.  York [1979], Bowen [1979b], and Bowen and York [1980]
+developed a formalism for specifying the initial data for a single black hole
+with non-zero linear and angular momenta.  Many authors, (York and Piran
+[1982], Choptuik [1982], Rauber [1986], and Cook and York [1990]), have studied
+single-hole, axisymmetric initial-data sets using numerical methods based on
+this framework.  The formalism employed for prescribing the initial data for a
+single hole was generalized to allow for multiple black holes by Kulkarni {\it
+et al}. [1983], York [1984], and Kulkarni [1984].  In principle, this method
+allows for the individual specification of linear and angular momenta for each
+hole permitting one, for example, to specify initial data for the spiralling
+coalescence of two black holes.  Based on this formal approach, Bowen, Rauber,
+and York [1984] detailed an approach for specifying the initial data for two
+black holes with axisymmetric parallel spins.  Rauber [1986] attempted to solve
+numerically for the data sets based on this approach but was unable to generate
+any complete solutions.
+
+We call the collection of the formalisms and assumptions described in the papers
+listed above the {\it conformal imaging technique}.  This approach is not unique
+and in fact Thornburg [1987] has found numerical solutions, based on an alternate
+set of assumptions, to the initial value equations for two black holes with
+axisymmetric linear and angular momenta.  I feel, however, that the conformal
+imaging approach will be a more fruitful approach and proceed in this
+dissertation to describe and examine solutions to the initial-value equations,
+based on the conformal imaging approach, which describe two black holes with
+axisymmetric linear and angular momenta.
+
+In the chapters which follow, I begin by outlining the conformal imaging
+approach.  This consists of the $(3+1)$ decomposition of Einstein's equations,
+York's conformal decomposition of the constraint equations, and the choice of
+the topology of the initial-data slice along with the isometry condition imposed
+on this slice and its consequences for the initial-value equations.  Next, I
+will discuss the analytic solutions to the momentum constraint equations for a
+single black hole, the formal extension to multiple black holes, and my
+algorithm for evaluating this formal solution.  The following chapters will
+discuss the numerical techniques used, and the solutions found, for the case of
+a single black hole with linear or angular momentum and for two black holes with
+axisymmetric linear or angular momenta.  One aspect of initial-data slices
+which has not been explored sufficiently is the existence and location of
+apparent horizons.  I will proceed with a description of the consequences of the
+conformal imaging approach on the existence and location of these apparent
+horizons and detail their properties for the single black hole initial-data
+sets.  Finally, I will conclude with some remarks on future work.
+
+\vfill
+\eject

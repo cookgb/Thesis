@@ -1,0 +1,211 @@
+#
+mywindow 4
+    define pw 8.5
+    define ph 11
+    define t (int(32767*$4/$ph))
+    define b (int(32767*$3/$ph))
+    define l (int(32767*$1/$pw))
+    define r (int(32767*$2/$pw))
+    location $l $r $b $t
+#
+myylabel 1
+    define y (($t + $b)/2)
+    define x ($l - 32767*(0.45)/$pw)
+    relocate ($x $y)
+    angle 90
+    putlabel 5 $1
+    angle 0
+#
+myplot 1
+    define x (($l + $r)/2)
+    define y ($b - 32767*(0.5)/$pw)
+    relocate ($x $y)
+    expand 0.6 
+    putlabel 5 $1
+#
+#
+fourplots
+    macro read rdata.sm
+    erase
+    mywindow 1.95 4.45 7.25 9.75
+	limits 0 1.1 1.1 1.9
+    makeEplots
+    myplot (a)
+    mywindow 5.2 7.7 7.25 9.75
+	limits 0 1.1 1.8 10.5
+    makeLplots
+    myplot (b)
+    mywindow 1.95 4.45 3.5 6
+	limits 0 1.1 -0.25 0.5
+    makeRadplots
+    myplot (c)
+    mywindow 5.2 7.7 3.5 6
+	limits 0 1.1 -0.2 0.25
+    makeeffplots
+    myplot (d)
+#
+#
+fourplotsold
+	macro read rdata.sm
+	erase
+	limits 0 1.1 1.1 1.9
+	window 2 2 1 2
+	makeEplots
+	limits 0 1.1 1.8 10.5
+	window 2 2 2 2
+	makeLplots
+	limits 0 1.1 -0.25 0.5
+	window 2 2 1 1
+	makeRadplots
+	limits 0 1.1 -0.2 0.25
+	window 2 2 2 1
+	makeeffplots
+#
+#
+makeEplots
+	expand 0.6
+	box
+	xlabel S/M^2
+	myylabel E/M
+	readdata "TS-2.b3.rich"
+	sdraw SoM2 EoM
+	blabel 3
+	readdata "TS-2.b4.rich"
+	sdraw SoM2 EoM
+	blabel 4
+	readdata "TS-2.b5.rich"
+	sdraw SoM2 EoM
+	blabel 5
+	readdata "TS-2.b6.rich"
+	sdraw SoM2 EoM
+	blabel 6
+	readdata "TS-2.b7.rich"
+	sdraw SoM2 EoM
+	blabel 7
+	readdata "TS-2.b8.rich"
+	sdraw SoM2 EoM
+	blabel 8
+	readdata "TS-2.b9.rich"
+	sdraw SoM2 EoM
+	blabel 9
+	readdata "TS-2.b10.rich"
+	sdraw SoM2 EoM
+	blabel 10
+	readdata "TS-2.b11.rich"
+	sdraw SoM2 EoM
+	blabel 11
+	readdata "TS-2.b12.rich"
+	sdraw SoM2 EoM
+	blabel 12
+#
+#
+makeLplots
+	expand 0.6
+	box
+	xlabel S/M^2
+	myylabel L/M
+	readdata "TS-2.b3.rich"
+	sdraw SoM2 LoM
+	blabel 3
+	readdata "TS-2.b4.rich"
+	sdraw SoM2 LoM
+	blabel 4
+	readdata "TS-2.b5.rich"
+	sdraw SoM2 LoM
+	blabel 5
+	readdata "TS-2.b6.rich"
+	sdraw SoM2 LoM
+	blabel 6
+	readdata "TS-2.b7.rich"
+	sdraw SoM2 LoM
+	blabel 7
+	readdata "TS-2.b8.rich"
+	sdraw SoM2 LoM
+	blabel 8
+	readdata "TS-2.b9.rich"
+	sdraw SoM2 LoM
+	blabel 9
+	readdata "TS-2.b10.rich"
+	sdraw SoM2 LoM
+	blabel 10
+	readdata "TS-2.b11.rich"
+	sdraw SoM2 LoM
+	blabel 11
+	readdata "TS-2.b12.rich"
+	sdraw SoM2 LoM
+	blabel 12
+#
+#
+makeRadplots
+	expand 0.6
+	box
+	xlabel S/M^2
+	myylabel E_{rad}/M
+	readdata "TS-2.b3.rich"
+	sdraw SoM2 EradoM
+	blabel 3
+	readdata "TS-2.b4.rich"
+	sdraw SoM2 EradoM
+	blabel 4
+	readdata "TS-2.b5.rich"
+	sdraw SoM2 EradoM
+	blabel 5
+	readdata "TS-2.b6.rich"
+	sdraw SoM2 EradoM
+	blabel 6
+	readdata "TS-2.b7.rich"
+	sdraw SoM2 EradoM
+	blabel 7
+	readdata "TS-2.b8.rich"
+	sdraw SoM2 EradoM
+	blabel 8
+	readdata "TS-2.b9.rich"
+	sdraw SoM2 EradoM
+	blabel 9
+	readdata "TS-2.b10.rich"
+	sdraw SoM2 EradoM
+	blabel 10
+	readdata "TS-2.b11.rich"
+	sdraw SoM2 EradoM
+	blabel 11
+	readdata "TS-2.b12.rich"
+	sdraw SoM2 EradoM
+	blabel 12
+#
+#
+makeeffplots
+	expand 0.6
+	box
+	xlabel S/M^2
+	myylabel "Radiation Efficiency"
+	readdata "TS-2.b3.rich"
+	sdraw SoM2 eff
+	blabel 3
+	readdata "TS-2.b4.rich"
+	sdraw SoM2 eff
+	blabel 4
+	readdata "TS-2.b5.rich"
+	sdraw SoM2 eff
+	blabel 5
+	readdata "TS-2.b6.rich"
+	sdraw SoM2 eff
+	blabel 6
+	readdata "TS-2.b7.rich"
+	sdraw SoM2 eff
+	blabel 7
+	readdata "TS-2.b8.rich"
+	sdraw SoM2 eff
+	blabel 8
+	readdata "TS-2.b9.rich"
+	sdraw SoM2 eff
+	blabel 9
+	readdata "TS-2.b10.rich"
+	sdraw SoM2 eff
+	blabel 10
+	readdata "TS-2.b11.rich"
+	sdraw SoM2 eff
+	blabel 11
+	readdata "TS-2.b12.rich"
+	sdraw SoM2 eff
+	blabel 12
+#

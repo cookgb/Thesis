@@ -1,0 +1,739 @@
+\chapterhead{Chapter~{\the\chapnum}:  The $(3+1)$ Decomposition}
+%%%%%%%%%%%%%%%%%%%
+Einstein's equations in full covariant form are a set of coupled partial
+differential equations, the solution of which is a metric $g_{\mu\nu}$ that
+represents the full pseudo-Riemannian geometry of a space-time.  This metric is
+not a dynamical object in that it does not change in time.  On the contrary, the
+metric represents the geometry at all times just as the metric of a two-sphere
+represents the geometry of that two-sphere at all points on the sphere.  In
+order for Einstein's equations to reveal their dynamical nature, we must break
+the full, four-dimensional covariance and exploit the special nature of time. 
+One method of doing this is the $(3+1)$ decomposition of Arnowitt, Deser, and
+Misner (ADM) [1962].  The idea behind the $(3+1)$ decomposition is to divide
+space-time into a sequence of ``instants'' of time.  Each instant of time holds
+an ``instantaneous state'' of the gravitational field which dynamically evolves
+from instant to instant.  Formally, the $(3+1)$ decomposition allows Einstein's
+equations to be posed as a Cauchy problem ({\it cf}. Choquet-Bruhat and York
+[1980]).  In the remainder of this chapter, I will present the $(3+1)$ splitting
+of Einstein's equations based largely on York [1979], Bowen [1979b], and Evans
+[1984].  The Einstein equations will be split into constraint equations which
+are solved to give the initial data for a gravitational configuration on some
+initial slice, and evolution equations which describe the dynamics of general
+relativity and take the gravitational configuration from slice to slice. 
+
+Consider a 4-dimensional space with metric $g_{\mu\nu}$ having signature
+$(\epsilon+++)$, where $\epsilon = \pm$.  (For generality, we consider both
+pseudo-Riemannian $(\epsilon=-)$ and Riemannian $(\epsilon=+)$ spaces.  In this
+work, we will only be concerned with pseudo-Riemannian space-times, though it is
+useful to keep track of where the special nature of time affects the equations. 
+Also, the generality is useful considering the importance of Euclidian methods in
+other areas of relativity.)  The space is assumed to be globally hyperbolic
+($\epsilon=-$ case) so that it can be foliated by a family of 3-dimensional
+hypersurfaces ${\Sigma}$ that fills the space $V$.  Let $\tau$ be a scalar
+function such that the level surfaces of $\tau$ are the hypersurfaces
+${\Sigma}$.  If the space can contain a foliation $\{{\Sigma}\}$, then the
+foliation can be described by a closed one-form $\Omegatilda=\Omega_\mu
+\etilda^\mu$ where $$
+d\Omegatilda=0 \qquad \hbox{or}\qquad \nabla_{[\mu }\Omega_{\nu]}=0
+\eqn{}
+$$
+and $\etilda^\mu$ is a general basis of forms.  Since $\Omega$ is
+closed, it must satisfy
+$$
+\Omegatilda=d\tau \qquad \hbox{or}\qquad 
+{\Omega }{}_{\mu }={\nabla }{}_{\mu }\tau. \eqn{}
+$$
+The lapse function $\alpha$ defines the norm $\|\Omega\|$ by means of the
+space-time metric $g_{\mu\nu}$
+$$
+\|\Omega\|={g}{}^{\mu }{}^{\nu }{\Omega }{}_{\mu
+}{\Omega }{}_{\nu }={g}{}^{\mu }{}^{\nu }{\nabla }{}_{\mu }\tau {\nabla }{}_{\nu
+}\tau =\epsilon {\alpha }^{-2}, \eqn{}
+$$
+so the normalized one-form $\omegatilda$ associated with $\{\Sigma\}$ is
+given by
+$$
+{\omega }{}_{\mu }\equiv \alpha {\Omega }{}_{\mu }=\alpha {\nabla }{}_{\mu
+}\tau. \eqn{}
+$$
+The minus sign for pseudo-Riemannian space-times and the strictly positive
+nature of $\alpha$ guarantee that the hypersurfaces defined by $\omegatilda$
+will be spacelike everywhere.  The unit normal vector of a slice is given by
+$$
+{n}{}^{\nu }=\epsilon {g}{}^{\mu }{}^{\nu }{\omega }{}_{\mu }, \eqn{}
+$$
+so that $n^\mu\omega_\mu = 1$ (and so that it is timelike $n_\mu n^\mu  = -1$
+for $\epsilon=-$).
+
+The spatial metric $\gamma_{\mu\nu}$
+induced by $g_{\mu\nu}$ onto a slice $\Sigma$ is given by
+$$
+{\gamma }{}_{\mu }{}_{\nu }={g}{}_{\mu }{}_{\nu }-\epsilon {n}{}_{\mu
+}{n}{}_{\nu }={g}{}_{\mu }{}_{\nu }-\epsilon {\omega }{}_{\mu }{\omega
+}{}_{\nu }, \eqn{}
+$$
+and the inverse spatial metric is given by
+$$
+{\gamma }{}^{\mu }{}^{\nu }={g}{}^{\mu }{}^{\alpha }{g}{}^{\nu }{}^{\beta
+}{\gamma }{}_{\alpha }{}_{\beta }={g}{}^{\mu }{}^{\nu }-\epsilon {n}{}^{\mu
+}{n}{}^{\nu }. \eqn{}
+$$
+
+Each index on a tensor can be decomposed into two pieces, one which is purely
+spatial and lies entirely in the surface $\Sigma$ and one which is entirely
+normal to the surface.  The projection operator $\perp$, which projects free
+indices into the slice $\Sigma$, is defined as
+$$
+{\perp }_{\nu }^{\mu }\equiv {\gamma }_{\nu }^{\mu }={\delta }_{\nu }^{\mu
+}-\epsilon {n}{}^{\mu }{n}{}_{\nu }\qquad \hbox{;}\qquad
+{\perp }_{\nu }^{\mu}{n}{}_{\mu }=0. \eqn{}
+$$
+Similarly, the projection operator $N$, which projects free indices normal to the
+slice, is defined as
+$$
+{N}_{\nu }^{\mu }\equiv \epsilon {n}{}^{\mu }{n}{}_{\nu }={\delta }_{\nu
+}^{\mu }-{\perp }_{\nu }^{\mu }\qquad \hbox{;}\qquad
+{N}_{\nu }^{\mu }{n}{}_{\mu }={n}{}_{\nu }. \eqn{}
+$$
+Note that $\perp$ and $N$ are idempotent projection operators since
+$$
+{\perp }_{\rho }^{\mu }{\perp }_{\nu }^{\rho }={\perp }_{\nu }^{\mu }
+\qquad\hbox{and}\qquad{\perp
+}_{\mu }^{\mu }=3, \eqn{}
+$$
+and
+$$
+{N}_{\rho }^{\mu }{N}_{\nu }^{\rho }={N}_{\nu }^{\mu }
+\qquad\hbox{and}\qquad{N}_{\mu }^{\mu }=1. \eqn{}
+$$
+
+Given the spatial metric on a hypersurface $\Sigma$, we can define a spatial
+covariant derivative $D_\mu$ which is compatible with the metric
+$\gamma_{\mu\nu}$ and which, acting upon spatial tensors, produces spatial
+tensors.  This operator is defined by taking the full covariant derivative of a
+tensor and projecting all free indices into the hypersurface.  Letting $\perp$
+with no indices represent the product of $n$ projection operators, one for each
+free index on the object upon which it is acting, then
+$$
+\eqalign{{D}{}_{\mu }{T}{}^{\alpha \cdots\beta }{}_{\rho \cdots\sigma }&\equiv
+\perp {\nabla }{}_{\mu }{T}{}^{\alpha \cdots\beta }{}_{\rho \cdots\sigma }\cr
+&={\perp }_{\mu }^{\nu }{\perp }_{\kappa }^{\alpha }\cdots{\perp }_{\lambda
+}^{\beta }{\perp }_{\rho }^{\zeta }\cdots{\perp }_{\sigma }^{\xi }{\nabla
+}{}_{\nu }{T}{}^{\kappa \cdots\lambda }{}_{\zeta \cdots\xi }.\cr} \eqn{}
+$$
+It is easily seen that the spatial covariant derivative is compatible with the
+spatial metric
+$$
+{D}{}_{\alpha }{\gamma }{}_{\mu }{}_{\nu }={\perp }_{\alpha }^{\beta }{\perp
+}_{\mu }^{\rho }{\perp }_{\nu }^{\sigma }{\nabla }{}_{\beta }\left({{g}{}_{\rho
+}{}_{\sigma }-\epsilon {n}{}_{\rho }{n}{}_{\sigma }}\right)=0. \eqn{}
+$$
+The requirement that the spatial covariant derivative acts only on spatial
+tensors is required in order for Leibnitz's rule to hold.
+$$
+\eqalign{{D}{}_{\alpha }\left({{V}{}^{\mu }{W}{}_{\mu }}\right)&={\perp
+}_{\alpha }^{\beta }{\nabla }{}_{\beta }\left({{V}{}^{\mu }{W}{}_{\mu
+}}\right)\cr &={\perp }_{\alpha }^{\beta }{V}{}^{\mu }\left({{\perp }_{\mu
+}^{\rho }+{N}_{\mu }^{\rho }}\right){\nabla }{}_{\beta }{W}{}_{\rho }+{\perp
+}_{\alpha }^{\beta }{W}{}_{\mu }\left({{\perp }_{\rho }^{\mu }+{N}_{\rho }^{\mu
+}}\right){\nabla }{}_{\beta }{V}{}^{\rho }\cr &={V}{}^{\mu }{D}{}_{\alpha
+}{W}{}_{\mu }+{W}{}_{\mu }{D}{}_{\alpha }{V}{}^{\mu }+{\perp }_{\alpha }^{\beta
+}\left({{V}{}^{\mu }{N}_{\mu }^{\rho }{\nabla }{}_{\beta }{W}{}_{\rho
+}+{W}{}_{\mu }{N}_{\rho }^{\mu }{\nabla }{}_{\beta }{V}{}^{\rho }}\right)\cr}
+\eqn{}
+$$
+which satisfies Leibnitz's rule only if $V^\mu$ and $W_\mu$ are purely spatial,
+i.e. $N_\mu^\rho V^\mu = 0$ and $N_\rho^\mu W_\mu = 0$.
+
+A slice $\Sigma$ has ``intrinsic'' curvature defined in the standard way by the
+commutation of covariant derivatives.  If $N_\rho^\mu W_\mu = 0$, then
+$$
+\left[{{D}{}_{\mu },{D}{}_{\nu }}\right]{W}{}_{\sigma }={W}{}_{\rho
+}{\dimR{3}}{}^{\rho }{}_{\sigma }{}_{\nu }{}_{\mu }
+\qquad\hbox{and}\qquad{n}{}_{\rho
+}{\dimR{3}}{}^{\rho }{}_{\sigma }{}_{\nu }{}_{\mu }=0. \eqn{}
+$$
+Here, ${{\dimR{3}}^\rho}_{\sigma\nu\mu}$ is the spatial Riemann tensor for the
+hypersurface $\Sigma$, as opposed to ${{\dimR{4}}^\rho}_{\sigma\nu\mu}$ which is
+the Riemann tensor for the full 4-dimensional space.  Since $\Sigma$ is an embedded
+hypersurface, the shape of the slice in the full space or the ``extrinsic''
+curvature of the slice is also of interest.  The extrinsic curvature of a
+hypersurface is related to the projection of the gradient of the surface normal
+vector field.  This naturally consists of two parts:  the symmetric part
+$\Theta_{\underline{\mu\nu}}$, known as the ``strain'', and the antisymmetric
+part $\omega_{\mu\nu}\kern-1em\smash{\lower3.6ex\hbox{\antisym\char20}}$, known
+as the ``twist''
+$$
+{\Theta }{}_{\underline{\mu \nu }}\equiv \perp {\nabla }{}_{(\mu }{n}{}_{\nu)}
+\qquad\hbox{and}\qquad
+\omega_{\mu\nu}\kern-1em\smash{\lower3.6ex\hbox{\antisym\char20}} \equiv \perp
+{\nabla }{}_{[\mu }{n}{}_{\nu]}. \eqn{}
+$$
+Since the vector field $n^\mu$ is surface-forming by definition
+$(d\Omegatilda = 0)$, it is easy to show that
+$$
+\omega \wedge d\omega =0\qquad\hbox{or}\qquad{\omega }{}_{[\mu }{\nabla }{}_{\nu
+}{\omega }{}_{\sigma ]}=0. \eqn{}
+$$
+It follows immediately that $n_{[\mu}\nabla_\nu n_{\sigma]} = 0$.  By contracting
+with $n^\mu$ and projecting the remaining free indices we find
+$$
+\eqalign{\perp \left({{n}{}^{\mu }{n}{}_{[\mu }{\nabla }{}_{\nu }{n}{}_{\sigma
+]}}\right)&={1 \over 3}\perp \left({-{\nabla }{}_{[\nu }{n}{}_{\sigma ]}+{1 \over
+2}{n}{}^{\mu }\left({{n}{}_{\sigma }{\nabla }{}_{[\mu }{n}{}_{\nu ]}-{n}{}_{\nu
+}{\nabla }{}_{[\mu }{n}{}_{\sigma ]}}\right)}\right)\cr &=-{1 \over 3}\perp
+{\nabla }{}_{[\nu }{n}{}_{\sigma ]}=0.\cr} \eqn{}
+$$
+And so the twist vanishes.  The extrinsic curvature of the slice, $K_{\mu\nu}$,
+is defined as minus the strain
+$$
+{K}{}_{\mu }{}_{\nu }\equiv -{\Theta }{}_{\underline{\mu \nu }}=-\perp {\nabla
+}{}_{(\mu }{n}{}_{\nu )}. \eqn{}
+$$
+Note that the choice of the minus sign is a convention.  The extrinsic curvature
+can be expressed in a more convenient form by expanding the gradient of the unit
+normal
+$$
+\eqalign{{\nabla }{}_{\mu }{n}{}_{\nu }&={\delta }_{\mu }^{\alpha }{\delta
+}_{\nu }^{\beta }{\nabla }{}_{\alpha }{n}{}_{\beta }=\left({{\perp }_{\mu
+}^{\alpha }+\epsilon {n}{}^{\alpha }{n}{}_{\mu }}\right)\left({{\perp }_{\nu
+}^{\beta }+\epsilon {n}{}^{\beta }{n}{}_{\nu }}\right){\nabla }{}_{\alpha
+}{n}{}_{\beta }\cr &=\perp {\nabla }{}_{\mu }{n}{}_{\nu }+\epsilon {n}{}_{\mu
+}\perp {a}{}_{\nu } \cr}\eqn{}
+$$
+where the acceleration of the unit normal, $a_\mu$, has been used
+$$
+{a}{}_{\mu }={n}{}^{\nu }{\nabla }{}_{\nu }{n}{}_{\mu }. \eqn{}
+$$
+Note that the acceleration is purely spatial since its contraction with the unit
+normal vanishes.  This follows from the identity
+$$
+{\nabla }{}_{\mu }\left({{n}{}_{\nu }{n}{}^{\nu }}\right)=2{n}{}^{\nu }{\nabla
+}{}_{\mu }{n}{}_{\nu }=0. \eqn{}
+$$
+Since the acceleration is spatial, ${\perp}a^\mu = a^\mu$ and we find
+$$
+{\nabla }{}_{\mu }{n}{}_{\nu }=-{K}{}_{\mu }{}_{\nu }+\epsilon {n}{}_{\mu
+}{a}{}_{\nu }. \eqn{}
+$$
+Since the extrinsic curvature is symmetric, we can express it as
+$$
+{K}{}_{\mu }{}_{\nu }=-{\nabla }{}_{(\mu }{n}{}_{\nu )}+\epsilon
+{n}{}_{(\mu }{a}{}_{\nu )} \eqn{}
+$$
+from which it is easily seen that the extrinsic curvature is also purely
+spatial.  From this and the definition of the Lie derivative, it follows that
+$$
+\eqalign{{K}{}_{\mu }{}_{\nu }&=\perp {K}{}_{\mu }{}_{\nu }=\perp
+\left({-{\nabla }{}_{(\mu }{n}{}_{\nu )}+\epsilon {n}{}_{(\mu }{a}{}_{\nu
+)}}\right)=-\perp {\nabla }{}_{(\mu }{n}{}_{\nu )}\cr &=-{1 \over 2}\perp
+{\hbox{\it\char36}}_{\bf n}{g}{}_{\mu }{}_{\nu }.\cr} \eqn{}
+$$
+Alternatively, if we look at the Lie derivative of the spatial metric, we find
+$$
+\eqalign{{\hbox{\it\char36}}_{\bf n}{\gamma }{}_{\mu }{}_{\nu
+}&={\hbox{\it\char36}}_{\bf n}\left({{g}{}_{\mu }{}_{\nu }-\epsilon
+{n}{}_{\mu }{n}{}_{\nu }}\right)\cr &=2\left({{\nabla }{}_{(\mu }{n}{}_{\nu
+)}-\epsilon {n}{}_{(\mu }{a}{}_{\nu )}}\right)\cr &=-2{K}{}_{\mu }{}_{\nu
+}.\cr} \eqn{}
+$$
+Since the unit normal is a timelike vector, the Lie derivative, alone $n^\mu$, of
+the spatial metric (and thus the extrinsic curvature) is related to the
+``velocity'' of the spatial metric on the slice $\Sigma$.
+
+Given a slice $\Sigma$ in space-time, its complete geometry is described by its spatial
+metric and extrinsic curvature.  Thus, the spatial metric and extrinsic
+curvature represent the ``instantaneous state'' of the gravitational field and
+are the dynamical quantities which will be followed to explore the evolution of a
+gravitational field.  In order that a foliation of slices, $\{\Sigma\}$, can fit
+into the higher dimensional space, they must satisfy certain conditions known as
+the Gauss-Codazzi-Ricci conditions.  These are obtained by taking all of the
+possible projections of the Riemann tensor of the full space.  We can spatially
+project all of the indices of the Riemann tensor into the hypersurface, contract
+one index with the unit normal and spatially project the remaining three free
+indices, and finally we can contract two of the indices with unit normals and
+project the remaining two.  All other combinations are identically zero by the
+symmetries of the Riemann tensor.  To explore these, consider first
+$$
+\eqalign{{D}{}_{\mu }{D}{}_{\nu }{V}{}_{\rho }&=\perp {\nabla }{}_{\mu
+}\left({\perp {\nabla }{}_{\nu }{V}{}_{\rho }}\right)\cr &=\perp {\nabla }{}_{\mu
+}{\nabla }{}_{\nu }{V}{}_{\rho }+\perp \left({{\nabla }{}_{\nu }{V}{}_{\sigma
+}}\right)\left({{\nabla }{}_{\mu }{\perp }_{\rho }^{\sigma }}\right)+\perp
+\left({{\nabla }{}_{\sigma }{V}{}_{\rho }}\right)\left({{\nabla }{}_{\mu }{\perp
+}_{\nu }^{\sigma }}\right).\cr} \eqn{}
+$$
+If we now expand the gradient of the projection operator, we find
+$$
+{\nabla }{}_{\sigma }{\perp }_{\nu }^{\mu }=\epsilon {n}{}_{\nu
+}{K}{}_{\sigma }{}^{\mu }-{n}{}_{\nu }{n}{}_{\sigma }{a}{}^{\mu }+\epsilon
+{n}{}^{\mu }{K}{}_{\sigma }{}_{\nu }-{n}{}^{\mu }{n}{}_{\sigma }{a}{}_{\nu }.
+\eqn{}
+$$
+Combining (2.27) and (2.28), we find
+$$
+{D}{}_{\mu }{D}{}_{\nu }{V}{}_{\rho }=\perp {\nabla }{}_{\mu }{\nabla }{}_{\nu
+}{V}{}_{\rho }+\epsilon \perp {K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\sigma
+}{V}{}_{\sigma }+\epsilon \perp {K}{}_{\mu }{}_{\nu }{n}{}^{\sigma }{\nabla
+}{}_{\sigma }{V}{}_{\rho }. \eqn{}
+$$
+Then, using the definition of the Riemann tensor in terms of the commutation of
+covariant derivatives (2.15), we get
+$$
+{\dimR{3}}{}_{\mu }{}_{\nu }{}_{\rho }{}^{\sigma }{V}{}_{\sigma }=\perp
+{\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}^{\sigma }{V}{}_{\sigma
+}+\epsilon \perp {K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\sigma }{V}{}_{\sigma
+}-\epsilon \perp {K}{}_{\nu }{}_{\rho }{K}{}_{\mu }{}^{\sigma }{V}{}_{\sigma
+}, \eqn{}
+$$
+which gives us the form of the fully projected Riemann tensor known as Gauss'
+equation: 
+$$
+\perp {\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\sigma }={\dimR{3}}{}_{\mu
+}{}_{\nu }{}_{\rho }{}_{\sigma }-\epsilon {K}{}_{\mu }{}_{\rho }{K}{}_{\nu
+}{}_{\sigma }+\epsilon {K}{}_{\mu }{}_{\sigma }{K}{}_{\nu }{}_{\rho }. \eqn{}
+$$
+
+If we contract one index on the Riemann tensor with the unit normal and project
+the rest, we find
+$$
+\perp {\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}^{\sigma }{n}{}_{\sigma
+}=\perp \left({{\nabla }{}_{\mu }{\nabla }{}_{\nu }{n}{}_{\rho }-{\nabla
+}{}_{\nu }{\nabla }{}_{\mu }{n}{}_{\rho }}\right). \eqn{}
+$$
+To simplify this, consider one of the terms on the right-hand side.
+$$
+\eqalign{\perp {\nabla }{}_{\mu }{\nabla }{}_{\nu }{n}{}_{\rho }&=\perp {\nabla
+}{}_{\mu }\left({-{K}{}_{\nu }{}_{\rho }+\epsilon {n}{}_{\nu }{a}{}_{\rho
+}}\right)=-{D}{}_{\mu }{K}{}_{\nu }{}_{\rho }+\epsilon \perp
+\left({{a}{}_{\rho }{\nabla }{}_{\mu }{n}{}_{\nu }}\right)\cr &=-{D}{}_{\mu
+}{K}{}_{\nu }{}_{\rho }-\epsilon {a}{}_{\rho }{K}{}_{\mu }{}_{\nu }.\cr}\eqn{}
+$$
+It follows, then, that the singly contracted, projected Riemann tensor gives
+$$
+\perp {\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}^{\sigma }{n}{}_{\sigma
+}={D}{}_{\nu }{K}{}_{\mu }{}_{\rho }-{D}{}_{\mu }{K}{}_{\nu }{}_{\rho }, \eqn{}
+$$
+which is known as Codazzi's equation.
+
+Note that Gauss' and Codazzi's equations depend only on the spatial metric,
+extrinsic curvature, and their spatial derivatives.  This implies that the
+Gauss-Codazzi equations represent integrability conditions which the spatial
+metric and extrinsic curvature must satisfy in order for any given slice to fit
+into the full space.  These equations will be directly related to the
+constraints of general relativity. Finally, explicit calculation shows
+$$
+\eqalign{{\hbox{\it\char36}}_{\bf n}{K}{}_{\mu }{}_{\nu }&={n}{}^{\rho
+}{\nabla }{}_{\rho }{K}{}_{\mu }{}_{\nu }+{K}{}_{\mu }{}_{\rho }{\nabla }{}_{\nu
+}{n}{}^{\rho }+{K}{}_{\rho }{}_{\nu }{\nabla }{}_{\mu }{n}{}^{\rho }\cr
+&={\dimR{4}}{}_{\mu }{}_{\rho }{}_{\nu }{}^{\sigma }{n}{}^{\rho
+}{n}{}_{\sigma }-{K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\rho }+\epsilon
+{K}{}_{\mu }{}_{\rho }{n}{}_{\nu }{a}{}^{\rho }-{\nabla }{}_{\mu }{a}{}_{\nu
+}+\epsilon {a}{}_{\mu }{a}{}_{\nu }+\epsilon {n}{}_{\mu }{n}{}^{\rho
+}{\nabla }{}_{\rho }{a}{}_{\nu }.\cr} \eqn{}
+$$
+Projecting this into the hypersurface yields
+$$
+\perp {\dimR{4}}{}_{\mu }{}_{\rho }{}_{\nu }{}^{\sigma }{n}{}^{\rho
+}{n}{}_{\sigma }=\perp {\hbox{\it\char36}}_{\bf n}{K}{}_{\mu }{}_{\nu
+}+{K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\rho }-\epsilon {a}{}_{\mu
+}{a}{}_{\nu }+{D}{}_{\mu }{a}{}_{\nu }. \eqn{}
+$$
+If we now consider
+$$
+\eqalign{{n}{}^{\mu }{\hbox{\it\char36}}_{\bf n}{K}{}_{\mu }{}_{\nu
+}&={n}{}^{\mu }{n}{}^{\rho }{\nabla }{}_{\rho }{K}{}_{\mu }{}_{\nu }+{n}{}^{\mu
+}{K}{}_{\mu }{}_{\rho }{\nabla }{}_{\nu }{n}{}^{\rho }+{n}{}^{\mu }{K}{}_{\rho
+}{}_{\nu }{\nabla }{}_{\mu }{n}{}^{\rho }\cr &=-{K}{}_{\rho }{}_{\nu }{a}{}^{\rho
+}+{K}{}_{\rho }{}_{\nu }{a}{}^{\rho }=0,\cr} \eqn{}
+$$
+we see that ${\hbox{\it\char36}}_{\bf n}K_{\mu\nu}$ is purely spatial so we find
+that the twice contracted, projected Riemann tensor gives
+$$
+\perp {\dimR{4}}{}_{\mu }{}_{\rho }{}_{\nu }{}^{\sigma }{n}{}^{\rho
+}{n}{}_{\sigma }={\hbox{\it\char36}}_{\bf n}{\rm K}{}_{\mu }{}_{\nu }+{K}{}_{\mu
+}{}_{\rho }{K}{}_{\nu }{}^{\rho }-\epsilon {a}{}_{\mu }{a}{}_{\nu
+}+{D}{}_{\mu }{a}{}_{\nu }, \eqn{}
+$$
+which is known as Ricci's equation.  Ricci's equation involves the Lie
+derivative along the normal vector field.  This is, roughly speaking, a normal
+or time derivative.  However, it should be noted that ${\hbox{\it\char36}}_{\bf
+n}$ is not the natural time derivative orthogonal to the hypersurface.  We want
+to take the Lie derivative along a vector field $t^\mu$ which is dual to the
+natural one-form associated with the hypersurface.  The timelike vector field
+should satisfy
+$$
+{\Omega }{}_{\mu }{t}{}^{\mu}=1\qquad\hbox{or}\qquad
+\left\langle{\Omegatilda,\overline{t}}\right\rangle=1. \eqn{}
+$$
+From (2.4) and (2.5) we find that one such vector is
+$$
+{t}{}^{\mu }={N}{}^{\mu }\equiv \alpha {n}{}^{\mu }. \eqn{}
+$$
+Of course, this is not a unique choice.  We can add to $N^\mu$ any spatial
+vector, $\beta^\mu$, since
+$\left\langle{\Omegatilda,\overline{\beta}}\right\rangle = 0$.  The freedom in
+the definition of the timelike vector stems from the general covariance of
+Einstein's equations.  In general then, the timelike vector is defined as
+$$
+{t}{}^{\mu }\equiv \alpha {n}{}^{\mu }+{\beta }{}^{\mu }, \eqn{}
+$$
+and we find that
+$$
+\eqalign{{\hbox{\it\char36}}_{\bf t}{K}{}_{\mu }{}_{\nu
+}&={\hbox{\it\char36}}_{\alpha \bf n}{K}{}_{\mu }{}_{\nu
+}+{\hbox{\it\char36}}_{\bf \beta }{K}{}_{\mu }{}_{\nu }\cr &=\alpha
+{\hbox{\it\char36}}_{\bf n}{K}{}_{\mu }{}_{\nu }+{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\mu }{}_{\nu }.\cr} \eqn{}
+$$
+As a final simplification of Ricci's equation, consider the acceleration
+$a_\mu$,
+$$
+\eqalign{{a}{}_{\mu }&={n}{}^{\nu }{\nabla }{}_{\nu }{n}{}_{\mu }=2{n}{}^{\nu
+}{\nabla }{}_{[\nu }{n}{}_{\mu ]}=\epsilon 2{n}{}^{\nu }{\nabla }{}_{[\nu
+}\left({\alpha {\Omega }{}_{\mu ]}}\right)\cr &=\epsilon {n}{}^{\nu
+}\left({{\Omega }{}_{\mu }{\nabla }{}_{\nu }\alpha -{\Omega }{}_{\nu }{\nabla
+}{}_{\mu }\alpha }\right)=-\epsilon {\alpha }^{-1}\left({\perp {\nabla
+}{}_{\mu }\alpha }\right)\cr &=-\epsilon {D}{}_{\mu }\ln\alpha.\cr} \eqn{}
+$$
+Combining (2.38), (2.42), and (2.43) we find that Ricci's equation takes the
+form:
+$$\perp {\dimR{4}}{}_{\mu }{}_{\rho }{}_{\nu }{}^{\sigma }{n}{}^{\rho
+}{n}{}_{\sigma }={\alpha }^{-1}{\hbox{\it\char36}}_{\bf t}{K}{}_{\mu
+}{}_{\nu }+{K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\rho }-\epsilon {\alpha
+}^{-1}{D}{}_{\mu }{D}{}_{\nu }\alpha -{\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\mu }{}_{\nu }. \eqn{}
+$$
+
+With the Gauss-Codazzi-Ricci equations, we can decompose the 4-dimensional
+Riemann tensor
+$$
+\eqalign{{\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\sigma }=&\perp
+{\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\sigma }-\epsilon {n}{}_{\mu }\perp
+{\dimR{4}}{}_{\rho }{}_{\sigma }{}_{\nu }{}_{\delta }{n}{}^{\delta }+\epsilon
+{n}{}_{\nu }\perp {\dimR{4}}{}_{\rho }{}_{\sigma }{}_{\mu }{}_{\delta
+}{n}{}^{\delta }\cr &-\epsilon {n}{}_{\rho }\perp {\dimR{4}}{}_{\mu }{}_{\nu
+}{}_{\sigma }{}_{\delta }{n}{}^{\delta }+\epsilon {n}{}_{\sigma }\perp
+{\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\delta }{n}{}^{\delta }\cr &+{n}{}_{\mu
+}{n}{}_{\rho }\perp {\dimR{4}}{}_{\nu }{}_{\delta }{}_{\sigma }{}_{\gamma
+}{n}{}^{\delta }{n}{}^{\gamma }-{n}{}_{\mu }{n}{}_{\sigma }\perp
+{\dimR{4}}{}_{\nu }{}_{\delta }{}_{\rho }{}_{\gamma }{n}{}^{\delta
+}{n}{}^{\gamma }\cr &+{n}{}_{\nu }{n}{}_{\sigma }\perp {\dimR{4}}{}_{\mu
+}{}_{\delta }{}_{\rho }{}_{\gamma }{n}{}^{\delta }{n}{}^{\gamma }-{n}{}_{\nu
+}{n}{}_{\rho }\perp {\dimR{4}}{}_{\mu }{}_{\delta }{}_{\sigma }{}_{\gamma
+}{n}{}^{\delta }{n}{}^{\gamma },\cr}  \eqn{}
+$$
+into
+$$
+\eqalign{{\dimR{4}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\sigma
+}&={\dimR{3}}{}_{\mu }{}_{\nu }{}_{\rho }{}_{\sigma }-\epsilon {K}{}_{\mu
+}{}_{\rho }{K}{}_{\nu }{}_{\sigma }+\epsilon {K}{}_{\mu }{}_{\sigma
+}{K}{}_{\nu }{}_{\rho }\cr &+\epsilon 2{n}{}_{\mu }{D}{}_{[\rho }{K}{}_{\sigma
+]}{}_{\nu }+\epsilon 2{n}{}_{\nu }{D}{}_{[\sigma }{K}{}_{\rho ]}{}_{\mu
+}+\epsilon 2{n}{}_{\rho }{D}{}_{[\mu }{K}{}_{\nu ]}{}_{\sigma }+\epsilon
+2{n}{}_{\sigma }{D}{}_{[\nu }{K}{}_{\mu ]}{}_{\rho }\cr &+{n}{}_{\mu }{n}{}_{\rho
+}\left({{\alpha }^{-1}{\hbox{\it\char36}}_{\bf t}{K}{}_{\nu }{}_{\sigma
+}+{K}{}_{\nu }{}_{\delta }{K}{}_{\sigma }{}^{\delta }-\epsilon {\alpha
+}^{-1}{D}{}_{\nu }{D}{}_{\sigma }\alpha -{\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\nu }{}_{\sigma }}\right)\cr &-{n}{}_{\nu }{n}{}_{\rho
+}\left({{\alpha }^{-1}{\hbox{\it\char36}}_{\bf t}{K}{}_{\mu }{}_{\sigma
+}+{K}{}_{\mu }{}_{\delta }{K}{}_{\sigma }{}^{\delta }-\epsilon {\alpha
+}^{-1}{D}{}_{\mu }{D}{}_{\sigma }\alpha -{\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\mu }{}_{\sigma }}\right)\cr &+{n}{}_{\nu }{n}{}_{\sigma
+}\left({{\alpha }^{-1}{\hbox{\it\char36}}_{\bf t}{K}{}_{\mu }{}_{\rho
+}+{K}{}_{\mu }{}_{\delta }{K}{}_{\rho }{}^{\delta }-\epsilon {\alpha
+}^{-1}{D}{}_{\mu }{D}{}_{\rho }\alpha -{\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\mu }{}_{\rho }}\right)\cr &-{n}{}_{\mu }{n}{}_{\sigma
+}\left({{\alpha }^{-1}{\hbox{\it\char36}}_{\bf t}{K}{}_{\nu }{}_{\rho
+}+{K}{}_{\nu }{}_{\delta }{K}{}_{\rho }{}^{\delta }-\epsilon {\alpha
+}^{-1}{D}{}_{\nu }{D}{}_{\rho }\alpha -{\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+\beta }{K}{}_{\nu }{}_{\rho }}\right).\cr} \eqn{}
+$$
+The Ricci tensor is defined by contracting the first and third indices on the
+Riemann tensor using the full metric.  Since the spatial Riemann tensor is
+purely spatial, this is equivalent to contracting it with the spatial metric. 
+This leads to
+$$
+\eqalign{{\dimR{4}}{}_{\mu }{}_{\nu }&={\dimR{3}}{}_{\mu }{}_{\nu
+}-\epsilon K{K}{}_{\mu }{}_{\nu }+\epsilon 2{K}{}_{\mu }{}_{\rho
+}{K}{}_{\nu }{}^{\rho }+\epsilon {\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+t}{K}{}_{\mu }{}_{\nu }-{\alpha }^{-1}{D}{}_{\mu }{D}{}_{\nu }\alpha \cr
+&-\epsilon {\alpha }^{-1}{\hbox{\it\char36}}_{\bf \beta }{K}{}_{\mu
+}{}_{\nu }+\epsilon {n}{}_{\mu }\left({{D}{}_{\nu }K-{D}{}_{\rho }{K}{}_{\nu
+}{}^{\rho }}\right)+\epsilon {n}{}_{\nu }\left({{D}{}_{\mu }K-{D}{}_{\rho
+}{K}{}_{\mu }{}^{\rho }}\right)\cr &+{n}{}_{\mu }{n}{}_{\nu }\left({{\alpha
+}^{-1}{\hbox{\it\char36}}_{\bf t}K-{K}{}_{\rho }{}^{\sigma }{K}{}_{\sigma
+}{}^{\rho }-\epsilon {\alpha }^{-1}{D}{}^{\rho }{D}{}_{\rho }\alpha -{\alpha
+}^{-1}{\hbox{\it\char36}}_{\bf \beta}K}\right),\cr} \eqn{}
+$$
+where the trace of the extrinsic curvature
+$$
+K={g}{}^{\mu }{}^{\nu }{K}{}_{\mu }{}_{\nu }={\gamma }{}^{\mu }{}^{\nu
+}{K}{}_{\mu }{}_{\nu }. \eqn{}
+$$
+has been used.  Finally, the Ricci scalar is defined by tracing the Ricci tensor
+giving
+$$
+\dimR{4}=\dimR{3}-\epsilon {K}^{2}-\epsilon {K}{}_{\rho
+}{}^{\sigma }{K}{}_{\sigma }{}^{\rho }+\epsilon 2{\alpha
+}^{-1}{\hbox{\it\char36}}_{\bf t}K-2{\alpha }^{-1}{D}{}^{\rho }{D}{}_{\rho
+}\alpha -\epsilon 2{\alpha }^{-1}{\hbox{\it\char36}}_{\bf \beta }K.
+\eqn{}
+$$
+
+With these results, we can begin splitting Einstein's equations.  In fully
+covariant form, Einstein's equations are written
+$$
+{G}{}_{\mu }{}_{\nu }={\dimR{4}}{}_{\mu }{}_{\nu }-{1 \over 2}{g}{}_{\mu
+}{}_{\nu }\dimR{4}=\kappa {T}{}_{\mu }{}_{\nu }, \eqn{}
+$$
+where $T_{\mu\nu}$ is the stress energy tensor of the sources and $\kappa$ is the
+proportionality constant which, in gravitational units $(G=c=1)$, is
+$\kappa=8\pi$.  We can decompose the stress energy tensor as
+$$
+{T}{}_{\mu }{}_{\nu }={S}{}_{\mu }{}_{\nu }+2{n}{}_{(\mu }{j}{}_{\nu
+)}+{n}{}_{\mu }{n}{}_{\nu }\rho, \eqn{}
+$$
+where the spatial stress $S_{\mu\nu}$, momentum density $j_\mu$, and energy
+density $\rho$ are defined as
+$$
+{S}{}_{\mu }{}_{\nu }\equiv \perp {T}{}_{\mu }{}_{\nu },	\eqn{}
+$$
+$$
+{j}{}_{\mu }\equiv \epsilon \perp {T}{}_{\mu }{}_{\nu }{n}{}^{\nu }, \eqn{}
+$$
+and
+$$
+\rho \equiv {n}{}^{\mu }{n}{}^{\nu }{T}{}_{\mu }{}_{\nu }. \eqn{}
+$$
+By tracing Einstein's equations and the decomposition of the stress energy
+tensor, we find that
+$$
+\dimR{4}=-\kappa T=-\kappa \left({S+\epsilon \rho }\right), \eqn{}
+$$
+where $T$ is the trace of the stress energy tensor and $S$ is the trace of the
+spatial stress tensor.  Combining (2.50), (2.51), and (2.55) Einstein's
+equations take the form
+$$
+{\dimR{4}}{}_{\mu }{}_{\nu }=\kappa \left({{S}{}_{\mu }{}_{\nu
+}+2{n}{}_{(\mu }{j}{}_{\nu )}-{1 \over 2}{\gamma }{}_{\mu }{}_{\nu
+}\left({S+\epsilon \rho }\right)-{1 \over 2}\epsilon {n}{}_{\mu
+}{n}{}_{\nu }\left({S-\epsilon\rho }\right)}\right). \eqn{}
+$$
+
+The final step in splitting Einstein's equations is accomplished by taking all
+possible projections of (2.56).  First, if we contract both indices with the
+unit normal, we find
+$$
+\eqalign{{\dimR{4}}{}_{\mu }{}_{\nu }{n}{}^{\mu }{n}{}^{\nu }&={\alpha
+}^{-1}{\hbox{\it\char36}}_{\bf t}K-{K}{}_{\mu }{}^{\nu }{K}{}_{\nu }{}^{\mu
+}-\epsilon {\alpha }^{-1}{D}{}^{\mu }{D}{}_{\mu }\alpha -{\alpha
+}^{-1}{\hbox{\it\char36}}_{\bf \beta }K\cr &=-{\epsilon  \over
+2}\left({\dimR{3}-\epsilon {K}^{2}+\epsilon {K}{}_{\mu }{}^{\nu
+}{K}{}_{\nu }{}^{\mu }+\kappa T}\right)\cr &=-{\epsilon \kappa  \over
+2}\left({S-\epsilon\rho }\right),\cr} \eqn{}
+$$
+where (2.49) and (2.55) have been used.  Simplifying, this gives
+$$
+\dimR{3}-\epsilon {K}^{2}+\epsilon {K}{}_{\mu }{}^{\nu }{K}{}_{\nu
+}{}^{\mu }=-\epsilon 2\kappa \rho. \eqn{}
+$$
+By contracting one index with the unit normal and spatially projecting the
+other, we find
+$$
+\eqalign{\perp {\dimR{4}}{}_{\mu }{}_{\nu }{n}{}^{\nu }&={D}{}_{\mu
+}K-{D}{}_{\nu }{K}{}_{\mu }{}^{\nu }\cr &=\epsilon \kappa {j}{}_{\mu
+},\cr}\eqn{}
+$$
+which can be expressed more conveniently as
+$$
+{D}{}_{\nu }\left({{K}{}^{\mu }{}^{\nu }-{\gamma }{}^{\mu }{}^{\nu
+}K}\right)=-\epsilon \kappa {j}{}^{\mu }. \eqn{}
+$$
+The final projection of the Einstein equation comes from spatially projecting
+both indices where we find
+$$
+\eqalign{\perp {\dimR{4}}{}_{\mu }{}_{\nu }&={\dimR{3}}{}_{\mu }{}_{\nu
+}-\epsilon K{K}{}_{\mu }{}_{\nu }+\epsilon 2{K}{}_{\mu }{}_{\rho
+}{K}{}_{\nu }{}^{\rho }+\epsilon {\alpha }^{-1}{\hbox{\it\char36}}_{\bf
+t}{K}{}_{\mu }{}_{\nu }\cr &\qquad-{\alpha }^{-1}{D}{}_{\mu }{D}{}_{\nu }\alpha
+-\epsilon {\alpha }^{-1}{\hbox{\it\char36}}_{\bf \beta }{K}{}_{\mu
+}{}_{\nu }\cr &=\kappa \left({{S}{}_{\mu }{}_{\nu }-{1 \over 2}{\gamma }{}_{\mu
+}{}_{\nu }\left({S+\epsilon \rho }\right)}\right),\cr} \eqn{}
+$$
+which can be rewritten as
+$$
+\eqalign{{\hbox{\it\char36}}_{\bf t}{K}{}_{\mu }{}_{\nu }&=\epsilon
+{D}{}_{\mu }{D}{}_{\nu }\alpha -\epsilon \alpha {{}_{}^{(3)}R}{}_{\mu
+}{}_{\nu }-2\alpha {K}{}_{\mu }{}_{\rho }{K}{}_{\nu }{}^{\rho }+\alpha
+K{K}{}_{\mu }{}_{\nu }\cr &\qquad+{\hbox{\it\char36}}_{\bf \beta }{K}{}_{\mu
+}{}_{\nu }+\epsilon \alpha \kappa \left({{S}{}_{\mu }{}_{\nu }-{1 \over
+2}{\gamma }{}_{\mu }{}_{\nu }\left({S+\epsilon \rho }\right)}\right).\cr}
+\eqn{}
+$$
+
+Equations (2.58), (2.60), and (2.62) are the projections of Einstein's
+equations.  Equations (2.58) and (2.60) contain no time derivatives and are,
+respectively, the Hamiltonian and momentum constraint equations.  The spatial
+metric and extrinsic curvature must satisfy these equations on every slice in
+the foliation.  Equation (2.62) describes the time evolution of the extrinsic
+curvature.  Apparently missing from the decomposition of Einstein's equations is
+the equation describing the evolution of the spatial metric.  This, however, is
+simply obtained from the definition of the extrinsic curvature (2.26), which
+gives us
+$$
+{\hbox{\it\char36}}_{\bf t}{\gamma }{}_{\mu }{}_{\nu }=-2\alpha {K}{}_{\mu
+}{}_{\nu }+{\hbox{\it\char36}}_{\bf \beta }{\gamma }{}_{\mu }{}_{\nu }.
+\eqn{}
+$$
+
+To this point, the basis of vectors ${\overline{e}}_\mu$ and its dual basis, the
+basis of forms ${\etilda}^\mu$ defined by
+$$
+\left\langle{{\etilda}^\mu,{\overline{e}}{}_{\nu
+}}\right\rangle={\delta }_{\nu }^{\mu }, \eqn{}
+$$
+have been assumed to be completely general.  To proceed, we will specialize the
+basis of vectors by splitting it into a purely spatial set of basis vectors plus
+a timelike basis vector which is orthogonal to the spatial basis.  We choose the
+timelike basis vector to be the timelike vector $t^\mu$:
+$$
+\overline{t}={t}{}^{\mu }{\overline{e}}{}_{\mu }={\overline{e}}{}_{0}. \eqn{}
+$$
+The remaining three basis vectors are chosen to be purely spatial and must
+satisfy
+$$
+\left\langle{\Omegatilda,{\overline{e}}{}_{i}}\right\rangle={\Omega
+}{}_{\nu }\left\langle{{\etilda}{}^{\nu},{\overline{e}}{}_{i}}\right\rangle=0,
+\eqn{}
+$$
+where $\{i=1,2,3\}$ designates the three spatial basis vectors.  The final demand
+is that the timelike basis vector must commute with the spatial basis vectors
+$$
+\left[{\overline{t},{\overline{e}}{}_{i}}\right]={\hbox{\it\char36}}_{\bf
+t}{\overline{e}}{}_{i}=0. \eqn{}
+$$
+If we now consider
+${\hbox{\it\char36}}_{\bf
+t}\left\langle{\Omegatilda,{\overline{e}}{}_{i}}\right\rangle$ and use this last
+demand, we find
+$$
+\eqalign{{\hbox{\it\char36}}_{\bf t}\left\langle{\Omegatilda
+,{\overline{e}}{}_{i}}\right\rangle&=\left\langle{{\hbox{\it\char36}}_{\bf
+t}\Omegatilda,{\overline{e}}{}_{i}}\right\rangle=\left({{\hbox{\it\char36}}_{\bf
+t}{\Omega }{}_{\nu }}\right)\left\langle{\etilda^{\nu
+},{\overline{e}}{}_{i}}\right\rangle\cr &=\left({{t}{}^{\rho }{\nabla }{}_{\rho
+}{\Omega }{}_{\nu }+{\Omega }{}_{\rho }{\nabla }{}_{\nu }{t}{}^{\rho
+}}\right)\left\langle{\etilda^{\nu
+},{\overline{e}}{}_{i}}\right\rangle\cr &=2{t}{}^{\rho }{\nabla }{}_{[\rho
+}{\Omega }{}_{\nu ]}\left\langle{\etilda^{\nu
+},{\overline{e}}{}_{i}}\right\rangle=0,\cr} \eqn{}
+$$
+so the spatial basis vectors remain purely spatial as they are dragged along
+$t^\mu$.  Finally, because ${\overline{e}}{}_{0}$ is a coordinate basis vector
+(2.65) and since it commutes with the remaining basis vectors (2.67), we find
+that the effect of the Lie derivative along $t^\mu$ on {\it any} tensor is the
+action of partial differentiation,
+$$
+{\hbox{\it\char36}}_{\bf t}{T}{}^{\alpha \cdots\beta }{}_{\rho
+\cdots\sigma }={\partial }{}_{t}{T}{}^{\alpha \cdots\beta }{}_{\rho \cdots\sigma
+}. \eqn{}
+$$
+
+With this choice of the bases, we can examine the components of the important
+tensors.  From (2.65) we find that the components of the timelike vector $t^\mu$ are
+$$
+{t}{}^{\mu }=\left[{\matrix{1&0&0&0\cr}}\right]. \eqn{}
+$$
+Equation (2.66) requires
+$$
+{n}{}_{i}=0. \eqn{}
+$$
+Since the contraction of $n_\mu$ with any contravariant index of a spatial tensor
+must vanish, this implies that any zeroth contravariant component of a spatial
+tensor must vanish.  For example, the components of the shift vector must be
+$$
+{\beta }{}^{\mu }=\left[{\matrix{0&{\beta }{}^{i}\cr}}\right]. \eqn{}
+$$
+Given the definition of the timelike vector (2.41), its components (2.70), and
+the components of the shift (2.72), we find that the components of the unit
+normal vector must be
+$$
+{n}{}^{\mu }=\left[{\matrix{{\alpha }^{-1}&-{\alpha }^{-1}{\beta
+}{}^{i}\cr}}\right]. \eqn{}
+$$
+From (2.5) we have $n_\mu n^\mu = \epsilon$, combined with (2.71) and (2.73)
+these imply
+$$
+{n}{}_{\mu }=\left[{\matrix{\epsilon \alpha &0&0&0\cr}}\right]. \eqn{}
+$$
+Equation (2.71) also implies from the definition of the spatial metric (2.6)
+that the spatial components of the spatial metric are identically the spatial
+components of the full metric
+$$
+{\gamma }{}_{i}{}_{j}={g}{}_{i}{}_{j}. \eqn{}
+$$
+Since any zeroth component of a contravariant tensor must vanish, we find that
+the components of the inverse spatial metric must be
+$$
+{\gamma }{}^{\mu }{}^{\nu }=\left[{\matrix{0&0\cr
+0&{\gamma }{}^{i}{}^{j}\cr}}\right], \eqn{}
+$$
+and the components of the full inverse metric must be
+$$
+{g}{}^{\mu }{}^{\nu }=\left[{\matrix{\epsilon {\alpha }^{-2}&-\epsilon
+{\alpha }^{-2}{\beta }{}^{j}\cr -\epsilon {\alpha }^{-2}{\beta
+}{}^{i}&{\gamma }{}^{i}{}^{j}+\epsilon {\alpha }^{-2}{\beta }{}^{i}{\beta
+}{}^{j}\cr}}\right]. \eqn{}
+$$
+If we consider $\gamma^{\mu\rho}g_{\rho\nu}=(g^{\mu\rho}-\epsilon n^\mu
+n^\rho)g_{\rho\nu}=\delta_\nu^\mu-\epsilon n^\mu\delta_\nu^0$, use (2.75) and
+(2.76), and restrict to spatial indices, we find
+$$
+{\gamma }{}^{i}{}^{k}{\gamma }{}_{k}{}_{j}={\delta }_{j}^{i}. \eqn{}
+$$
+This means that the spatial components of the metric and inverse metric are
+three-dimensional inverses and can be used to raise and lower spatial indices on
+spatial tensors.  Using this property to define the spatial, covariant form of
+the shift vector, $\beta_i$, as
+$$
+{\beta }{}_{i}={\gamma }{}_{i}{}_{j}{\beta }{}^{j}, \eqn{}
+$$
+we find the components of the full metric to be
+$$
+{g}{}_{\mu }{}_{\nu }=\left[{\matrix{\epsilon {\alpha }^{2}+{\beta
+}{}_{\ell }{\beta }{}^{\ell }&{\beta }{}_{j}\cr {\beta }{}_{i}&{\gamma
+}{}_{i}{}_{j}\cr}}\right], \eqn{}
+$$
+and so the line element is
+$$
+{ds}^{2}={\gamma }{}_{i}{}_{j}\left({{dx}{}^{i}+{\beta
+}{}^{i}dt}\right)\left({{dx}{}^{j}+{\beta }{}^{j}dt}\right)+\epsilon {\alpha
+}^{2}{dt}^{2}. \eqn{}
+$$
+The entire content of the decomposed Einstein equations is now expressible as
+the spatial components of (2.58), (2.60), (2.62), and (2.63):
+$$
+R-\epsilon {K}^{2}+\epsilon
+{K}{}_{i}{}_{j}{K}{}^{i}{}^{j}=-\epsilon 2\kappa \rho, \eqn{}
+$$
+$$
+{D}{}_{j}\left({{K}{}^{i}{}^{j}-{\gamma }{}^{i}{}^{j}K}\right)=-\epsilon
+\kappa {j}{}^{i}, \eqn{}
+$$
+$$
+\eqalign{{\partial }{}_{t}{K}{}_{i}{}_{j}&=\epsilon {D}{}_{i}{D}{}_{j}\alpha
+-\epsilon \alpha \left[{{R}{}_{i}{}_{j}+\epsilon 2{K}{}_{i}{}_{\ell
+}{K}{}_{j}{}^{\ell }-\epsilon K{K}{}_{i}{}_{j}-\kappa {S}{}_{i}{}_{j}+{1
+\over 2}\kappa{\gamma }{}_{i}{}_{j}\left({S+\epsilon \rho }\right)}\right]\cr
+&\qquad\qquad\qquad+{\beta }{}^{\ell }{D}{}_{\ell
+}{K}{}_{i}{}_{j}+{K}{}_{i}{}_{\ell }{D}{}_{j}{\beta }{}^{\ell }+{K}{}_{\ell
+}{}_{j}{D}{}_{i}{\beta }{}^{\ell }\cr}, \eqn{}
+$$
+and
+$$ {\partial }{}_{t}{\gamma }{}_{i}{}_{j}=-2\alpha
+{K}{}_{i}{}_{j}+{D}{}_{i}{\beta }{}_{j}+{D}{}_{j}{\beta }{}_{i}, \eqn{}
+$$
+where we have dropped the label on the Ricci tensor and Ricci scalar which
+distinguish them from their four-dimensional counterparts. 
+\vfill
+\eject

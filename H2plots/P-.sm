@@ -1,0 +1,211 @@
+#
+mywindow 4
+    define pw 8.5
+    define ph 11
+    define t (int(32767*$4/$ph))
+    define b (int(32767*$3/$ph))
+    define l (int(32767*$1/$pw))
+    define r (int(32767*$2/$pw))
+    location $l $r $b $t
+#
+myylabel 1
+    define y (($t + $b)/2)
+    define x ($l - 32767*(0.45)/$pw)
+    relocate ($x $y)
+    angle 90
+    putlabel 5 $1
+    angle 0
+#
+myplot 1
+    define x (($l + $r)/2)
+    define y ($b - 32767*(0.5)/$pw)
+    relocate ($x $y)
+    expand 0.6 
+    putlabel 5 $1
+#
+#
+fourplots
+    macro read rdata.sm
+    erase
+    mywindow 1.95 4.45 7.25 9.75
+    limits 0 3.8 1.2 2.8
+    makeEplots
+    myplot (a)
+    mywindow 5.2 7.7 7.25 9.75
+    limits 0 3.8 2 10.5
+    makeLplots
+    myplot (b)
+    mywindow 1.95 4.45 3.5 6
+    limits 0 3.8 -0.25 1.3
+    makeRadplots
+    myplot (c)
+    mywindow 5.2 7.7 3.5 6
+    limits 0 3.8 -0.15 0.5
+    makeeffplots
+    myplot (d)
+#
+#
+fourplotsold
+	macro read rdata.sm
+	erase
+	limits 0 3.8 1.2 2.8
+	window 2 2 1 2
+	makeEplots
+	limits 0 3.8 2 10.5
+	window 2 2 2 2
+	makeLplots
+	limits 0 3.8 -0.25 1.3
+	window 2 2 1 1
+	makeRadplots
+	limits 0 3.8 -0.15 0.5
+	window 2 2 2 1
+	makeeffplots
+#
+#
+makeEplots
+	expand 0.6
+	box
+	xlabel P/M
+	myylabel E/M
+	readdata "TP-.b3.rich"
+	sdraw PoM EoM
+	blabel 3
+	readdata "TP-.b4.rich"
+	sdraw PoM EoM
+	blabel 4
+	readdata "TP-.b5.rich"
+	sdraw PoM EoM
+	blabel 5
+	readdata "TP-.b6.rich"
+	sdraw PoM EoM
+	blabel 6
+	readdata "TP-.b7.rich"
+	sdraw PoM EoM
+	blabel 7
+	readdata "TP-.b8.rich"
+	sdraw PoM EoM
+	blabel 8
+	readdata "TP-.b9.rich"
+	sdraw PoM EoM
+	blabel 9
+	readdata "TP-.b10.rich"
+	sdraw PoM EoM
+	blabel 10
+	readdata "TP-.b11.rich"
+	sdraw PoM EoM
+	blabel 11
+	readdata "TP-.b12.rich"
+	sdraw PoM EoM
+	blabel 12
+#
+#
+makeLplots
+	expand 0.6
+	box
+	xlabel P/M
+	myylabel L/M
+	readdata "TP-.b3.rich"
+	sdraw PoM LoM
+	blabel 3
+	readdata "TP-.b4.rich"
+	sdraw PoM LoM
+	blabel 4
+	readdata "TP-.b5.rich"
+	sdraw PoM LoM
+	blabel 5
+	readdata "TP-.b6.rich"
+	sdraw PoM LoM
+	blabel 6
+	readdata "TP-.b7.rich"
+	sdraw PoM LoM
+	blabel 7
+	readdata "TP-.b8.rich"
+	sdraw PoM LoM
+	blabel 8
+	readdata "TP-.b9.rich"
+	sdraw PoM LoM
+	blabel 9
+	readdata "TP-.b10.rich"
+	sdraw PoM LoM
+	blabel 10
+	readdata "TP-.b11.rich"
+	sdraw PoM LoM
+	blabel 11
+	readdata "TP-.b12.rich"
+	sdraw PoM LoM
+	blabel 12
+#
+#
+makeRadplots
+	expand 0.6
+	box
+	xlabel P/M
+	myylabel E_{rad}/M
+	readdata "TP-.b3.rich"
+	sdraw PoM EradoM
+	blabel 3
+	readdata "TP-.b4.rich"
+	sdraw PoM EradoM
+	blabel 4
+	readdata "TP-.b5.rich"
+	sdraw PoM EradoM
+	blabel 5
+	readdata "TP-.b6.rich"
+	sdraw PoM EradoM
+	blabel 6
+	readdata "TP-.b7.rich"
+	sdraw PoM EradoM
+	blabel 7
+	readdata "TP-.b8.rich"
+	sdraw PoM EradoM
+	blabel 8
+	readdata "TP-.b9.rich"
+	sdraw PoM EradoM
+	blabel 9
+	readdata "TP-.b10.rich"
+	sdraw PoM EradoM
+	blabel 10
+	readdata "TP-.b11.rich"
+	sdraw PoM EradoM
+	blabel 11
+	readdata "TP-.b12.rich"
+	sdraw PoM EradoM
+	blabel 12
+#
+#
+makeeffplots
+	expand 0.6
+	box
+	xlabel P/M
+	myylabel "Radiation Efficiency"
+	readdata "TP-.b3.rich"
+	sdraw PoM eff
+	blabel 3
+	readdata "TP-.b4.rich"
+	sdraw PoM eff
+	blabel 4
+	readdata "TP-.b5.rich"
+	sdraw PoM eff
+	blabel 5
+	readdata "TP-.b6.rich"
+	sdraw PoM eff
+	blabel 6
+	readdata "TP-.b7.rich"
+	sdraw PoM eff
+	blabel 7
+	readdata "TP-.b8.rich"
+	sdraw PoM eff
+	blabel 8
+	readdata "TP-.b9.rich"
+	sdraw PoM eff
+	blabel 9
+	readdata "TP-.b10.rich"
+	sdraw PoM eff
+	blabel 10
+	readdata "TP-.b11.rich"
+	sdraw PoM eff
+	blabel 11
+	readdata "TP-.b12.rich"
+	sdraw PoM eff
+	blabel 12
+#

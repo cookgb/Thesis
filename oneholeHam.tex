@@ -1,0 +1,532 @@
+\hfuzz=4pt
+\chapterhead {Chapter~\the\chapnum:  Numerical Solution of the Hamiltonian
+Constraint\cr for a Single, Axisymmetric Black Hole}
+\hfuzz=0.1pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As a first example of finding numerical solutions for the Hamiltonian constraint
+within the framework of the conformal imaging approach, I will examine the case
+of a single black hole with axisymmetric linear or angular momentum.  In this
+chapter, I will describe in detail the procedure for differencing the
+Hamiltonian constraint and discuss the methods used to solve the finite
+difference equations.  I will tabulate the numerical results obtained by
+sweeping through the parameter space (i.e. the magnitude of the linear and
+angular momenta of the hole), but I will reserve the physical interpretation
+for a later chapter.  I should note that several authors (York and Piran [1982],
+Choptuik [1982], and Rauber [1985]) have examined these solutions previously. 
+While the differencing scheme which I use is slightly different from that of any
+of the previous authors, the results I obtain are essentially the same.
+
+I will begin by choosing a coordinate system which is appropriate for the
+physical configuration.  The obvious choice is spherical polar coordinates with
+the center of the black hole coincident with the origin of coordinates.  This
+coordinate system is perfectly adapted for imposing the boundary conditions at
+both the throat (or inversion surface) and at large distances.  For numerical
+efficiency, I will use a logarithmically scaled, dimensionless radial coordinate
+$x$ defined by
+$$
+x=\ln\left({{r \over a}}\right), \eqn{}
+$$
+where $a$ is the radius of the throat.  This scaling is chosen because the
+curvature of the initial-data slice is expected to be greatest near the throat
+of the black hole.  In the case of the conformal factor, this curvature will
+show up as a gradient in the conformal factor and so the greatest changes in
+the conformal factor occur in the region near the throat.  The coordinate choice
+(8.1) will tend to emphasize the region near the throat in the finite difference
+equations.  With the coordinate transformation (8.1), the dimensionless
+coordinates covering the manifold are $(x,\theta,\phi)$ and the metric is given
+by 
+$$
+{ds}^{2}={a}^{2}{e}^{2x}\left({{dx}^{2}+{d\theta }^{2}+{\sin}^{2}\theta {d\phi
+}^{2}}\right). \eqn{}
+$$
+The domain of the top sheet in which the Hamiltonian constraint must be solved
+is $0 \le x < \infty$ and the throat (or minimal surface) is located at $x = 0$.
+
+To simplify the numerical problem of solving the Hamiltonian constraint, I will
+restrict myself to axisymmetric configurations.  The only restriction this
+imposes in the case of a single hole (as mentioned in Chapter 7) occurs in the
+case in which the hole has {\it both} linear and angular momenta.  In this case,
+to remain axisymmetric, the linear and angular momentum vectors must be parallel
+or anti-parallel.  I will take the symmetry axis to coincide with the $z$-axis
+and so the $\phi$ coordinate can be ignored.  From (8.2) and axisymmetry, the
+Laplace operator takes the form
+$$
+{\overline{\nabla }}^{2}={a}^{-2}{e}^{-2x}\left\{{{e}^{-x}{\partial  \over
+\partial x}\left({{e}^{x}{\partial  \over \partial x}}\right)+{1 \over
+\sin\theta }{\partial  \over \partial \theta }\left({\sin\theta {\partial  \over
+\partial \theta }}\right)}\right\}. \eqn{}
+$$
+
+The inversion-symmetric extrinsic curvatures for a single hole (as found by Bowen
+and York [1980]) were given in (5.5) and (5.6).  In terms of this coordinate
+system, the dimensionless components are
+$$
+{\bar{A}^{+}_{ij} \over a}=3\left({{P \over a}}\right) 
+\left[{\matrix{2{e}^{-x}\cosh x \cos\theta &-{e}^{-x}\sinh x \sin\theta &0\cr
+-{e}^{-x}\sinh x \sin\theta &-{e}^{-x}\cosh x \cos\theta &0\cr
+0&0&-{e}^{-x}\cosh x \cos\theta {\sin}^{2}\theta \cr}}\right], \eqn{} 
+$$
+$$
+{\bar{A}^{-}_{ij} \over a}=3\left({{P \over a}}\right)
+\left[{\matrix{2{e}^{-x}\sinh x \cos\theta &-{e}^{-x}\cosh x \sin\theta &0\cr
+-{e}^{-x}\cosh x \sin\theta &-{e}^{-x}\sinh x \cos\theta &0\cr
+0&0&-{e}^{-x}\sinh x \cos\theta {\sin}^{2}\theta \cr}}\right], \eqn{}
+$$
+and
+$$
+{\bar{A}_{ij} \over a}=3\left({{S \over {a}^{2}}}\right)
+\left[{\matrix{0&0&{e}^{-x}{\sin}^{2}\theta \cr 0&0&0\cr
+{e}^{-x}{\sin}^{2}\theta &0&0\cr}}\right]. \eqn{} 
+$$
+Note that I have chosen to use gravitational units in which the proportionality
+constant $\kappa=8\pi$.  Equation (8.4) gives the background extrinsic curvature
+for a hole with linear momentum $P$ in the positive $z$ direction and which obeys
+the extrinsic curvature isometry condition (4.45) with the plus sign.  Equation
+(8.5) gives the background extrinsic curvature for the same physical
+configuration, but the extrinsic curvature obeys the isometry condition with the
+minus sign.  Equation (8.6) gives the background extrinsic curvature for a hole
+with angular momentum $S$ in the positive $z$ direction and obeys the isometry
+condition with the minus sign.  No single hole can have a non-vanishing angular
+momentum at infinity and obey the isometry condition with the plus sign.
+
+The square of the extrinsic curvature is needed in the source term  for the
+Hamiltonian constraint.  The squares of (8.4), (8.5), and (8.6) in dimensionless
+form are, respectively,
+$$
+{a}^{2}\bar{A}^{+}_{ij}\bar{A}^{+ij}=18{\left({{P
+\over a}}\right)}^{2}{e}^{-6x}\left\{{{\sinh}^{2}x\left({1+2{\cos}^{2}\theta
+}\right)+3{\cos}^{2}\theta }\right\}, \eqn{}
+$$
+$$
+{a}^{2}\bar{A}^{-}_{ij}\bar{A}^{-ij}=18{\left({{P
+\over a}}\right)}^{2}{e}^{-6x}\left\{{{\cosh}^{2}x\left({1+2{\cos}^{2}\theta
+}\right)-3{\cos}^{2}\theta }\right\}, \eqn{}
+$$
+and
+$$
+{a}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}=18{\left({{S \over
+{a}^{2}}}\right)}^{2}{e}^{-6x}{\sin}^{2}\theta . \eqn{}
+$$
+Since (8.5) and (8.6) obey the extrinsic curvature isometry condition with the
+same sign, they can be considered together.  In this case, the square of the sum
+is the sum of the squares since there are no cross terms and (8.8) and (8.9) can
+be added together.  Examining (8.7), (8.8), and (8.9), we find that they are
+also reflection symmetric through the $\theta=\pi/2$ plane.  This means that the
+domain in which the Hamiltonian constraint must be solved in order to specify
+initial data over the entire initial hypersurface is $0\le x < \infty$ and
+$0\le\theta\le\pi/2$.
+
+With the domain of the problem determined, boundary conditions must be imposed
+on all domain boundaries.  Equation (7.5) defines the boundary condition on the
+throat.  In terms of our coordinate system, this becomes
+$$
+{\partial \psi  \over \partial x}+{\psi  \over 2}=0\qquad\hbox{for}\qquad x=0.
+\eqn{} 
+$$
+
+If the outer boundary is not taken at infinity, but at some finite radius
+$x_{\scriptscriptstyle f}$, then the outer boundary condition can be approximated
+by either (7.14) or (7.27).  While the accuracy of (7.27) is always equal to or
+greater than the accuracy of (7.14), this boundary condition had not been
+derived at the time when this problem was studied.  For this reason, I will
+consider only (7.14) for this particular problem.  Equation (7.27) should be
+used in any future work on the one-hole problem, and it has been used in all
+work subsequent to this.  With this in mind, the approximate outer boundary
+condition takes the following form in terms of our coordinate system:
+$$
+{\partial \psi  \over \partial x}+\psi -1=0\qquad\hbox{for}\qquad
+x=x_{\scriptscriptstyle f}. \eqn{} $$
+
+The two remaining boundaries are at $\theta=0$ and $\theta=\pi/2$.  To fix
+boundary conditions here, recall first that the configuration is axisymmetric. 
+In order for the solution to be axisymmetric, the derivative of the conformal
+factor normal to the rotation axis must vanish.  Similarly, because of the
+reflection symmetry, the derivative of the conformal factor normal to the
+reflection plane must also vanish.  In terms of our coordinates, these two
+boundary conditions can be written as
+$$
+{\partial \psi  \over \partial \theta }=0\qquad\hbox{at}\qquad\theta
+=0\quad\hbox{or}\quad{\pi  \over 2}. \eqn{} $$
+
+To difference the Hamiltonian constraint I first discretize the domain of the
+solution.  The discretization will take the following form:
+$$
+{x}_{i}\equiv i*{h}_{x}\qquad\hbox{where}\qquad
+i=0,\ldots,\Iind\quad\hbox{and}\quad{h}_{x}\equiv {{x}_{\scriptscriptstyle f}
+\over\Iind} \eqn{} 
+$$
+and
+$$
+{\theta }_{j}\equiv j*{h}_{\theta }\qquad\hbox{where}\qquad
+j=0,\ldots,\Jind\quad\hbox{and}\quad{h}_{\theta }\equiv {\pi /2 \over\Jind}. \eqn{}
+$$
+Thus, the continuous domain of the solution is approximated by a discrete
+``mesh'' of points labeled by an index pair $(i,j)$.  Any function on the space
+becomes a function on the mesh.  For example, the conformal factor will become
+$$
+\psi ({{x}_{i},{\theta }_{j}})\rightarrow {\psi }_{i,j}. \eqn{}
+$$
+
+To difference the Laplacian (8.3), I use a second order conservative
+differencing scheme ({\it cf}. Adler and Piran [1984]).  I should point out that
+there is no unique way to difference a differential operator.  In the limit that
+the mesh spacings $h_x$ and $h_\theta$ go to zero, however, all correct
+differencing schemes should converge to the same continuous differential
+operator and the results of different finite difference calculations should
+converge to the same continuous result.  The choice of a conservative
+differencing scheme means that the finite difference equations will obey,
+locally, a discrete version of Gauss' law.  As a general rule, any method for
+making the finite difference equations mimic any behavior of the differential
+equations should be used.
+
+The finite difference form of the Hamiltonian constraint is expressed as follows:
+$$
+\eqalign{{\Ac}_{i,j}^{+}\left({{\psi }_{i+1,j}-{\psi
+}_{i,j}}\right)&+{\Ac}_{i,j}^{-}\left({{\psi }_{i-1,j}-{\psi
+}_{i,j}}\right)+{\Bc}_{i,j}^{+}\left({{\psi }_{i,j+1}-{\psi
+}_{i,j}}\right)\cr &+{\Bc}_{i,j}^{-}\left({{\psi }_{i,j-1}-{\psi
+}_{i,j}}\right)+{{e}^{2{x}_{i}} \over 8}{\psi
+}_{i,j}^{-7}{\left[{{a}^{2}{\bar{A}}{}_{\ell }{}_{m}{\bar{A}}{}^{\ell
+}{}^{m}}\right]}_{i,j}=0,\cr} \eqn{} 
+$$
+where
+$$
+{\Ac}_{i,j}^{\pm }\equiv {\exp\left\{{\pm {h}_{x}}\right\} \over
+{h}_{x}^{2}}\qquad :\qquad\hbox{for}\quad\matrix{i=0,\ldots,\Iind\cr
+j=0,\ldots,\Jind\cr} \eqn{} $$
+and
+$$
+{\Bc}_{i,j}^{\pm }\equiv \cases{{\sin\left({{\theta }_{j}\pm {1 \over
+2}{h}_{\theta }}\right) \over {h}_{\theta }^{2}\sin{\theta }_{j}}&: for
+$\matrix{i=0,\ldots,\Iind\cr j=1,\ldots,\Jind\cr}$\cr \hfill{2 \over {h}_{\theta
+}^{2}}&: for $\matrix{i=0,\ldots,\Iind\cr j=0\hfill\cr}$.\cr} \eqn{}
+$$
+Notice that a different form must be used for the $\Bc^\pm_{i,j}$ coefficients on
+the $\theta=0$ axis.  This special case occurs because of the coordinate
+singularity on the $z$-axis which is present in spherical coordinates.  In the
+case of axisymmetry, this can be handled easily by L'H\^ opital's rule given the
+boundary condition (8.12).  For $\theta=0$ $(\hbox{or\ } \pi)$, we find that
+$$
+\lim\limits_{\theta \rightarrow 0}^{}{1 \over \sin\theta }{\partial  \over
+\partial \theta }\left({\sin\theta {\partial \psi  \over \partial \theta
+}}\right)=2{{\partial }^{2}\psi  \over \partial {\theta }^{2}}, \eqn{}
+$$
+which fixes the special case of (8.18).  (Evans [1986a] espouses an alternate
+approach for differencing near coordinate singularities based on numerical
+regularization.)  Notice also, that the differenced form of the Hamiltonian
+constraint has been multiplied by an overall factor of $r^2$ in order to simplify
+the equations and to remove the overall $r^{-2}$ scaling in the difference
+coefficients.
+
+The difference equations, as given in (8.16), for points on the boundary of the
+domain depend on values of the conformal factor outside the computational
+domain.  These unknowns are fixed by the boundary conditions which have, as yet,
+not been used.  I include the boundary conditions in the one-hole problem by the
+{\it explicit} use of ``virtual'' boundary points.  That is, the computational
+domain is expanded to include four sets of ``virtual'' mesh points, with the
+values of these mesh points being determined by the boundary conditions.  On the
+inner boundary, virtual points are added for $i=-1$ and $j=0,\ldots,\Jind$.  The
+second order finite difference form of (8.10) fixes these virtual boundary
+points by $$
+{\psi }_{-1,j}={\psi }_{1,j}+{h}_{x}{\psi }_{0,j}. \eqn{}
+$$
+On the outer boundary, virtual points are added for $i=\Iind+1$ and
+$j=0,\ldots,\Jind$.  The second order finite difference form of (8.11) fixes
+these virtual boundary points by
+$$
+{\psi }_{\Iind+1,j}={\psi }_{\Iind-1,j}-2{h}_{x}\left({{\psi }_{\Iind,j}-1}\right).
+\eqn{} $$
+Finally, the virtual points outside $\theta=0$ and $\pi/2$ are fixed by the
+second order finite difference form of (8.12).  These virtual points are located
+at $j=-1$ or $\Jind+1$ and $i=0,\ldots,\Iind$, and are defined by
+$$
+{\psi }_{i,-1}={\psi }_{i,1} \eqn{}
+$$
+and
+$$
+{\psi }_{i,\Jind+1}={\psi }_{i,\Jind-1}. \eqn{}
+$$
+
+The computational mesh used can be visualized as in Figure~8.1.  The collection
+of points which ``sample'' the computational domain (and the virtual boundary
+points) are thought of as a two-dimensional object mimicking the two-dimensional
+domain.  Each point is uniquely identified by an index pair.  It is often
+convenient to think of the collection of points as a one-dimensional {\it
+vector} instead of a two-dimensional mesh.  In this case, some ordering of the
+points is assumed and each mesh point (and virtual boundary point) maps to a
+unique element of the vector.  When viewed in this manner, objects such as the
+conformal factor will carry a single index instead of two as in (8.15).
+
+%\figlabel{3.625truein}{Figure~8.1:  Computational mesh and ``virtual'' boundary
+%points.}
+\figlabelpdf{3.625truein}{Figure~8.1:  Computational mesh and ``virtual'' boundary
+points.}{Figures/Figure8_1.pdf}
+
+If we think of the conformal factor as a vector, then the set of equations given
+by (8.16), (8.20), (8.21), (8.22), and (8.23) can be thought of abstractly as a
+{\it vector of equations} which acts on the vector of conformal factor values
+$$
+{\vecfunct}_{a}\left[{\psi }\right]=0. \eqn{}
+$$
+In general, $\vecfunct_a[\psi]$ will be a vector of nonlinear equations as is the
+case for the Hamiltonian constraint (8.16).  If the equations were linear (i.e.
+the extrinsic curvature is zero), then (8.24) can be represented by a square
+matrix dotted into the vector $\psi_a$, all set equal to some constant vector
+containing the terms which do not depend on the conformal factor.  The solution
+of the finite difference equations for the value of the conformal factor at the
+mesh points, then, reduces to the problem of inverting a large matrix.
+
+In the case of the Hamiltonian constraint, the system is not linear and another
+approach must be found.  There is no ideal approach for the solution of a set of
+nonlinear algebraic equations.  One approach for solving them is the iterative
+Newton-Raphson method for nonlinear systems ({\it cf}. Press {\it et al}.
+[1988]).  Assume that $\psi_a$ is some initial guess at the solution to (8.24). 
+Next, assume that the actual solution is given by $\psi_a+\delta\psi_a$ and
+expand (8.24) in a Taylor series.  Truncating at linear order, we find
+$$
+{\vecfunct}_{a}\left[{\psi +\delta \psi }\right]={\vecfunct}_{a}\left[{\psi
+}\right]+\sum\nolimits\limits_{b}^{} {\left.{{\partial {\vecfunct}_{a} \over \partial
+{\psi }_{b}}}\right|}_{\psi }{\delta \psi }_{b}+\Order\left({{\delta \psi
+}^{2}}\right)=0. \eqn{}
+$$
+If we define the linearized coefficient matrix $\coeffmatrix_{ab}$ as
+$$
+{\coeffmatrix}_{ab}\equiv {\left.{{\partial {\vecfunct}_{a} \over \partial {\psi
+}_{b}}}\right|}_{\psi } \eqn{}
+$$
+and the ``residual'' vector $\residual_a$ as
+$$
+{\residual}_{a}\equiv -{\vecfunct}_{a}\left[{\psi }\right], \eqn{}
+$$
+then the solution, $\delta\psi_a$, of the linearized equation
+$$
+\sum\nolimits\limits_{b}^{} {\coeffmatrix}_{ab}{\delta \psi
+}_{b}={\residual}_{a} \eqn{} 
+$$
+gives a first-order accurate correction to the initial guess $\psi_a$.  Updating
+the initial guess $(\psi_aÊ\rightarrow \psi_a + \delta\psi_a)$ and iterating
+until the correction becomes negligible everywhere will (in the absence of
+pathological sets of equations) yield a solution to the nonlinear equations
+(8.24) to any desired accuracy.
+
+Direct solutions of the difference equations (i.e., those which directly invert
+the coefficient or linearized coefficient matrix) are the preferred method of
+solving the finite difference equations whenever it is possible.  It is often
+the case, however, that the coefficient matrix is too large and requires too
+much computer memory to be directly inverted.  If this is the case, other
+approximation methods can be used such as simultaneous over-relaxation (SOR),
+alternating direction implicit (ADI), conjugate gradient (CG), and many others
+({\it cf}. Press {\it et al}. [1988] or Ames [1977]).  All such approximation
+schemes iteratively converge to the solution which would be found by a
+``direct'' solution.  The advantages of one over another deal with rates of
+convergence, computational efficiency, and the requirement of specific
+symmetries in the coefficient matrix.  Perhaps the most efficient method for
+solving the difference equations is the multigrid (MG) approach.  The use of
+this method for solving the Hamiltonian constraint has been discussed in
+Choptuik [1982], Choptuik and Unruh [1986], and Cook [1989].  I have used the MG
+approach for the solution of the finite difference equations in the case of a
+single hole.  The details of the MG method are left to Appendix A and the
+references therein.
+
+Given a solution to the finite difference form of the Hamiltonian constraint, it
+is important to extract any physically significant information about the initial
+data.  Of fundamental interest is the total ADM energy of the initial slice
+defined by (7.9).  In terms of the conformal factor and using gravitational
+units, this becomes
+$$
+E=-{1 \over 2\pi }\oint_{\infty }^{}{\bar{D}}{}^{i}\psi
+{d}^{2}{\bar{S}}{}_{i}. \eqn{}
+$$
+This is not, however, the best form to use for computing the total energy. 
+First, we recall that the computational domain does not extend to infinity and
+so this integral must be approximated by the integral over the outer boundary
+at a finite radius.  Second, evaluating (8.29) from numerical data will require
+that a numerical derivative be computed in order to evaluate the integrand. 
+Such a numerical derivative would necessarily add error to the evaluation of
+(8.29).  An alternate method for evaluating the total energy ({\it cf}. Bowen and
+York [1980]) can be derived by applying Gauss' law to (8.29).  The result is
+$$
+\eqalign{E&={1 \over 2\pi }\oint_{r=a}^{}{\bar{D}}{}^{i}\psi
+{d}^{2}{\bar{S}}{}_{i}-{1 \over 2\pi }\int_{r>a}^{}{\overline{\nabla
+}}^{2}\psi {d}^{3}\bar{V}\cr &={1 \over 4\pi }\oint_{r=a}^{}{\psi  \over
+r}{d}^{2}\bar{S}+{1 \over 16\pi }\int_{r>a}^{}{\psi
+}^{-7}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}{d}^{3}\bar{V},\cr}
+\eqn{}
+$$
+where the Hamiltonian constraint (4.8) and the inner boundary condition (7.2)
+have been used.  (Note that the unit normal for the surface integral over the
+inner boundary points out of the domain, i.e. toward the origin.)
+
+This form for the total energy is much superior to (8.29).  The computational
+approximation of a finite domain, however, means that the volume integral in
+(8.30) will be cut off radially at the outer boundary.  Because the integrand
+falls off as $\Order(r^{-2})$, the error in having a finite outer boundary
+will, nonetheless, be small if the boundary is far enough out.  The major
+portion of the energy results from the surface integral and the inner regions of
+the volume integral.  In terms of the coordinate system being used and in the
+case of axisymmetry, the total energy can be written in dimensionless form as
+$$
+{E \over a}\cong {1 \over 2}\int\limits_{\theta =0}^{\theta =\pi }{\psi
+}_{(x=0)}\sin\theta d\theta +{1 \over
+8}\int\limits_{\theta=0}^{\theta=\pi}{\int\limits_{x=0}^{x={x}_{f}}{\psi
+}^{-7}\left({{{a}^{2}\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right){e}^{3x}dx}d\theta
+. \eqn{} $$
+
+After computing the total energy, one might consider computing the higher order
+moments in the multipole expansion.  Because of the reflection symmetry through
+$\theta=\pi/2$, the dipole moment vanishes identically.  While higher moments
+will not vanish identically, it is not clear as to the usefulness of these
+quantities and they have not been calculated.  A quantity that {\it is} of
+interest is the area of the throat or minimal surface {\it in the physical
+space}.  This quantity is defined as 
+$$
+{A}_{\scriptscriptstyle MS}=\oint_{r=a}^{}{\psi }^{4}{d}^{2}\bar{S}. \eqn{}
+$$
+Associated with the area of the minimal surface is a mass defined similarly to
+irreducible mass by
+$$
+M=\sqrt {{A \over 16\pi }}. \eqn{}
+$$
+
+In terms of the coordinate system being used and in the case of axisymmetry, the
+area of the minimal surface can be written in dimensionless form as
+$$
+{{A}_{\scriptscriptstyle MS} \over {a}^{2}}=2\pi \int\limits_{\theta =0}^{\theta
+=\pi }{\psi }_{(x=0)}^{4}\sin\theta d\theta . \eqn{}
+$$
+
+A code was constructed to solve the finite difference equations described above
+using the multigrid algorithm described in Appendix A.  After obtaining a
+solution, the total energy and minimal surface area and mass are integrated
+numerically.  In order to test the accuracy of the code, use was made of an
+exact solution to a fully non-linear ``model'' Hamiltonian constraint found by
+Bowen and York [1980].  The model problem is obtained by considering a
+non-physical, spherically symmetric extrinsic curvature whose square is given by
+$$
+{a}^{2}\bar{A}^{T}_{ij}\bar{A}^{Tij}=24{\left({{P
+\over a}}\right)}^{2}{e}^{-6x}{\sinh}^{2}x. \eqn{}
+$$
+The solution to the model problem is
+$$
+{\psi }_{\scriptscriptstyle model}={e}^{-x/2}{\left[{6+2\cosh 2x+4\left({{E \over
+a}}\right)\cosh x}\right]}^{1/4}, \eqn{}
+$$
+where
+$$
+{E \over a}=\sqrt {4+{\left({{P \over a}}\right)}^{2}}. \eqn{}
+$$
+From (8.34), the area of the minimal surface in the model problem is
+$$
+{{A}_{\scriptscriptstyle model} \over {a}^{2}}=16\pi \left({2+{E \over a}}\right) \eqn{}
+$$
+and the mass is
+$$
+{{M}_{\scriptscriptstyle model} \over a}=\sqrt {2+{E \over a}}. \eqn{}
+$$
+
+The code was run using (8.35) for a series of values of the momentum and using
+the same computational domain as was used later for the physical problem. 
+Specifically, the outer boundary was set at $x=10$.  The radial discretization
+parameter was set at $\Iind=1024$ and the angular parameter at $\Jind=384$ on the
+finest grid used in the multigrid solution.  Table~8.1 below summarizes the
+results of the computer solution compared with the exact solution.  Full details
+on the multigrid solutions to the model problem as well as the physical problem
+can be found in Appendix B.  The computed solution has proven to be accurate to
+roughly one part in 10,000 for all examined quantities.
+
+Physical initial-data sets were generated with the same code using (8.7), (8.8),
+and (8.9) for the square of the extrinsic curvature.  The same computational
+domain and discretization were used for all cases as described above for the
+model problem.  The results are summarized in Tables~8.2 and 8.3 below.  The full
+details of the solutions can be found in Appendix B.  In the tables below, the
+printed digits represent the significant digits of the printed values as
+determined by a conservative error estimate.
+
+\vskip 0.25truein
+$$
+\vbox{\offinterlineskip
+\hrule
+\halign{\quad\hfil#\quad&\vrule#&
+\strut\quad\hfil#\quad&
+\quad\hfil#\quad&\vrule#&
+\strut\quad\hfil#\quad&
+\quad\hfil#\quad\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+$P/a$ &&	$E_{exact}/a$&$E_{comp.}/a$&&	$M_{exact}/a$&	$M_{comp.}/a$\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+	0.0&&2.00000&1.99997&&2.00000&1.99995\cr
+	1.0&&2.23607&2.23605&&2.05817&2.05812\cr
+	2.5&&3.20156&3.20156&&2.28069&2.28064\cr
+	5.0&&5.38517&5.38516&&2.71757&2.71750\cr
+	7.5&&7.76209&7.76209&&3.12443&3.12436\cr
+	10.0&&10.1980&10.1981&&3.49257&3.49249\cr
+	12.5&&12.6590&12.6590&&3.82871&3.82862\cr
+	15.0&&15.1328&15.1328&&4.13917&4.13908\cr
+	17.5&&17.6139&17.6139&&4.42876&4.42866\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\noalign{\smallskip}
+\multispan7 Table~8.1:  Numerical solution of the model problem compared\cr
+\multispan7 \hfil with the exact solution.\hfil\cr}}
+$$
+
+$$
+\vbox{\offinterlineskip
+\hrule
+\halign{\quad\hfil#\quad&\vrule#&
+\strut\quad\qquad\hfil#\quad&
+\quad\hfil#\quad\qquad&\vrule#&
+\qquad\quad\hfil#\hfil\quad&
+\qquad\hfil#\hfil\quad\quad\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+&&\multispan2\hfil$\bar{A}^+_{ij}$\hfil&&\multispan2\hfil$\bar{A}^-_{ij}$\hfil\cr
+$P/a$ &&	$E/a$ &	$M_{\scriptscriptstyle MS}/a$ &&	$E/a$ &	$M_{\scriptscriptstyle MS}/a$\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+	0.0&&2.000&2.000&&2.000&2.000\cr
+	1.0&&2.347&2.113&&2.330&2.100\cr
+	2.5&&3.589&2.470&&3.545&2.430\cr
+	5.0&&6.132&3.069&&6.078&3.001\cr
+	7.5&&8.815&3.589&&8.760&3.502\cr
+	10.0&&11.54&4.049&&11.49&3.946\cr
+	12.5&&14.29&4.463&&14.24&4.348\cr
+	15.0&&17.04&4.843&&17.00&4.716\cr
+	17.5&&19.81&5.195&&19.76&5.058\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\noalign{\smallskip}
+\multispan7 Table~8.2:  Energy and minimal surface mass for a single black
+hole\cr \multispan7 \hfil with linear momentum.\hfil\cr}}
+$$
+
+$$
+\vbox{\offinterlineskip
+\hrule
+\halign{\quad\hfil#\quad&\vrule#&
+\strut\qquad\qquad\hfil#\hfil\qquad&
+\qquad\hfil#\hfil\quad\quad\cr
+\omit&height2pt&\omit&\omit\cr
+	$S/a^2$ &&	$E/a$ &	$M_{\scriptscriptstyle MS}/a$\cr
+\omit&height2pt&\omit&\omit\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&\omit\cr
+	0.0&&2.000&2.000\cr
+	1.0&&2.048&2.033\cr
+	3.0&&2.328&2.227\cr
+	10.0&&3.477&3.034\cr
+	30.0&&5.759&4.673\cr
+	100.0&&10.41&8.071\cr
+	300.0&&17.99&13.67\cr
+	1000.0&&32.83&24.69\cr
+	10000.0&&103.8&77.56\cr
+\omit&height2pt&\omit&\omit\cr
+\noalign{\hrule}
+\noalign{\smallskip}
+\multispan4 Table~8.3:  Energy and minimal surface mass for a\cr
+\multispan4 \hfil single black hole with angular momentum.\hfil\cr}}
+$$
+\vfill
+\eject

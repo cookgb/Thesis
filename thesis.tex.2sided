@@ -1,0 +1,321 @@
+\magnification=\magstep1
+\nopagenumbers
+
+% Hyphenation Help for TeX
+\hyphenation{Schwarz-schild}
+\hyphenation{anti-parallel}
+
+% footnote definitions
+\font\eightrm=cmr8  \font\sixrm=cmr6
+\font\eighti=cmmi8  \font\sixi=cmmi6
+\font\eightsy=cmsy8 \font\sixsy=cmsy6
+\font\eightbf=cmbx8 \font\sixbf=cmbx6
+\font\eighttt=cmtt8
+\font\eightit=cmti8
+\font\eightsl=cmsl8
+
+\catcode`@=11
+\newskip\ttglue
+
+\def\tenpoint{\def\rm{\fam0\tenrm}% switch to 10-point type
+  \textfont0=\tenrm \scriptfont0=\sevenrm \scriptscriptfont0=\fiverm
+  \textfont1=\teni  \scriptfont1=\seveni  \scriptscriptfont1=\fivei
+  \textfont2=\tensy \scriptfont2=\sevensy \scriptscriptfont2=\fivesy
+  \textfont3=\tenex  \scriptfont3=\tenex   \scriptscriptfont3=\tenex
+  \textfont\itfam=\tenit  \def\it{\fam\itfam\tenit}%
+  \textfont\slfam=\tensl  \def\sl{\fam\slfam\tensl}%
+  \textfont\ttfam=\tentt  \def\tt{\fam\ttfam\tentt}%
+  \textfont\bffam=\tenbf  \scriptfont\bffam=\sevenbf
+   \scriptscriptfont\bffam=\fivebf  \def\bf{\fam\bffam\tenbf}%
+  \tt \ttglue=.5em plus.25em minus.15em
+  \normalbaselineskip=12pt
+  \setbox\strutbox=\hbox{\vrule height8.5pt depth3.5pt width0pt}%
+  \let\sc=\eightrm \let\big=\tenbig \normalbaselines\rm}
+
+\font\ttenrm=cmr10 at 10truept
+\font\ttenit=cmti10 at 10truept
+\font\ttensl=cmsl10 at 10truept
+\font\ttentt=cmtt10 at 10truept
+\font\ttenbf=cmbx10 at 10truept
+\font\tteni=cmmi10 at 10truept
+\font\ttensy=cmsy10 at 10truept
+\font\ttenex=cmex10 at 10truept
+\font\ttenbf=cmbx10 at 10truept
+\font\tsevenrm=cmr7 at 7truept
+\font\tsevenbf=cmbx7 at 7truept
+\font\tseveni=cmmi7 at 7truept
+\font\tsevensy=cmsy7 at 7truept
+\font\tfiverm=cmr5 at 5truept
+\font\tfivebf=cmbx5 at 5truept
+\font\tfivei=cmmi5 at 5truept
+\font\tfivesy=cmsy5 at 5truept
+
+\def\ttenpoint{\def\rm{\fam0\ttenrm}% switch to 10-truepoint type
+  \textfont0=\ttenrm \scriptfont0=\tsevenrm \scriptscriptfont0=\tfiverm
+  \textfont1=\tteni  \scriptfont1=\tseveni  \scriptscriptfont1=\tfivei
+  \textfont2=\ttensy \scriptfont2=\tsevensy \scriptscriptfont2=\tfivesy
+  \textfont3=\ttenex  \scriptfont3=\ttenex   \scriptscriptfont3=\ttenex
+  \textfont\itfam=\ttenit  \def\it{\fam\itfam\ttenit}%
+  \textfont\slfam=\ttensl  \def\sl{\fam\slfam\ttensl}%
+  \textfont\ttfam=\ttentt  \def\tt{\fam\ttfam\ttentt}%
+  \textfont\bffam=\ttenbf  \scriptfont\bffam=\tsevenbf
+   \scriptscriptfont\bffam=\tfivebf  \def\bf{\fam\bffam\ttenbf}%
+  \tt \ttglue=.5em plus.25em minus.15em
+  \normalbaselineskip=12truept \normallineskip=1truept
+     \normallineskiplimit=0truept
+  \setbox\strutbox=\hbox{\vrule height8.5truept depth3.5truept width0truept}%
+  \let\sc=\eightrm \let\big=\tenbig \normalbaselines\rm}
+
+
+\def\eightpoint{\def\rm{\fam0\eightrm} % switch to 8-point type
+  \textfont0=\eightrm \scriptfont0=\sixrm \scriptscriptfont0=\fiverm
+  \textfont1=\eighti  \scriptfont1=\sixi  \scriptscriptfont1=\fivei
+  \textfont2=\eightsy \scriptfont2=\sixsy \scriptscriptfont2=\fivesy
+  \textfont3=\tenex   \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \textfont\itfam=\eightit  \def\it{\fam\itfam\eightit}%
+  \textfont\slfam=\eightsl  \def\sl{\fam\slfam\eightsl}%
+  \textfont\ttfam=\eighttt  \def\tt{\fam\ttfam\eighttt}%
+  \textfont\bffam=\eightbf  \scriptfont\bffam=\sixbf
+   \scriptscriptfont\bffam=\fivebf  \def\bf{\fam\bffam\eightbf}%
+  \tt \ttglue=.5em plus.25em minus.15em
+  \normalbaselineskip=9pt
+  \setbox\strutbox=\hbox{\vrule height7pt depth2pt width0pt}%
+  \let\sc=\sixrm  \let\big=\eightbig  \normalbaselines\rm}
+
+\def\footnote#1{\edef\@sf{\spacefactor\the\spacefactor}#1\@sf
+	     \insert\footins\bgroup\eightpoint
+      \interlinepenalty100 \let\par=\endgraf
+        \leftskip=0pt \rightskip=0pt
+        \splittopskip=10pt plus 1pt minus 1pt \floatingpenalty=20000
+        \smallskip\item{#1}\bgroup\strut\aftergroup\@foot\let\next}
+\skip\footins=12pt plus 2pt minus 4pt % space added when footnote exists
+\dimen\footins=30pc % maximum footnotes per page
+
+% \settitle centers a multiline title
+\def\ctr#1{\hfill#1\hfill}
+\newbox\title
+\setbox\title=\hbox{}
+\def\settitle#1#2{\setbox\title=\vbox{
+    \tabskip0pt plus 1000pt
+    \baselineskip=16pt
+    \halign to \hsize{#2\ctr{##}\cr#1\crcr}
+    \normalbaselines
+    }}
+
+% Makes a centered Chapter head with 1 in of extra space at the
+% top and 0.5 in below. Use \cr to break long heads.
+\font\chapfnt=cmbx10 at 14truept
+\def\chapterhead#1{
+     \topskip 1truein
+					\settitle{#1} \chapfnt
+     \copy\title
+     \topskip 0truein 
+     \vskip .5truein }
+
+% \setlabel centers a multiline label
+\def\ctr#1{\hfill#1\hfill}
+\newbox\label
+\setbox\label=\hbox{}
+\def\setlabel#1#2{\setbox\label=\vbox{
+    \tabskip0pt plus 1000pt
+    \baselineskip=10pt
+    \halign to \hsize{#2\ctr{##}\cr#1\crcr}
+    \normalbaselines
+    }}
+
+%% Makes a centered Figure label
+\newbox\figbox
+\setbox\figbox=\vbox{}
+\def\figlabel#1#2{
+      \setlabel{#2}{}
+		    \setbox\figbox=\vbox{\vbox spread #1{} \copy\label}
+      \goodbreak
+      \midinsert
+      \copy\figbox
+      \vskip 0.125truein
+      \endinsert}
+
+%define reference style
+\def\reference#1{
+     \hangindent 1pc
+     \hangafter 1
+     \baselineskip=10truept plus1truept minus1truept
+     \noindent #1
+     \goodbreak
+     \vskip 0.1875truein
+     }
+
+\def\tablepage{\penalty-100\hbox to 0pt{}\dotfill}
+\def\toca#1#2#3{
+     {\leftskip=\parindent\rightskip=17pt
+     \noindent{\llap{#1\enspace}\ignorespaces}#2\ignorespaces
+                                \dotfill{\rlap{\hskip0.5em#3}}\par}
+     }
+\def\tocb#1#2#3{
+     {\leftskip=60pt\rightskip=17pt
+     \noindent{\llap{#1\enspace}\ignorespaces}#2\ignorespaces
+                                \dotfill{\rlap{\hskip0.5em#3}}\par}
+     }
+\def\tocc#1#2#3{
+     {\leftskip=#1pt\rightskip=17pt
+     \noindent{\llap{#2\enspace}\ignorespaces}\ignorespaces
+                                \dotfill{\rlap{\hskip0.5em#3}}\par}
+     }
+
+\def\blankpage{
+     \vbox to8.5truein{\vfill}\vfill\eject
+     }
+
+%define counter for automatic equation numbering
+\newcount\chapnum
+\newcount\eqcount
+\def\eqn#1{\global\advance\eqcount by1
+    \eqno{(\the\chapnum{.}\the\eqcount{#1})}}
+\def\eqnb#1{\eqno{(\the\chapnum{.}\the\eqcount{#1})}}
+\def\apeqn#1#2{\global\advance\eqcount by1
+    \eqno{(\hbox{#1}{.}\the\eqcount{#2})}}
+\def\apeqnb#1#2{\eqno{(\hbox{#1}{.}\the\eqcount{#2})}}
+\def\reseteqncount{\eqcount = 0}
+
+\def\Omegatilda{\smash{\Omega\kern-.75em\lower.95ex\hbox{$\sim$}}}
+\def\omegatilda{\smash{\omega\kern-.675em\lower.75ex\hbox{$\scriptstyle\sim$}}}
+\def\etilda{\smash{e\kern-.5em\lower.6ex\hbox{$\scriptscriptstyle\sim$}}}
+\def\dimR#1{^{\scriptscriptstyle {(#1)}}\!R}
+\mathchardef\Order="124F
+\def\Unitmatrix{\hbox{I\kern-0.5em I}}
+\mathchardef\actson="720E
+\mathchardef\Ac="7241
+\mathchardef\Bc="7242
+\mathchardef\Cc="7243
+\mathchardef\Dc="7244
+\mathchardef\vecfunct="7246
+\mathchardef\Hc="7248
+\mathchardef\Iind="7249
+\mathchardef\Jind="724A
+\mathchardef\coeffmatrix="724C
+\mathchardef\Mc="724D
+\mathchardef\Nc="724E
+\mathchardef\Pc="7250
+\mathchardef\residual="7252
+\mathchardef\Sind="7253
+
+\hsize=6truein         % UNC Dissertation rules
+\hoffset=.5truein      % UNC Dissertation rules
+
+% Arabic page numbers in upper right
+% Not on any page with \pageno = \firstcount
+\newcount\firstcount
+\headline={\tenrm \ifnum\pageno=\firstcount {\hfil} \else {\hfill \folio}
+\fi}
+
+% Title page before setting baselineskip and pagenumbering
+\pageno = -1
+\firstcount=\pageno  % prevent page number on title page
+\input TitlePage
+
+\baselineskip=20truept plus1truept minus1truept
+
+\input Abstract \blankpage
+\input Acknowledge \blankpage
+\input Contents
+\input Tablelist \blankpage
+\input Figurelist
+\input Notes
+
+\reseteqncount       % reset equation counter
+\chapnum = 1         % set chapter number
+\pageno = 1
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input Intro \blankpage
+
+\font\antisym=cmr17 at 21pt
+\reseteqncount       % reset equation counter
+\chapnum = 2         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input 3+1 \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 3         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input conformal \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 4         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input ConfImag
+
+\reseteqncount       % reset equation counter
+\chapnum = 5         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input Momentum
+
+\reseteqncount       % reset equation counter
+\chapnum = 6         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input TwoHoleA \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 7         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input Hamilton
+
+\reseteqncount       % reset equation counter
+\chapnum = 8         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input oneholeHam
+
+\reseteqncount       % reset equation counter
+\chapnum = 9         % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input twoholeHam
+
+\reseteqncount       % reset equation counter
+\chapnum = 10        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input twoholeCadez \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 11        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input apparentHoriz \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 12        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input oneholeAH \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 13        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input oneholeID \blankpage
+
+\reseteqncount       % reset equation counter
+\chapnum = 14        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input twoholeID
+
+\reseteqncount       % reset equation counter
+\chapnum = 15        % set chapter number
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input Conclusion
+
+\reseteqncount       % reset equation counter
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input appendixA \blankpage
+
+\reseteqncount       % reset equation counter
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input appendixB
+
+\reseteqncount       % reset equation counter
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input appendixC \blankpage
+
+\reseteqncount       % reset equation counter
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input appendixD \blankpage
+
+\firstcount=\pageno  % prevent page number on first page of chapter
+\input refs \blankpage
+
+\bye

@@ -1,0 +1,817 @@
+\chapterhead{Chapter~\the\chapnum:  The Hamiltonian Constraint for Two Black\cr
+Holes Using \v{C}ade\v{z} Coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As mentioned in Chapter~9, the coordinate system first used by \v{C}ade\v{z}
+[1971] in his early investigations into black-hole collisions is the best
+coordinate system known at this time for investigating the numerical evolution
+of two-hole, initial-data sets.  Unfortunately, this coordinate system is
+difficult to work with because it must be constructed numerically and because it
+contains a severe coordinate singularity.  In this chapter, I will describe all
+aspects of the problem of defining \v{C}ade\v{z} coordinates and explore an
+approach for applying them to the problem of solving the Hamiltonian constraint
+for two black holes.
+
+\v{C}ade\v{z} coordinates are defined in terms of a complex-plane
+transformation ({\it cf}. Moon and Spincer [1988]).  Letting the base
+coordinate system be cylindrical coordinates, the complex variable $\zeta$ is
+defined as 
+$$
+\zeta \equiv z+i\rho. \eqn{}
+$$
+The cylindrical coordinate $z$ is then the real part of $\zeta$ and the
+cylindrical coordinate $\rho$ is the imaginary part of $\zeta$.  The
+\v{C}ade\v{z} coordinates are defined as the real and imaginary parts of a
+complex function $\chi(\zeta)$.  Specifically,
+$$
+\eta (\rho ,z)\equiv \Re{e}\chi (\zeta)\qquad\hbox{and}\qquad\xi (\rho ,z)\equiv
+\Im{m}\chi (\zeta ). \eqn{}
+$$
+Defined in this way, the coordinate system is guaranteed to be orthogonal
+everywhere that $\chi$ is analytic.  The explicit form of the complex function
+$\chi$ is taken to be
+$$
+\chi (\zeta )\equiv {C}_{0}^{+}\ln(\zeta -{\zeta }^{+})+{C}_{0}^{-}\ln(\zeta
+-{\zeta }^{-})+\sum\nolimits\limits_{n=1}^{\infty }
+\left\{{{C}_{n}^{+}{\left({\zeta -{\zeta
+}^{+}}\right)}^{-n}+{C}_{n}^{-}{\left({\zeta -{\zeta
+}^{-}}\right)}^{-n}}\right\}. \eqn{} 
+$$
+The coefficients $C^\pm_i$ are real scalars and the two complex parameters
+$\zeta^\pm$ will fix the locations of the two holes.
+
+To see the general behavior of this transformation, consider the limit that
+$|\zeta|$ is large compared to $|\zeta^+|$ and $|\zeta^-|$.  In this case, (10.3)
+becomes 
+$$
+\chi (\zeta )\approx \left({{C}_{0}^{+}+{C}_{0}^{-}}\right)\ln(\zeta )
+\eqn{}
+$$
+and the coordinate transformations become
+$$
+\eta (\rho ,z)\approx \left({{C}_{0}^{+}+{C}_{0}^{-}}\right)\ln\sqrt {{\rho
+}^{2}+{z}^{2}} \eqn{a}
+$$
+and
+$$
+\xi (\rho ,z)\approx \left({{C}_{0}^{+}+{C}_{0}^{-}}\right)\arg(\zeta ). \eqnb{b}
+$$
+We are free to scale the coordinate system so that $C^+_0 + C^-_0 = 1$ and,
+in this limit, $\eta$ is simply a logarithmically scaled, spherical-polar radial
+coordinate and $\xi$ is simply the spherical-polar colatitude coordinate.  This
+transition to spherical-polar behavior in the coordinates is precisely the
+desired behavior, at large distances from the holes, alluded to in Chapter 9.
+
+If we consider only the logarithmic terms in (10.3) and take the limit that
+$\zeta\rightarrow\zeta^\pm$, then we find that the coordinates again approach
+logarithmically scaled, spherical-polar coordinates, but centered around
+$\zeta^\pm$.  We see then that the $\eta = constant$ surfaces near $\zeta^\pm$
+form ovals surrounding $\zeta^+$ and $\zeta^-$ and the coefficients in the
+infinite series in (10.3) can be chosen to make specific $\eta = constant$
+surfaces truly spherical.  This is again the desired behavior, near the holes,
+for a coordinate system described in Chapter~9.
+
+The coordinate system based on (10.3) thus has all of the properties desired
+for a coordinate system to be used for a two-hole manifold.  Previous work
+(\v{C}ade\v{z} [1971], Smarr {\it et al}. [1976], Rauber [1985]) done with these
+coordinates has been restricted to the case in which the two holes are of equal
+size.  This restriction simplifies the definition of the coordinate system
+(10.3).  Here, however, I have extended the traditional definition of
+\v{C}ade\v{z} coordinates so that it can address problems in which the holes
+are not of equal size.  The remaining task in defining the \v{C}ade\v{z}
+coordinates is to prescribe a method for fixing the coefficients $C^\pm_i$ and
+parameters $\zeta^\pm$.
+
+As in the case of bispherical coordinates, I parameterize the configuration by
+the two dimensionless parameters $\alpha$ and $\beta$ ({\it cf}. Chapter~9).  In
+order to maintain the ability to transform to bispherical coordinates easily, I
+choose to locate the boundaries of the holes (throats) as prescribed in
+Chapter~9 for bispherical coordinates.  This approach determines the two
+bispherical coordinate surfaces $\eta^\pm_0$ with which the throats are
+coincident.  The two positional parameters $\zeta^\pm$ are then fixed as 
+$$
+{\zeta }^{+}\equiv \cosh{\eta
+}_{0}^{+}\qquad\hbox{and}\qquad{\zeta }^{-}\equiv {\alpha }^{-1}\cosh{\eta
+}_{0}^{-}. \eqn{}
+$$
+In terms of the complex variable $\zeta$, the two sets of points constituting the
+throats can be parameterized by $\theta^\pm$ in the following way:
+$$
+\zeta ({\theta }^{+})\equiv {\zeta }^{+}+\cos{\theta }^{+}+i\sin{\theta
+}^{+}\qquad\hbox{for}\quad 0\le {\theta }^{+}\le \pi \eqn{}
+$$
+and
+$$
+\zeta ({\theta }^{-})\equiv {\zeta }^{-}+{\alpha }^{-1}\left({\cos{\theta
+}^{-}+i\sin{\theta }^{-}}\right)\qquad\hbox{for}\quad 0\le {\theta }^{-}\le \pi.
+\eqn{}
+$$
+Using (10.7) and (10.8), the $C^\pm_i$ coefficients are fixed by demanding that
+$$
+{\eta }^{+}=\Re{e}\chi (\zeta ({\theta }^{+}))\qquad\hbox{and}\qquad{\eta
+}^{-}=\Re{e}\chi (\zeta ({\theta }^{-})), \eqn{}
+$$
+where $\eta^\pm$ are the coordinate values of the \v{C}ade\v{z} coordinate
+$\eta$ for each of the throats and these can be freely chosen (the implications
+of their choice will be discussed below).  The two equations in (10.9),
+evaluated at a large set of points on (10.7) and (10.8), yield a large set of
+equations which can be used to fix the $C^\pm_i$ coefficients numerically by a
+linear least squares fit.  Finally, given values for the $C^\pm_i$ coefficients,
+they, and the values for $\eta^\pm$, are rescaled so that $C^+_0 + C^-_0 =
+1$.
+
+Given a point in cylindrical coordinates, the corresponding point in
+\v{C}ade\v{z} coordinates is easily obtained from (10.2).  However, given a
+point $\chi_0 = \chi(\eta,x)$ in \v{C}ade\v{z} coordinates, the corresponding
+point in cylindrical coordinates can only by found numerically.  The inversion
+can be accomplished iteratively via Newton's method generalized for complex
+functions.  The algorithm is
+$$
+{\zeta }^{i+1}={\zeta }^{i}-\left({\chi ({\zeta }^{i})-{\chi
+}_{0}}\right){\left({{\left.{{\partial \chi  \over \partial \zeta
+}}\right|}_{{\zeta }^{i}}}\right)}^{-1}. \eqn{}
+$$
+
+Because of the behavior demanded in the coordinate system around the throats and
+at large distances, there is necessarily a critical point in the complex
+transformation (10.3).  This point is defined by
+$$
+{\partial \chi (\zeta ) \over \partial \zeta }=0. \eqn{}
+$$
+Recalling the Cauchy-Riemann conditions
+$$
+{\partial \eta  \over \partial z}={\partial \xi  \over \partial \rho
+}\qquad\hbox{and}\qquad{\partial \eta  \over \partial \rho }=-{\partial \xi 
+\over \partial z}, \eqn{}
+$$
+the determinant of the Jacobian of the coordinate transformation becomes
+$$
+J={\partial \eta  \over \partial \rho }{\partial \xi  \over \partial
+z}-{\partial \eta  \over \partial z}{\partial \xi  \over \partial \rho
+}=-{\left({{\partial \eta  \over \partial \rho }}\right)}^{2}-{\left({{\partial
+\eta  \over \partial z}}\right)}^{2}=-{\left|{{\partial \chi  \over \partial
+\zeta }}\right|}^{2}. \eqn{}
+$$
+Thus, the critical point in (10.3) is a saddle-point singularity of the
+coordinate system.  This singular point will be located somewhere on the
+symmetry axis connecting the two throats.  The exact location will be determined
+by the choices made for the values of $\eta^\pm$.  In fact, the freedom to choose
+$\eta^\pm$ is used to position the singularity at some desired location.
+
+The location of the singular point must be determined numerically.  Having fixed
+the coefficients in the definition of (10.3) as describe above, equation (10.11)
+can be solved iteratively via Newton's method generalized for complex
+functions.  The algorithm is 
+$$
+{\zeta }_{s}^{i+1}={\zeta }_{s}^{i}-{\left.{{\partial \chi  \over \partial
+\zeta }}\right|}_{{\zeta }_{s}^{i}}{\left({{\left.{{{\partial }^{2}\chi  \over
+\partial {\zeta }^{2}}}\right|}_{{\zeta }_{s}^{i}}}\right)}^{-1}, \eqn{}
+$$
+where $\zeta_s$ denotes the singular value of $\zeta$.
+
+%\figlabel{4.125truein}{Figure~10.1:  \v{C}ade\v{z} coordinates near the two holes
+%showing important coordinate \cr lines and the {\it three} region nature of the
+%coordinate system.}
+\figlabelpdf{4.125truein}{Figure~10.1:  \v{C}ade\v{z} coordinates near the two holes
+showing important coordinate \cr lines and the {\it three} region nature of the
+coordinate system.}{Figures/Figure10_1.pdf}
+
+Expanding (10.2) about the singular point and making use of the Cauchy-Riemann
+conditions, the coordinate transformation is given locally by
+$$
+\eta (\rho ,z)={\eta }_{s}+{{\eta }_{,\rho \rho } \over 2}\left({{\rho
+}^{2}-{(z-{z}_{s})}^{2}}\right)\quad\hbox{and}\quad\xi (\rho ,z)={\xi
+}_{s}-{\eta }_{,\rho \rho }\rho (z-{z}_{s}). \eqn{}
+$$
+We see that $\xi=\xi_s$ is a double image along the $z$-axis and so must be
+handled carefully.  The singular point effectively divides the \v{C}ade\v{z}
+coordinatization into three regions (see Figure~10.1):  one surrounding each of
+the two throats and one region surrounding both throats and extending to
+infinity.  With $(\eta_s,\xi_s)$ denoting the singular point in \v{C}ade\v{z}
+coordinates, the three regions are given explicitly (assuming $C^+_0 + C^-_0 =
+1$) by
+$$
+\hbox{Region~1}\equiv \cases{{\eta }^{+}\le \eta <{\eta }_{s}\cr
+0\le \xi \le {\xi }_{s}\cr}, \eqn{a}
+$$
+$$
+\hbox{Region~2}\equiv \cases{{\eta }^{-}\le \eta <{\eta }_{s}\cr
+{\xi }_{s}\le \xi \le \pi \cr}, \eqnb{b}
+$$
+and
+$$
+\hbox{Region~3}\equiv \cases{{\eta }_{s}\le \eta <\infty \cr
+0\le \xi \le \pi \cr}. \eqnb{c}
+$$
+
+The presence of this coordinate singularity places one final restriction on the
+definition of the \v{C}ade\v{z} coordinates. In order to handle the singular
+point numerically, I will demand that it always be represented in the
+discretization of the domain.  In order to maintain a constant interval in the
+discretization of the $\eta$ coordinate, it is necessary to demand that
+$$
+{{\eta }_{s}-{\eta }^{+} \over {\eta }_{s}-{\eta }^{\_}}={{\Iind}^{+} \over
+{\Iind}^{-}}, \eqn{}
+$$
+where $\Iind^+$ and $\Iind^-$ are positive integers.  This demand can be
+satisfied iteratively by making initial guesses for $\eta^\pm$, solving for the
+\v{C}ade\v{z} coefficients, and determining an initial value for $\eta_s$.  Next,
+if (10.17) is not satisfied, assume $\eta^+\rightarrow\eta^++\varepsilon$ and
+$\eta^-\rightarrow\eta^--\varepsilon$.  Inserting these into (10.17) and solving
+for $\varepsilon$ gives a correction for $\eta^\pm$.  The new guesses for
+$\eta^\pm$ are used to solve again for the \v{C}ade\v{z} coefficients and for
+$\eta_s$ and the iteration is continued until (10.17) is satisfied.  This
+procedure has proven to be rapidly convergent.
+
+With the \v{C}ade\v{z} coordinates fully defined, they can now be applied to
+the problem of solving the Hamiltonian constraint.  Because of the nature of the
+coordinate transformations, all quantities are explicitly functions of the
+cylindrical coordinates and are functions of the \v{C}ade\v{z} coordinates
+only implicitly through the numerical inverse coordinate transformation.  The
+Jacobian of the coordinate transformation from cylindrical to \v{C}ade\v{z}
+coordinates is given by
+$$
+{J}_{i}^{j}=\left[{\matrix{{\eta }_{,\rho }&0&{\eta }_{,z}\cr 0&1&0\cr {\eta
+}_{,z}&0&-{\eta }_{,\rho }\cr}}\right] \eqn{}
+$$
+and the inverse Jacobian by
+$$
+{\left({{J}^{-1}}\right)}_{i}^{j}=\left[{\matrix{{{\eta }_{,\rho } \over
+\left({{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}\right)}&0&{{\eta }_{,z} \over
+\left({{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}\right)}\cr  0&1&0\cr {{\eta }_{,z}
+\over \left({{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}\right)}&0&{-{\eta }_{,\rho }
+\over \left({{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}\right)}\cr}}\right]. \eqn{}
+$$
+The metric is given by
+$$
+{ds}^{2}={{a}_{1}^{2} \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}\left({{d\eta }^{2}+{d\xi }^{2}}\right)+{a}_{1}^{2}{\rho }^{2}{d\phi
+}^{2}, \eqn{}
+$$
+where $\rho$ and $z$ are dimensionless coordinates scaled relative to $a_1$.
+
+The Laplacian can be written in \v{C}ade\v{z} coordinates by applying the
+chain rule to the Laplacian in cylindrical coordinates as done by Rauber
+[1985].  The Laplacian, in this form, cannot be conservatively differenced which
+is a significant disadvantage to finding numerical solutions.  However, by
+making use of the explicit form of the inverse Jacobian, the Laplacian can be
+rewritten in a form which can be conservatively differenced.  Restricting to the
+case of axisymmetry, the Laplacian, written conservatively in \v{C}ade\v{z}
+coordinates, takes the form
+$$
+{\overline{\nabla }}^{2}\psi ={{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2} \over
+{a}_{1}^{2}\rho }\left\{{{\partial  \over \partial \eta }\left({\rho {\partial
+\psi  \over \partial \eta }}\right)+{\partial  \over \partial \xi }\left({\rho
+{\partial \psi  \over \partial \xi }}\right)}\right\}. \eqn{}
+$$
+The boundary conditions (7.2) on the two inversion boundaries located at $\eta =
+\eta^\pm$ take the following forms,
+$$
+{\left[{\sqrt {{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}{\partial \psi  \over
+\partial \eta }+{\psi  \over 2}}\right]}_{\eta ={\eta }^{+}}=0 \eqn{a}
+$$
+and
+$$
+{\left[{\sqrt {{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}{\partial \psi  \over
+\partial \eta }+{\alpha \psi  \over 2}}\right]}_{\eta ={\eta }^{-}}=0. \eqnb{b}
+$$
+On the $z$-axis, axisymmetry must be used to impose a boundary condition on this
+coordinate boundary.  The $z$-axis exists on four separate segments in the
+\v{C}ade\v{z} coordinate system.  The two boundaries for which $\xi=0$ and
+$\xi=\pi$ correspond, respectively, to the $z$-axis extending to infinity from
+the right of the right-most hole and to the left of the left-most hole.  The
+boundaries in Regions~1 and 2 (10.16a,b) for which $\xi=\xi_s$ and
+$\eta\le\eta_s$ also correspond to the $z$-axis located between the holes.  On
+these boundaries, axisymmetry demands that
+$$
+{\left.{{\partial \psi  \over \partial \xi }}\right|}_{\rho =0}=0.\eqn{}
+$$
+As usual, a limiting form of the Laplacian must be found along the $\rho=0$
+axis.  Using the axisymmetry boundary condition (10.23) and L'H\^{o}pital's rule,
+the Laplacian takes the form
+$$
+{\left.{{\overline{\nabla }}^{2}\psi }\right|}_{\rho =0}={{\eta }_{,z}^{2}
+\over {a}_{1}^{2}}\left\{{{{\partial }^{2}\psi  \over {\partial \eta
+}^{2}}+2{{\partial }^{2}\psi  \over {\partial \xi }^{2}}}\right\}+{{\eta
+}_{,\rho \rho } \over {a}_{1}^{2}}{\partial \psi  \over \partial \eta }.
+\eqn{}
+$$
+
+The outer boundary of the domain in which the Hamiltonian constraint will be
+found does not conveniently extend to infinity where the boundary condition of
+asymptotic flatness is naturally applied.  Instead, the approximate outer
+boundary condition (7.27) is applied at a finite but large radius.  For the case
+of two black holes with axisymmetric linear momentum, and assuming gravitational
+units, (7.27) takes the form
+$$
+{\partial \psi  \over \partial r}={1-\psi  \over r}-{1 \over
+2{r}^{3}}\left\{{{d}_{z}\cos\theta +{9 \over
+16}{\left({{P}_{1}+{P}_{2}}\right)}^{2}\cos 2\theta }\right\}+{1 \over
+r}\Order({r}^{-3}). \eqn{}
+$$
+While \v{C}ade\v{z} coordinates do approach spherical coordinates at large
+distances from the holes, they are not exactly spherical coordinates and so the
+radial derivative must be handled carefully.  The radial derivative can be
+written in terms of \v{C}ade\v{z} coordinates by the use of the chain rule
+as follows:
+$$
+\eqalign{{\partial  \over \partial r}&=\cos\theta {\partial  \over \partial
+z}+\sin\theta {\partial  \over \partial \rho }\cr &={\left({z{\eta }_{,z}+\rho
+{\eta }_{,\rho }}\right) \over r}{\partial  \over \partial \eta }-{\left({z{\eta
+}_{,\rho }-\rho {\eta }_{,z}}\right) \over r}{\partial  \over \partial \xi
+}.\cr} \eqn{}
+$$
+The outer boundary condition (10.25) can thus be written as
+$$
+\left({z{\eta }_{,z}+\rho {\eta }_{,\rho }}\right){\partial \psi  \over
+\partial \eta }-\left({z{\eta }_{,\rho }-\rho {\eta }_{,z}}\right){\partial
+\psi  \over \partial \xi }+{{d}_{z}z \over 2{\left({{\rho
+}^{2}+{z}^{2}}\right)}^{3/2}}+{9 \over
+32}{\left({{P}_{1}+{P}_{2}}\right)}^{2}{\left({{z}^{2}-{\rho }^{2}}\right) \over
+{\left({{\rho }^{2}+{z}^{2}}\right)}^{2}}=0, \eqn{}
+$$
+and is applied at an outer boundary where $\eta=\eta_f$.  As discussed in
+Chapter~7, this boundary condition must be applied iteratively since it depends
+on the dipole moment $d_z$ which must be determined from the solution.
+
+The differencing of the Hamiltonian constraint is complicated by the
+discretization of the computational domain which, as mentioned above, is
+naturally divided into three regions.  The $\eta$ coordinate is discretized as 
+$$
+{\eta }_{i}=i*{h}_{\eta }+{\eta
+}_{s}\qquad\hbox{where}\qquad\cases{i=-{\Iind}^{+},\ldots,-1&: Region~1\cr
+i=-{\Iind}^{-},\ldots,-1&: Region~2\cr i=0,\ldots,\Iind&: Region~3\cr} \eqn{}
+$$
+and
+$$
+{h}_{\eta }={{\eta }_{f}-{\eta }_{s} \over \Iind}={{\eta }_{s}-{\eta }^{+} \over
+{\Iind}^{+}}={{\eta }_{s}-{\eta }^{-} \over {\Iind}^{-}}. \eqn{}
+$$
+The discretization of the $\xi$ coordinate cannot be done directly.  The singular
+value of $\xi$ must always occur in the discretization and this will not, in
+general, be compatible with a uniform discretization.  This situation is
+analogous to that already dealt with for the discretization of the $\eta$
+coordinate in bispherical coordinates.  I reparameterize $\xi$ in terms of an
+auxiliary variable $s$ so that
+$$
+\xi =\xi (s)=f*{s}^{2}+g*s+{\xi }_{s}. \eqn{}
+$$
+The new coordinate $s$ is then discretized as follows
+$$
+{s}_{j}=j*{h}_{s}\qquad\hbox{where}\qquad
+j=-{\Sind}^{+},\ldots,0,\ldots,{\Sind}^{-} \eqn{}
+$$
+and
+$$
+{h}_{s}={1 \over \Sind}\qquad\hbox{where}\qquad\Sind={\Sind}^{+}+{\Sind}^{-}.
+\eqn{}
+$$
+Together, (10.31) and (10.32) guarantee that $\xi(0) = \xi_s$ is in the discrete
+domain.  The two constants $f$ and $g$ are chosen so that the end points of the
+range of $s$ give the correct coordinate boundaries for $\xi$.  Let the upper and
+lower limits on the range of $s$ be defined as
+$$
+{s}^{-}\equiv {\Sind}^{-}*{h}_{s}={\Sind}^{-}/\Sind \eqn{}
+$$
+and
+$$
+{s}^{+}\equiv -{\Sind}^{+}*{h}_{s}=-{\Sind}^{+}/\Sind. \eqn{}
+$$
+The two constants $f$ and $g$ are fixed by the two equations
+$$
+\xi ({s}^{+})=0\qquad\hbox{and}\qquad\xi ({s}^{-})=\pi. \eqn{}
+$$
+The result is
+$$
+f={\Sind \over {\Sind}^{-}}\pi -{{\Sind}^{2} \over {\Sind}^{+}{\Sind}^{-}}{\xi
+}_{s} \eqn{}
+$$
+and
+$$
+g={{\Sind}^{+} \over {\Sind}^{-}}\pi
++{\Sind\left({{\Sind}^{-}-{\Sind}^{+}}\right) \over {\Sind}^{+}{\Sind}^{-}}{\xi
+}_{s}. \eqn{}
+$$
+
+As was the case for bispherical coordinates, the Jacobian of the
+reparameterization is given by
+$$
+J(s)\equiv {\partial \xi (s) \over \partial s}=2f*s+g, \eqn{}
+$$
+and $\xi$ will be monotonically increasing as $s$ increases if and only if
+$$
+J({s}^{+}-{h}_{s})>0\qquad\hbox{and}\qquad J({s}^{-}+{h}_{s})>0. \eqn{}
+$$
+From (10.39), a sufficient condition for the coordinate system to be well
+behaved is
+$$
+{\Sind\left({2+\Sind}\right) \over
+{\Sind}^{+}\left({2+\Sind+{\Sind}^{-}}\right)}<{\pi  \over {\xi
+}_{s}}<{\Sind\left({2+\Sind}\right) \over
+{\Sind}^{+}\left({2+{\Sind}^{+}}\right)}. \eqn{}
+$$
+
+In practice, one chooses values for $\alpha$ and $\beta$ to fix the configuration
+and also a value for the ratio $\Iind^+/\Iind^-$ (see (10.17)) to position the
+singular point.  Next, one chooses values for $\Sind^+$ and $\Sind^-$ so that
+(10.40) is satisfied.  The discretization of the $(\eta,s)$-domain is then given
+by (10.28) and (10.31).  The second order, conservative finite difference form of
+the Hamiltonian constraint is expressed (except at the singular point $i=j=0$) as
+$$
+\eqalign{{\Ac}_{i,j}^{+}\left({{\psi }_{i+1,j}-{\psi
+}_{i,j}}\right)&+{\Ac}_{i,j}^{-}\left({{\psi }_{i-1,j}-{\psi
+}_{i,j}}\right)+{\Bc}_{i,j}^{+}\left({{\psi }_{i,j+1}-{\psi
+}_{i,j}}\right)\cr&+{\Bc}_{i,j}^{-}\left({{\psi }_{i,j-1}-{\psi }_{i,j}}\right)
++{1 \over 8}{\psi }_{i,j}^{-7}{\left[{{a}_{1}^{2}{\bar{A}}{}_{\ell
+}{}_{m}{\bar{A}}{}^{\ell }{}^{m}}\right]}_{i,j}=0,\cr} \eqn{}
+$$
+where
+$$
+{\Ac}_{i,j}^{\pm }\equiv \cases{{\left({{\left.{{\eta }_{,\rho
+}^{2}}\right|}_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}+{\left.{{\eta
+}_{,z}^{2}}\right|}_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}}\right) \over
+{h}_{\eta }^{2}{\rho }_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}}{\rho
+}_{\left({{\eta }_{i}\pm {h}_{\eta }/2,\xi ({s}_{j})}\right)}&:$\hbox{for all
+$(i,j)$ except $i=j=0$;} \atop \hfill{\hbox{or all $i$ and
+$j=-{\Sind}^{+},{\Sind}^{-}$;} \atop \hfill\hbox{or $i<0$ and $j=0$}}$\cr
+{{\left.{{\eta }_{,z}^{2}}\right|}_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}
+\over {h}_{\eta }^{2}}\pm {{\left.{{\eta }_{,\rho \rho }}\right|}_{\left({{\eta
+}_{i},\xi ({s}_{j})}\right)} \over {2h}_{\eta }}&:$\hbox{for all $i$ and
+$j=-{\Sind}^{+},{\Sind}^{-}$;} \atop \hfill\hbox{and $i<0$ and $j=0$}$\cr} \eqn{}
+$$
+and
+$$
+{\Bc}_{i,j}^{\pm }\equiv \cases{{\left({{\left.{{\eta }_{,\rho
+}^{2}}\right|}_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}+{\left.{{\eta
+}_{,z}^{2}}\right|}_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}}\right) \over
+{h}_{s}^{2}J({s}_{j}){\rho }_{\left({{\eta }_{i},\xi ({s}_{j})}\right)}}{{\rho
+}_{\left({{\eta }_{i},\xi ({s}_{j}\pm {h}_{s}/2)}\right)} \over J({s}_{j}\pm
+{h}_{s}/2)}&:$\hbox{for all $(i,j)$ except $i=j=0$;} \atop \hfill{\hbox{or all
+$i$ and $j=-{\Sind}^{+},{\Sind}^{-}$;} \atop \hfill\hbox{or $i<0$ and
+$j=0$}}$\cr {\left({2{\left.{{\eta }_{,z}^{2}}\right|}_{\left({{\eta }_{i},\xi
+({s}_{j})}\right)}}\right) \over {h}_{s}^{2}J({s}_{j})}{1 \over J({s}_{j}\pm
+{h}_{s}/2)}&:$\hbox{for all $i$ and $j=-{\Sind}^{+},{\Sind}^{-}$;} \atop
+\hfill\hbox{and $i<0$ and $j=0$}$.\cr} \eqn{}
+$$
+The differencing of the Laplacian at the singular point must be handled as a
+special case and will be discussed below.
+
+The boundary conditions will be handled through the {\it implicit} use of
+``virtual'' boundary points as in the case of bispherical coordinates.  The
+finite difference form for the  inner boundary condition for Region~1 (10.22a),
+put in a form which is most convenient for eliminating the dependence on the
+virtual boundary points, is given by
+$$
+\left({{\psi }_{-{\Iind}^{+}-1,j}-{\psi }_{-{\Iind}^{+},j}}\right)=\left({{\psi
+}_{-{\Iind}^{+}+1,j}-{\psi }_{-{\Iind}^{+},j}}\right)+{{h}_{\eta }{\psi
+}_{-{\Iind}^{+},j} \over \sqrt {{\left.{{\eta }_{,\rho
+}^{2}}\right|}_{\left({{\eta }^{+},\xi ({s}_{j})}\right)}+{\left.{{\eta
+}_{,z}^{2}}\right|}_{\left({{\eta }^{+},\xi ({s}_{j})}\right)}}}, \eqn{}
+$$
+and the inner boundary condition for Region~2 (10.22b) is given by
+$$
+\left({{\psi }_{-{\Iind}^{-}-1,j}-{\psi }_{-{\Iind}^{-},j}}\right)=\left({{\psi
+}_{-{\Iind}^{-}+1,j}-{\psi }_{-{\Iind}^{-},j}}\right)+{\alpha {h}_{\eta }{\psi
+}_{-{\Iind}^{-},j} \over \sqrt {{\left.{{\eta }_{,\rho
+}^{2}}\right|}_{\left({{\eta }^{-},\xi ({s}_{j})}\right)}+{\left.{{\eta
+}_{,z}^{2}}\right|}_{\left({{\eta }^{-},\xi ({s}_{j})}\right)}}}. \eqn{}
+$$
+The finite difference form for the outer boundary condition of Region 3 (10.27)
+is expressed as
+$$
+\eqalign{({\psi }_{\Iind+1,j}&-{\psi }_{\Iind,j})=\left({{\psi
+}_{\Iind-1,j}-{\psi }_{\Iind,j}}\right)+{2{h}_{\eta }\left({1-{\psi
+}_{\Iind,j}}\right) \over {\left({z{\eta }_{,z}+\rho {\eta }_{,\rho
+}}\right)}_{\left({{\eta }_{f},\xi ({s}_{j})}\right)}}\cr&+{{h}_{\eta } \over
+{h}_{s}J({s}_{j})}{\left({{z{\eta }_{,\rho }-\rho {\eta }_{,z} \over z{\eta
+}_{,z}+\rho {\eta }_{,\rho }}}\right)}_{\left({{\eta }_{f},\xi
+({s}_{j})}\right)}\left({\left({{\psi }_{\Iind,j+1}-{\psi
+}_{\Iind,j}}\right)-\left({{\psi }_{\Iind,j-1}-{\psi
+}_{\Iind,j}}\right)}\right)\cr&-{d}_{z}{\left({{{h}_{\eta }z{\left({{\rho
+}^{2}+{z}^{2}}\right)}^{-3/2} \over z{\eta }_{,z}+\rho {\eta }_{,\rho
+}}}\right)}_{\left({{\eta }_{f},\xi
+({s}_{j})}\right)}\cr&-{9{\left({{P}_{1}+{P}_{2}}\right)}^{2} \over
+16}{\left({{{h}_{\eta }\left({{z}^{2}-{\rho }^{2}}\right){\left({{\rho
+}^{2}+{z}^{2}}\right)}^{-2} \over z{\eta }_{,z}+\rho {\eta }_{,\rho
+}}}\right)}_{\left({{\eta }_{f},\xi ({s}_{j})}\right)}.\cr} \eqn{} $$
+The axisymmetry boundary conditions (10.23) give
+$$
+\left({{\psi }_{i,-{\Sind}^{+}-1}-{\psi }_{i,-{\Sind}^{+}}}\right)=\left({{\psi
+}_{i,-{\Sind}^{+}+1}-{\psi }_{i,-{\Sind}^{+}}}\right), \eqn{}
+$$
+$$
+\left({{\psi }_{i,{\Sind}^{-}+1}-{\psi }_{i,{\Sind}^{-}}}\right)=\left({{\psi
+}_{i,{\Sind}^{-}-1}-{\psi }_{i,{\Sind}^{-}}}\right), \eqn{}
+$$
+$$
+\left({{\psi }_{i,1}-{\psi }_{i,0}}\right)=\left({{\psi }_{i,-1}-{\psi
+}_{i,0}}\right)\qquad\hbox{for}\quad i<0 \hbox{ in Region~1}, \eqn{}
+$$
+and
+$$
+\left({{\psi }_{i,-1}-{\psi }_{i,0}}\right)=\left({{\psi }_{i,1}-{\psi
+}_{i,0}}\right)\qquad\hbox{for}\quad i<0 \hbox{ in Region~2}. \eqn{}
+$$
+
+As mentioned above, the differencing of the Laplacian at the singular point
+cannot be handled in the usual manner since even the limiting behavior of the
+Laplacian, as the singular point is approached, is not well defined.  One
+approach to differencing the Laplacian at the singular point is obtained by
+considering the mesh in the neighborhood of the singular point not as a
+regularly spaced mesh in \v{C}ade\v{z} coordinates, but rather as an
+irregularly spaced mesh in cylindrical coordinates.  For an axisymmetric
+configuration, the Laplacian at the singular point takes the cylindrical
+coordinate form of
+$$
+{\left.{{\overline{\nabla }}^{2}\psi }\right|}_{\left({\rho
+=0,z={z}_{s}}\right)}=2{{\partial }^{2}\psi  \over {\partial \rho
+}^{2}}+{{\partial }^{2}\psi  \over {\partial z}^{2}}. \eqn{}
+$$
+To express (10.51) by finite differences, discrete approximations to both
+second derivatives must be found which can be constructed from the irregular
+distribution of mesh point in the cylindrical coordinate system.
+
+Assuming axisymmetry in the conformal factor, the general Taylor series
+expansion about the singular point takes the form
+$$
+\eqalign{\psi ({z}_{s}+h,k)={\psi }_{s}+{\psi }_{,z}h&+{1 \over 2}{\psi
+}_{,zz}{h}^{2}+{1 \over 2}{\psi }_{,\rho \rho }{k}^{2}+{1 \over 2}{\psi
+}_{,z\rho \rho }h{k}^{2}+{1 \over 6}{\psi }_{,zzz}{h}^{3}\cr&+\left\{{{1 \over
+4}{\psi }_{,zz\rho \rho }{h}^{2}{k}^{2}+{1 \over 24}{\psi }_{,zzzz}{h}^{4}+{1
+\over 24}{\psi }_{,\rho \rho \rho \rho }{k}^{4}+\cdots}\right\}.\cr} \eqn{}
+$$
+If this series is truncated at some level and the difference between the value
+of the conformal factor at the singular point and a sufficient number of
+neighboring points are taken in (10.52), then the result is a matrix problem for
+the derivatives of the conformal factor at the singular point.  In order for the
+truncation error in the approximations of the second derivatives to be second
+order in $h$ and $k$, all of the terms not bracketed in (10.52) must be included
+in the expansion.  This means that five points neighboring the singular point
+must be used.  If there happens to be a reflection symmetry in the coordinate
+system in the $z$ direction through the singular point, then three of the terms
+in (10.52) will vanish identically.  In order for the matrix constructed from
+(10.52) not to be singular in this case, at least three pairs of points must be
+used for which $h\not=0$.  This means that at least six points must be used and
+thus at least one of the fourth order terms in (10.52) must be included. 
+Finally, in order to symmetrize the differencing scheme as much as possible, I
+have chosen to include one extra point and a second fourth order term from
+(10.52).  The resulting eight-point differencing molecule is illustrated below
+in Figure~10.2.
+
+%\figlabel{2.125truein}{Figure~10.2:  Eight-point differencing molecule used for
+%singular point.}
+\figlabelpdf{2.125truein}{Figure~10.2:  Eight-point differencing molecule used for
+singular point.}{Figures/Figure10_2.pdf}
+
+Using the labeling in Figure~10.2, the matrix problem for the derivatives becomes
+$$
+\left[{\matrix{{h}_{1}&{h}_{1}^{2}&0&0&{h}_{1}^{3}&{h}_{1}^{4}&0\cr
+{h}_{2}&{h}_{2}^{2}&0&0&{h}_{2}^{3}&{h}_{2}^{4}&0\cr
+{h}_{3}&{h}_{3}^{2}&{k}_{3}^{2}&{h}_{3}{k}_{3}^{2}&{h}_{3}^{3}&{h}_{3}^{4}&{k}_{3}^{4}\cr
+{h}_{4}&{h}_{4}^{2}&{k}_{4}^{2}&{h}_{4}{k}_{4}^{2}&{h}_{4}^{3}&{h}_{4}^{4}&{k}_{4}^{4}\cr
+{h}_{5}&{h}_{5}^{2}&{k}_{5}^{2}&{h}_{5}{k}_{5}^{2}&{h}_{5}^{3}&{h}_{5}^{4}&{k}_{5}^{4}\cr
+{h}_{6}&{h}_{6}^{2}&{k}_{6}^{2}&{h}_{6}{k}_{6}^{2}&{h}_{6}^{3}&{h}_{6}^{4}&{k}_{6}^{4}\cr
+{h}_{7}&{h}_{7}^{2}&{k}_{7}^{2}&{h}_{7}{k}_{7}^{2}&{h}_{7}^{3}&{h}_{7}^{4}&{k}_{7}^{4}\cr}}
+\right]\left[{\matrix{{\psi }_{,z}\cr {{1 \over 2}\psi }_{,zz}\cr {{1 \over
+2}\psi }_{,\rho \rho }\cr {{1 \over 2}\psi }_{,z\rho \rho }\cr {{1 \over 6}\psi
+}_{,zzz}\cr {{1 \over 24}\psi }_{,zzzz}\cr {{1 \over 24}\psi }_{,\rho \rho \rho
+\rho }\cr}}\right]=\left[{\matrix{{\psi }_{1}-{\psi }_{0}-\Order({h}_{1}^{5})\cr
+{\psi }_{2}-{\psi }_{0}-\Order({h}_{2}^{5})\cr {\psi }_{3}-{\psi
+}_{0}-\Order({h}_{3}^{2}{k}_{3}^{2})\cr {\psi }_{4}-{\psi
+}_{0}-\Order({h}_{4}^{2}{k}_{4}^{2})\cr {\psi }_{5}-{\psi
+}_{0}-\Order({h}_{5}^{2}{k}_{5}^{2})\cr {\psi }_{6}-{\psi
+}_{0}-\Order({h}_{6}^{2}{k}_{6}^{2})\cr {\psi }_{7}-{\psi
+}_{0}-\Order({h}_{7}^{2}{k}_{7}^{2})\cr}}\right], \eqn{}
+$$
+where
+$$
+{h}_{i}\equiv {z}_{i}-{z}_{0}\qquad\hbox{and}\qquad{k}_{i}\equiv {\rho }_{i}.
+\eqn{}
+$$
+Having chosen a discretization for the domain of the problem being solved, all
+quantities in the matrix of (10.53) are fixed and the inverse matrix can be
+computed numerically.  If the elements of the inverse matrix are denoted by
+$M^{-1}_{i,j}$, then the differenced form of the Laplacian at the singular
+point can be written as
+$$
+{\overline{\nabla }}^{2}\psi =\sum\nolimits\limits_{i=1}^{7}
+\left\{{\left({2{M}_{2,i}^{-1}+4{M}_{3,i}^{-1}}\right)\left({{\psi }_{i}-{\psi
+}_{0}}\right)}\right\}-\sum\nolimits\limits_{i=3}^{7}
+\left\{{\left({2{M}_{2,i}^{-1}+4{M}_{3,i}^{-1}}\right)\Order({h}_{i}^{2}{k}_{i}^{2})}\right\}.
+\eqn{}
+$$
+The overall truncation error to this scheme is $\Order(h^2 + k^2 + hk)$ and so
+the rate of decrease in the error is quadratic as $h$ and $k$ decrease.  This
+does not, however, accurately describe the reduction in the truncation error as
+the discretization size in \v{C}ade\v{z} coordinates is reduced.  If the
+discretization of the \v{C}ade\v{z} coordinates is fine enough so that the
+local expansion of the coordinate transformation (10.15) is valid, then it is
+seen that the reduction in the cylindrical discretization length goes as the
+square root of the reduction of the \v{C}ade\v{z} discretization length. 
+This means that the limiting behavior of the truncation error of (10.55) will be
+first-order or linear, not quadratic.  As in the case of bispherical
+coordinates, the presence of this sort of coordinate singularity leads to
+first-order behavior for the discretization error.
+
+The difference equations described above for the Hamiltonian constraint in
+\v{C}ade\v{z} coordinates are solved via the Newton-Raphson method for
+nonlinear systems as described in Chapter~8.  As with the bispherical
+coordinates, the linearized equations for the iterative correction have been
+solved directly by means of the LINPACK routines for factoring (DGBFA) and
+solving (DGBSL) general banded matrices.  Because of the multiple region nature
+of the \v{C}ade\v{z} coordinate system, the number of bands and the maximum
+separation of the bands from the diagonal of the matrix are larger than in the
+case of bispherical coordinates.  The effect of this is that the size of the
+matrix which can be solved with these LINPACK routines is substantially less
+than in the case of bispherical coordinates.  This means that the discretization
+of the domain cannot be done as finely as is possible with bispherical
+coordinates and, consequently, the accuracy of the solution will not be as
+great.  An alternate approach for solving the \v{C}ade\v{z} coordinate
+difference equations would be of great help in this regard.  Some work has been
+done on applying the multigrid approach to this problem, but with only modest
+success.  It is likely that the multiple region nature of the domain and
+difficulties associated with the coordinate singularity are responsible for the
+less than satisfactory behavior of the multigrid solver written for this
+problem.  A detailed investigation of the applicability of the multigrid method
+to the \v{C}ade\v{z} coordinate system will be necessary in order to advance
+this approach.
+
+Given a solution to the difference equations, the total ADM energy and
+dipole moment as well as the minimal surface masses and the physical hole
+separations can be computed via numerical integrals.  As in the case of
+bispherical coordinates, care must be taken in numerically integrating near the
+singular point.  Extrapolative integral formulas have been used unless otherwise
+stated.  In terms of \v{C}ade\v{z} coordinates, the total energy is given in
+dimensionless form by
+$$
+\eqalign{{E \over {a}_{1}}={1 \over 2}&\int_{0}^{{\xi }_{s}}{\left.{{\psi \rho
+d\xi  \over \sqrt {{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}}}\right|}_{\left({\eta
+={\eta }^{+}}\right)}+{\alpha  \over 2}\int_{{\xi }_{s}}^{\pi }{\left.{{\psi
+\rho d\xi  \over \sqrt {{\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}}\right|}_{\left({\eta ={\eta }^{-}}\right)}\cr&+{1 \over
+8}\int\limits_{\xi=0}^{\xi ={\xi }_{s}}{\int\limits_{\eta ={\eta }^{+}}^{\eta
+={\eta}_{s}}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right)
+\over {\psi }^{7}}{\rho d\eta d\xi  \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}} +{1 \over 8}\int\limits_{\xi ={\xi }_{s}}^{\xi
+=\pi}{\int\limits_{\eta ={\eta
+}^{-}}^{\eta={\eta}_{s}}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right)
+\over {\psi }^{7}}{\rho d\eta d\xi  \over {\eta }_{,\rho
+}^{2}+{\eta}_{,z}^{2}}}\cr&+{1 \over 8}\int\limits_{\xi =0}^{\xi
+=\pi}{\int\limits_{\eta ={\eta }_{s}}^{\eta =\infty
+}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right) \over
+{\psi }^{7}}{\rho d\eta d\xi  \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}.\cr} \eqn{}
+$$
+The $z$ component of the dipole moment is given in dimensionless form
+by
+$$
+\eqalign{{{d}_{z} \over {a}_{1}^{2}}=\int\limits_{0}^{{\xi
+}_{s}}{\left\{{\!\!{z\psi  \over 2}+{{\eta }_{,z}(1-\psi ) \over \sqrt {{\eta
+}_{,\rho }^{2}+{\eta }_{,z}^{2}}}}\right\}\!\!\left.{{\rho d\xi  \over \sqrt
+{{\eta }_{,\rho }^{2}+{\eta }_{,z}^{2}}}}\right|}_{\left({\eta ={\eta
+}^{+}}\right)}&\!\!\!+{1 \over 8}\int\limits_{\xi =0}^{\xi ={\xi
+}_{s}}{\int\limits_{\eta ={\eta }^{+}}^{\eta
+={\eta}_{s}}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right)
+\over {\psi }^{7}}{z\rho d\eta d\xi  \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}\cr +\int\limits_{{\xi }_{s}}^{\pi }{\left\{{\!\!{\alpha
+z\psi  \over 2}+{{\eta }_{,z}(1-\psi ) \over \sqrt {{\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}}\right\}\!\!\left.{{\rho d\xi  \over \sqrt {{\eta }_{,\rho
+}^{2}+{\eta }_{,z}^{2}}}}\right|}_{\left({\eta ={\eta
+}^{-}}\right)}&\!\!\!+{1 \over 8}\int\limits_{\xi ={\xi }_{s}}^{\xi
+=\pi}{\int\limits_{\eta ={\eta }^{-}}^{\eta ={\eta
+}_{s}}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right)
+\over {\psi }^{7}}{z\rho d\eta d\xi  \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}\cr&\!\!\!+{1 \over 8}\int\limits_{\xi =0}^{\xi
+=\pi}{\int\limits_{\eta ={\eta }_{s}}^{\eta =\infty
+}{\left({{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}}\right) \over
+{\psi }^{7}}{z\rho d\eta d\xi  \over {\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}.\cr} \eqn{} $$
+The areas of the minimal surfaces are given in dimensionless form by
+$$
+{{A}_{MS}^{+} \over {a}_{1}^{2}}=2\pi \int_{0}^{{\xi }_{s}}{\left.{{{\psi
+}^{4}\rho d\xi  \over \sqrt {{\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}}\right|}_{\left({\eta ={\eta }^{+}}\right)} \eqn{a}
+$$
+and
+$$
+{{A}_{MS}^{-} \over {a}_{1}^{2}}=2\pi \int_{{\xi }_{s}}^{\pi
+}{\left.{{{\psi }^{4}\rho d\xi  \over \sqrt {{\eta }_{,\rho }^{2}+{\eta
+}_{,z}^{2}}}}\right|}_{\left({\eta ={\eta }^{-}}\right)}. \eqnb{b}
+$$
+
+Finally, the proper separation of the two holes is given in dimensionless form by
+$$
+{L \over {a}_{1}}=-\int_{{\eta }^{+}}^{{\eta }_{s}}{\left.{{{\psi }^{2}d\eta 
+\over {\eta }_{,z}}}\right|}_{\left({\xi ={\xi }_{s}}\right)}+\int_{{\eta
+}^{-}}^{{\eta }_{s}}{\left.{{{\psi }^{2}d\eta  \over {\eta
+}_{,z}}}\right|}_{\left({\xi ={\xi }_{s}}\right)}. \eqn{}
+$$
+The numerical approximation of (10.59) tends to be a poor approximation because
+of the relative sparseness of mesh points between the two holes.  The accuracy
+of the approximation can be greatly increased by replacing (10.59) with an
+integral over three separate regions.  (10.59) consists of an integral along the
+$z$-axis between the holes in Regions~1 and 2.  The third integral is taken to be
+from one mesh point to the left of the singular point in Region~2 to one mesh
+point to the right of the singular point in Region~1.  The two integrals in
+(10.59) are adjusted so as not to include this section.  The value of the
+conformal factor in the intermediate section can be approximated by a quadratic
+polynomial fit to the three values of the conformal factor at the singular point
+and its nearest neighbors.  This interpolated conformal factor can then be
+integrated analytically in cylindrical coordinates giving a more accurate result
+than can be achieved by a standard, extrapolative numerical integral.  Using the
+notation of Figure~10.2, the contribution of this section to the total proper
+separation is given by
+$$
+\eqalign{{\bar{L} \over {a}_{1}}={\psi }_{1}^{2}{({z}_{1}-{z}_{2}) \over
+6({z}_{1}-{z}_{0})}(2{z}_{1}-3{z}_{0}+{z}_{2})&+{\psi
+}_{0}^{2}{{({z}_{1}-{z}_{2})}^{3} \over 6({z}_{1}-{z}_{0})({z}_{0}-{z}_{2})}\cr
+&-{\psi }_{2}^{2}{({z}_{1}-{z}_{2}) \over
+6({z}_{0}-{z}_{2})}({z}_{1}-3{z}_{0}+2{z}_{2}).\cr} \eqn{}
+$$
+
+Because the numerical integrals for the total energy and dipole moment cannot
+extend past the outer boundary of the computational domain, the integrals
+(10.56) and (10.57) necessarily incorporate error beyond that introduced by the
+numerical approximations.  An understanding of the nature of this error as well
+as a first-order correction to the numerical result can be obtained by examining
+the asymptotic forms of the integrands of (10.56) and (10.57) and estimating the
+contribution from the integral over the domain exterior to the outer boundary.
+
+For the case of two holes with axisymmetric linear and angular momenta, we find
+(see (7.22)) that at large radius the square of the extrinsic curvature takes
+the dimensionless form
+$$
+{a}_{1}^{2}{\bar{A}}{}_{i}{}_{j}{\bar{A}}{}^{i}{}^{j}\approx {9
+\over
+2{r}^{4}}{\left({{P}_{1}/{a}_{1}+{P}_{2}/{a}_{1}}\right)}^{2}\left({1+2{\cos}^{2}\theta
+}\right). \eqn{}
+$$
+(Note that $r$ is dimensionless.)  Similarly, from
+(7.26) we find for the conformal factor
+$$
+\psi \approx 1+{E/{a}_{1} \over 2r}+{{d}_{z}/{a}_{1}^{2} \over
+2{r}^{2}}\cos\theta -{9 \over 32}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over
+{r}^{2}}(1-2{\cos}^{2}\theta ). \eqn{}
+$$
+Using (10.61) and (10.62), the leading order contributions to the total
+energy and dipole moment, resulting from the integral over the region exterior
+to a sphere of radius $r_b$, are
+$$
+\Delta E/{a}_{1}\approx {15 \over 8}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2}
+\over {r}_{b}}-{105 \over 32}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over
+{r}_{b}^{2}}{E \over {a}_{1}} \eqn{}
+$$
+and
+$$
+\Delta {d}_{z}/{a}_{1}^{2}\approx -{231 \over
+160}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over {r}_{b}^{2}}{{d}_{z} \over
+{a}_{1}^{2}}. \eqn{}
+$$
+
+If results of the numerical integration over the finite domain for the total
+energy and dipole moment are denoted respectively by $E_N/a_1$ and
+$d_N/a_1^2$, then first-order corrected values are given by
+$$
+{E \over {a}_{1}}\approx {{E}_{N}/{a}_{1}+{15 \over
+8}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over {r}_{b}} \over 1+{105 \over
+32}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over {r}_{b}^{2}}} \eqn{}
+$$
+and
+$$
+{{d}_{z} \over {a}_{1}^{2}}\approx {{d}_{N}/{a}_{1}^{2} \over 1+{231 \over
+160}{{({P}_{1}/{a}_{1}+{P}_{2}/{a}_{1})}^{2} \over {r}_{b}^{2}}}. \eqn{}
+$$
+It is easy to see from (10.65) and (10.66) that configurations with a
+non-vanishing net linear momentum will suffer the worst errors from the
+approximation of a finite computational domain and this error can, for the most
+part, be compensated for by the use of (10.65) and (10.66).
+
+Appendix~D contains the results from computational solutions covering a large set
+of configurations and grid resolutions.  Each of these computations, performed in
+\v{C}ade\v{z} coordinates, can be directly compared to an identical computation
+performed in bispherical coordinates and tabulated in Appendix~C.  Because of
+the behavior of the discretization between the holes, configurations with small
+$\beta$ require very fine discretizations in Region~3 in order to have a
+moderate discretization in Regions~1 and 2.  The end result of this is that
+with the current solution method, only very coarse grids can be used when
+$\beta$ is small.  Consequently, the accuracy of the solution is rather poor in
+these cases.  For the case of $\beta=3$, the errors in the total energy where
+on the order of $20\%$ and the errors in the separation were roughly $30\%$. 
+This is not at all surprising considering that only 12 discrete zones were
+present between the holes while in bispherical coordinates, 160 where used in
+the finest discretization.  On the other hand, when $\beta$ reached 6, the errors
+were down to less than $1\%$ when there was no net momentum and to $5\%$ when
+there was.  This is an encouraging level of error for the cases with no net
+momenta.  The higher error in the cases with a net momentum indicate that the
+outer boundary, placed at radius of roughly $200a_1$, was somewhat too close.
+
+These preliminary solutions using \v{C}ade\v{z} coordinates, while less accurate
+than those obtained with bispherical coordinates, show that there is no
+fundamental problem with the use of \v{C}ade\v{z} coordinates for work on the
+two-hole initial-value and evolution problems.  The differencing scheme
+discussed above appears to work adequately.  The remaining difficuly lies in
+finding computational routines for solving the large, poorly banded matrices
+which result from the differencing scheme.
+
+\vfill
+\eject
+

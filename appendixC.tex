@@ -1,0 +1,43 @@
+\chapterhead{Appendix~C:  Numerical Solutions of the Two-Hole\cr Hamiltonian
+Constraint in Bispherical Coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This appendix contains the most important details from the numerical solution
+of the two-hole Hamiltonian constraint described in Chapter~9.  The difference
+equations for this approach were solved by Newton's method for systems of
+equations and each linearized equation for the iterative correction was solved
+directly by means of the LINPACK routines for factoring (DGBFA) and solving
+(DGBSL) general banded matrices.  The solution for each configuration was
+obtained at three different mesh resolutions.  The coarsest discretization
+consisted of a mesh of $(80\times80)$ zones.  The intermediate discretization
+consisted of a mesh of $(120\times120)$ zones.  The finest discretization
+consisted of a mesh of $(160\times160)$ zones.  It was possible, though not
+practicle, to use a discretization of $(200\times200)$ zones.  One set of runs
+was obtained for configurations with $\beta=3$ to see if the results were
+significantly better.  They were not, and the results of this run are not
+included in this appendix.  (They are, however, included in the Richardson
+extrapolated data used to construct Figures 14.1 through~14.7.)
+
+The 60 tables which follow can be considered as ten groups of six tables.  Each
+group of six tables corresponds to the six cases described in Chapter~14.  The
+ten groups of six tables represent ten values of the separation parameter
+$\beta=3\to12$.  Finally, each table lists results from the numerical
+computations for the scaled total energy $E/a_1$, the scaled minimal surface
+mass $M/a_1$, and the scaled proper separation $L/a_1$ as the linear or angular
+momentum parameter is varied.  For each of the physical quantities listed in
+each table, the value for each of the three mesh resolutions is listed along
+with the  average Richardson extrapolated value $\Re$ obtaind by assuming the
+error scales as first order in the mesh spacing.
+
+\vfill
+\eject
+
+\input Tables/2-Hole.bs/bs3
+\input Tables/2-Hole.bs/bs4
+\input Tables/2-Hole.bs/bs5
+\input Tables/2-Hole.bs/bs6
+\input Tables/2-Hole.bs/bs7
+\input Tables/2-Hole.bs/bs8
+\input Tables/2-Hole.bs/bs9
+\input Tables/2-Hole.bs/bs10
+\input Tables/2-Hole.bs/bs11
+\input Tables/2-Hole.bs/bs12

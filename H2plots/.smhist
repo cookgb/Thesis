@@ -1,0 +1,58 @@
+macro read P+.sm
+macro read "P+.sm"
+device x11
+fourplots
+erase
+fourplots
+list device
+device postencap P+.eps
+fourplots
+device x11
+list device
+quit
+macro read "P+.sm"
+device x11
+fourplots
+device postscript P+.eps
+fourplots
+device x11
+device postport P+.eps
+fourplots
+device x11
+macro read "P+2.sm"
+erase
+fourplots
+device postport P+2.eps
+fourplots
+device x11
+macro read "P-.sm"
+erase
+fourplots
+device postport P-.eps
+fourplots
+device x11
+macro read "P-2.sm"
+erase
+fourplots
+device postport P-2.eps
+fourplots
+device x11
+macro read "S-.sm"
+erase
+fourplots
+device postport S-.eps
+fourplots
+device x11
+macro read "S-2.sm"
+erase
+fourplots
+device postport S-2.eps
+fourplots
+device x11
+macro read "Scmp.sm"
+erase
+compplot
+device postport Scmp.eps
+compplot
+device x11
+quit

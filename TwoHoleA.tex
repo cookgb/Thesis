@@ -1,0 +1,389 @@
+\chapterhead {Chapter~\the\chapnum:  Inversion-Symmetric Extrinsic Curvature\cr
+ for Two Black Holes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The formalism described in the previous chapter describes a method for
+constructing inversion-symmetric solutions to the momentum constraint equation
+for $N$ black holes.  This chapter is devoted to a method for evaluating these
+inversion-symmetric solutions in the case of two black holes.  For the
+construction of initial-data sets, it is sufficient to be able to evaluate
+numerically the formal infinite series solution described in the previous
+chapter (5.21).  In this light, the search for an analytic expression for each
+term in the series is abandoned.  Instead, let us consider the evaluation of the
+infinite series at a specific point in the domain exterior to the two holes.
+
+Since I deal here with the case of two holes, the hole label, $\alpha$, takes on
+the values of 1 and 2.  Let ${\bf x}$ denote the point at which the extrinsic
+curvature will be evaluated, and with it define the following quantities:
+$$
+{\bf x}_{1}\equiv {\bf J}_{1}\left({\bf x}\right),\quad{\bf x}_{ 21}\equiv {\bf
+J}_{2}\left({{\bf x}_{1}}\right),\quad{\bf x}_{121}\equiv {\bf J}_{1}\left({{\bf
+x}_{21}}\right),\ldots. \eqn{}
+$$
+and
+$$
+{\bf x}_{2}\equiv {\bf J}_{2}\left({\bf x}\right),\quad{\bf x}_{ 12}\equiv {\bf
+J}_{1}\left({{\bf x}_{2}}\right),\quad{\bf x}_{212}\equiv {\bf J}_{2}\left({{\bf
+x}_{12}}\right),\ldots. \eqn{}
+$$
+With $\hat{A}_{ij}$ defined by (5.22), consider the first few terms of the
+infinite series (5.21).
+$$
+{\Re }_{1}^{\pm }\actson \hat{A}\left({\bf x}\right) =\pm {\left({{{a}_{1}
+\over {r}_{1}}}\right)}_{\left({\bf x}\right)}^{2}{\left[{{\bf J}_{
+1}}\right]}_{\left({\bf x}\right)}{\hat{A}}_{\left({{\bf x}_{
+1}}\right)}{\left[{{\bf J}_{1}}\right]}_{\left({\bf x}\right)}. \eqn{}
+$$
+$$
+{\Re }_{2}^{\pm }\actson {\Re }_{1}^{\pm }\actson \hat{A}\left({\bf
+x}\right) ={\left({{{a}_{2} \over {r}_{2}}}\right)}_{\left({\bf
+x}\right)}^{2}{\left({{{a}_{1} \over {r}_{1}}}\right)}_{\left({{\bf x}_{
+2}}\right)}^{2}{\left[{{\bf J}_{2}}\right]}_{\left({\bf
+x}\right)}{\left[{{\bf J}_{1}}\right]}_{\left({{\bf x}_{
+2}}\right)}{\hat{A}}_{\left({{\bf x}_{12}}\right)}{\left[{{\bf J}_{
+1}}\right]}_{\left({{\bf x}_{2}}\right)}{\left[{{\bf J}_{
+2}}\right]}_{\left({\bf x}\right)}. \eqn{}
+$$
+$$
+\eqalign{{\Re }_{1}^{\pm }\actson {\Re }_{2}^{\pm }\actson {\Re }_{1}^{\pm
+}\actson \hat{A}\left({\bf x}\right) =\pm &{\left({{{a}_{1} \over
+{r}_{1}}}\right)}_{\left({\bf x}\right)}^{2}{\left({{{a}_{2} \over
+{r}_{2}}}\right)}_{\left({{\bf x}_{1}}\right)}^{2}{\left({{{a}_{1} \over
+{r}_{1}}}\right)}_{\left({{\bf x}_{21}}\right)}^{2}\times \cr &{\left[{{\bf
+J}_{1}}\right]}_{\left({\bf x}\right)}{\left[{{\bf J}_{
+2}}\right]}_{\left({{\bf x}_{1}}\right)}{\left[{{\bf J}_{
+1}}\right]}_{\left({{\bf x}_{21}}\right)}{\hat{A}}_{\left({{\bf x}_{
+121}}\right)}{\left[{{\bf J}_{1}}\right]}_{\left({{\bf x}_{
+21}}\right)}{\left[{{\bf J}_{2}}\right]}_{\left({{\bf x}_{
+1}}\right)}{\left[{{\bf J}_{1}}\right]}_{\left({\bf x}\right)}.\cr} \eqn{}
+$$
+The extension to higher order terms is obvious.  Now, recursively define the two
+vectors ${\bf x}^n_1$ and ${\bf x}^n_2$ as follows.
+$$
+{\bf x}_{1}^{n}\equiv \cases{{\bf J}_{1}\left({{\bf x}_{ 1}^{n-1}}\right)&: for
+$n$ odd \cr {\bf J}_{\rm 2}\left({{\bf x}_{\rm 1}^{n-1}}\right)&: for $n$
+even\cr \hfill{\bf x}&: for $n=0$.\cr} \eqn{}
+$$
+$$
+{\bf x}_{2}^{n}\equiv \cases{{\bf J}_{\rm 2}\left({{\bf x}_{ 2}^{n-1}}\right)&:
+for $n$ odd\cr {\bf J}_{1}\left({{\bf x}_{ 2}^{n-1}}\right)&: for $n$ even\cr
+\hfill{\bf x} &: for $n=0$.\cr} \eqn{} 
+$$
+In terms of ${\bf x}^n_1$ and ${\bf x}^n_2$, recursively define the following
+two matrices. 
+$$
+{M}_{1}^{n}\equiv \cases{{M}_{1}^{n-1}{\left[{{\bf J}_{ 1}}\right]}_{\left({{\bf
+x}_{1}^{n-1}}\right)}&: for $n$ odd\cr {M}_{1}^{n-1}{\left[{{\bf
+J}_{2}}\right]}_{\left({{\bf x}_{ 1}^{n-1}}\right)}&: for $n$ even\cr
+\hfill\Unitmatrix&: for $n=0$.\cr} \eqn{} 
+$$
+$$
+{M}_{2}^{n}\equiv \cases{{M}_{2}^{n-1}{\left[{{\bf J}_{ 2}}\right]}_{\left({{\bf
+x}_{2}^{n-1}}\right)}&: for $n$ odd\cr {M}_{2}^{n-1}{\left[{{\bf
+J}_{1}}\right]}_{\left({{\bf x}_{ 2}^{n-1}}\right)}&: for $n$ even\cr
+\hfill\Unitmatrix&: for $n=0$.\cr} \eqn{} 
+$$
+Finally, recursively define the following two scalar quantities.
+$$
+{F}_{1}^{n}\equiv \cases{{F}_{1}^{n-1}{\left({{{a}_{1} \over
+{r}_{1}}}\right)}_{\left({{\bf x}_{1}^{n-1}}\right)}^{2}&: for $n$ odd\cr
+{F}_{1}^{n-1}{\left({{{a}_{2} \over {r}_{2}}}\right)}_{\left({{\bf
+x}_{1}^{n-1}}\right)}^{2}&: for $n$ even\cr \hfill 1&: for $n=0$.\cr} \eqn{} 
+$$
+$$
+{F}_{2}^{n}\equiv \cases{{F}_{2}^{n-1}{\left({{{a}_{2} \over
+{r}_{2}}}\right)}_{\left({{\bf x}_{2}^{n-1}}\right)}^{2}&: for $n$ odd\cr
+{F}_{2}^{n-1}{\left({{{a}_{1} \over {r}_{1}}}\right)}_{\left({{\bf x}_{
+2}^{n-1}}\right)}^{2}&: for $n$ even\cr \hfill 1&: for $n=0$.\cr} \eqn{}
+$$
+
+In terms of these quantities, the first few terms in the series (5.19) can be
+written as
+$$
+{\Re }_{1}^{\pm }\actson \hat{A}\left({\bf x}\right) ={\left({\pm
+1}\right)}^{1}{F}_{1}^{1}{M}_{1}^{1}{\hat{A}}_{\left({{\bf x}_{
+1}^{1}}\right)}{\tilde{M}}_{1}^{1}, \eqn{}
+$$
+$$
+{\Re }_{2}^{\pm }\actson {\Re }_{1}^{\pm }\actson \hat{A}\left({\bf
+x}\right) ={\left({\pm
+1}\right)}^{2}{F}_{2}^{2}{M}_{2}^{2}{\hat{A}}_{\left({{\bf x}_{
+2}^{2}}\right)}{\tilde{M}}_{2}^{2}, \eqn{}
+$$
+and
+$$
+{\Re }_{1}^{\pm }\actson {\Re }_{2}^{\pm }\actson {\Re }_{1}^{\pm }\actson
+\hat{A}\left({\bf x}\right) ={\left({\pm
+1}\right)}^{3}{F}_{1}^{3}{M}_{1}^{3}{\hat{A}}_{\left({{\bf x}_{
+1}^{3}}\right)}{\tilde{M}}_{1}^{3}. \eqn{}
+$$
+Note that $\tilde{M}^n_\alpha$ denotes the transpose of $M^n_\alpha$.  By using
+the recursion relations defined above, it is easy to prove that (6.12), (6.13),
+and (6.14) are equivalent, respectively, to (6.3), (6.4), and (6.5).  The pattern
+for a general term in the series (5.21) is now clear.  The set of quantities to
+use, $({\bf x}^n_1,M^n_1,F^n_1)$ or $({\bf x}^n_2,M^n_2,F^n_2)$, is determined
+by the label of the left-most inversion operator, and the index of the
+recursion, $n$, is determined by the number of inversion operators.  The
+two-hole, inversion-symmetric solution to the momentum constraint equation can
+now be written as
+$$
+\eqalign{\bar{A}\left({\bf x}\right) &={\Re }^{\pm }\actson\hat{A}\left({\bf
+x}\right)\cr &=\hat{A}\left({\bf x}\right) +\sum\limits_{n=1}^{\infty }
+{\left({\pm 1}\right)}^{n}\left\{{{F}_{1}^{n}{M}_{1}^{n}{\hat{A}}_{\left({{\bf
+x}_{
+1}^{n}}\right)}{\tilde{M}}_{1}^{n}+{F}_{2}^{n}{M}_{2}^{n}{\hat{A}}_{\left({{\bf
+x}_{2}^{n}}\right)}{\tilde{M}}_{2}^{n}}\right\}.\cr} \eqn{}
+$$
+
+Formulated in this way, any desired numerical accuracy can be obtained for the
+components of $\bar{A}_{ij}$.  To obtain the $n^{th}$ term in the series, one
+only needs to know the six quantities ${\bf x}^{n-1}_1$, ${\bf x}^{n-1}_2$,
+$M^{n-1}_1$, $M^{n-1}_2$, $F^{n-1}_1$, and $F^{n-1}_2$ which have already been
+computed in order to obtain the $(n-1)^{th}$ term.  From a computational point
+of view, it is a simple iterative matter to keep adding terms until the value of
+$\bar{A}_{ij}$ converges to machine accuracy.
+
+This formulation of the extrinsic curvature is completely general.  It can be
+used to compute the components of the extrinsic curvature when the two holes
+have any relative sizes and separation, and for any values of the linear and
+angular momentum for each hole.  In later chapters, I will explore solutions to
+the Hamiltonian constraint in the case of axisymmetry.  In preparation for this,
+I will describe (6.15) explicitly for this special case.
+
+Let us consider first the coordinate system to be used.  Since the configuration
+is to be axisymmetric, the obvious choice is to use cylindrical coordinates.  It
+is best to use dimensionless coordinates, so it is desirable to scale the
+coordinates relative to some physical length scale of the problem.  There are
+three natural length scales in the problem:  the size of each of the two holes
+and the separation between the two holes.  I choose to use the radius of the
+first hole, $a_1$, as the natural length scale.
+
+The two holes will be centered on the $z$-axis and will be positioned so that
+$$
+{\bf C}_{1}=\left[{\matrix{0&0&{a}_{1}{\zeta
+}_{1}\cr}}\right]\qquad\hbox{and}\qquad{\bf
+C}_{2}=\left[{\matrix{0&0&{a}_{1}{\zeta }_{2}\cr}}\right]. \eqn{} 
+$$
+In order to maintain axisymmetry, we choose the linear and angular momentum
+vectors for the two holes to have components only in the $z$ direction.  The
+physical, unscaled linear and angular momentum vectors will be
+$$
+{\bf P}_{1}=\left[{\matrix{0&0&{P}_{1}\cr}}\right] \qquad\hbox{and}\qquad{\bf
+P}_{ 2}=\left[{\matrix{0&0&{P}_{2}\cr}}\right] \eqn{}
+$$
+and
+$$
+{\bf S}_{1}=\left[{\matrix{0&0&{S}_{1}\cr}}\right] \qquad\hbox{and}\qquad{\bf
+S}_{ 2}=\left[{\matrix{0&0&{S}_{2}\cr}}\right]. \eqn{}
+$$
+The cylindrical coordinate components of $\hat{A}_{ij}$ can now be written in
+dimensionless form as
+$$
+{{\hat{A}}{}_{\rho }{}_{\rho } \over {a}_{1}}=-{3\kappa  \over 16\pi
+}\left\{{{\left({{{P}_{1} \over {a}_{1}}}\right){\left({z-{\zeta
+}_{1}}\right)}^{3} \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{5/2}}+{\left({{{P}_{2} \over
+{a}_{1}}}\right){\left({z-{\zeta }_{2}}\right)}^{3} \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}\right)}^{5/2}}}\right\}, \eqn{}
+$$
+$$
+{{\hat{A}}{}_{\phi }{}_{\phi } \over {a}_{1}}=-{3\kappa  \over 16\pi }{\rho
+}^{2}\left\{{{\left({{{P}_{1} \over {a}_{1}}}\right)\left({z-{\zeta
+}_{1}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{3/2}}+{\left({{{P}_{2} \over
+{a}_{1}}}\right)\left({z-{\zeta }_{2}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}\right)}^{3/2}}}\right\}, \eqn{}
+$$
+$$
+\eqalign{{{\hat{A}}{}_{z}{}_{z} \over {a}_{1}}={3\kappa  \over 16\pi
+}&\left\{{{\left({{{P}_{1} \over {a}_{1}}}\right)\left({z-{\zeta
+}_{1}}\right)\left({{\rho }^{2}+2{\left({z-{\zeta }_{1}}\right)}^{2}}\right)
+\over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{5/2}}}\right.\cr
+&\qquad\qquad\qquad+\left.{{\left({{{P}_{2} \over
+{a}_{1}}}\right)\left({z-{\zeta }_{2}}\right)\left({{\rho
+}^{2}+2{\left({z-{\zeta }_{2}}\right)}^{2}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}\right)}^{5/2}}}\right\},\cr} \eqn{} 
+$$
+$$
+{{\hat{A}}{}_{\rho }{}_{z} \over {a}_{1}}={3\kappa  \over 16\pi }\rho
+\left\{{{\left({{{P}_{1} \over {a}_{1}}}\right)\left({{\rho
+}^{2}+2{\left({z-{\zeta }_{1}}\right)}^{2}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}\right)}^{5/2}}+{\left({{{P}_{2} \over
+{a}_{1}}}\right)\left({{\rho }^{2}+2{\left({z-{\zeta }_{2}}\right)}^{2}}\right)
+\over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}\right)}^{5/2}}}\right\}, \eqn{}
+$$
+$$
+{{\hat{A}}{}_{\rho }{}_{\phi } \over {a}_{1}}={3\kappa  \over 16\pi }{\rho
+}^{3}\left\{{{\left({{{S}_{1} \over {a}_{1}^{2}}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}\right)}^{5/2}}+{\left({{{S}_{2} \over
+{a}_{1}^{2}}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}\right)}^{5/2}}}\right\}, \eqn{}
+$$
+and
+$$
+{{\hat{A}}{}_{\phi }{}_{z} \over {a}_{1}}={3\kappa  \over 16\pi }{\rho
+}^{2}\left\{{{\left({{{S}_{1} \over {a}_{1}^{2}}}\right)\left({z-{\zeta
+}_{1}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{5/2}}+{\left({{{S}_{2} \over
+{a}_{1}^{2}}}\right)\left({z-{\zeta }_{2}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}\right)}^{5/2}}}\right\}. \eqn{}
+$$
+
+Before describing the explicit form which the isometry map and the Jacobian will
+take, it is useful to examine the square of the background extrinsic curvature
+which is the quantity of interest in the Hamiltonian constraint.  Expressed as a
+dimensionless quantity, it takes the form
+$$
+\eqalign{{a}_{1}^{2}{\bar{A}}_{ij}&{\bar{A}}^{ij}={\left[{{\left({{\Re
+}^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\rho\rho}}\right]}^{2}+{\left[{{1 \over
+{\rho }^{2}}{\left({{\Re }^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\phi\phi}}\right]}^{2}+{\left[{{\left({{\Re
+}^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!zz}}\right]}^{2}\cr &+
+2{\left[{{\left({{\Re }^{\pm }\actson \left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\rho z}}\right]}^{2}+2{\left[{{1 \over
+\rho }{\left({{\Re }^{\pm }\actson\! \left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\rho\phi }}\right]}^{2}+2{\left[{{1 \over
+\rho }{\left({{\Re }^{\pm }\actson\! \left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\phi z}}\right]}^{2}.\cr} \eqn{} 
+$$
+It is clear that care will have to be taken in computing the second, fifth, and
+sixth terms in (6.25) so as not to encounter errors resulting from division by
+zero (not to mention computational roundoff errors) as the $\rho=0$ axis is
+approached.  The second term in (6.25) is handled easily by the property that
+$\bar{A}_{ij}$ is traceless.  This fact immediately gives
+$$
+{1 \over {\rho }^{2}}{\left({{\Re }^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\phi\phi}=-\left({\left[{{\left({{\Re
+}^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\rho\rho }}\right]+\left[{{\left({{\Re
+}^{\pm }\actson \left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!zz}}\right]}\right), \eqn{} 
+$$
+so we never actually need to compute this term.  The fifth and sixth terms
+of (6.25) cannot be handled so easily.  Their resolution depends on the explicit
+form of the isometry and the Jacobian in the scaled cylindrical coordinate
+system.
+
+In order to define the isometry conditions, one more definition must be made. 
+The scaled centers of the holes have already been defined by (6.16).  The scaled
+radius of the first hole is just {\it one} since that length sets the scale for
+all quantities.  All that remains is to define a dimensionless quantity to give
+the size of the second hole.  I define this quantity by the following:
+$$
+{a}_{1}=\alpha {a}_{2}. \eqn{}
+$$
+
+A straightforward calculation shows that the isometry conditions take the
+following dimensionless forms:
+$$
+{\bf J}_{1}\left({\bf x}\right) =\left[{\matrix{{\rho  \over {\rho
+}^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}&,\phi &,{z-{\zeta }_{1} \over {\rho
+}^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}+{\zeta }_{1}\cr}}\right] \eqn{}
+$$
+and
+$$
+{\bf J}_{2}\left({\bf x}\right) =\left[{\matrix{{{\alpha }^{-2}\rho 
+\over {\rho }^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}&,\phi &,{{\alpha
+}^{-2}\left({z-{\zeta }_{2}}\right) \over {\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}+{\zeta }_{2}\cr}}\right]. \eqn{}
+$$
+Based on these two equations, the Jacobians are given by
+$$
+{\left[{{\bf J}_{1}}\right]}_{\left({\bf x}\right)}
+=\left[{\matrix{{{\left({z-{\zeta }_{1}}\right)}^{2}-{\rho }^{2} \over
+{\left({{\rho }^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}\right)}^{2}}&0&{-2\rho
+\left({z-{\zeta }_{1}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{2}}\cr 0&1&0\cr {-2\rho \left({z-{\zeta
+}_{1}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{2}}&0&{{\rho }^{2}-{\left({z-{\zeta
+}_{1}}\right)}^{2} \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}\right)}^{2}}\cr}}\right] \eqn{}
+$$
+and
+$$
+{\left[{{\bf J}_{2}}\right]}_{\left({\bf x}\right)}
+=\left[{\matrix{{{\alpha }^{-2}\left({{\left({z-{\zeta }_{2}}\right)}^{2}-{\rho
+}^{2}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}\right)}^{2}}&0&{-2{\alpha }^{-2}\rho \left({z-{\zeta
+}_{2}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}\right)}^{2}}\cr 0&1&0\cr {-2{\alpha }^{-2}\rho
+\left({z-{\zeta }_{2}}\right) \over {\left({{\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}\right)}^{2}}&0&{{\alpha }^{-2}\left({{\rho
+}^{2}-{\left({z-{\zeta }_{2}}\right)}^{2}}\right) \over {\left({{\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}\right)}^{2}}\cr}}\right] \eqn{}
+$$
+For completeness, I display the dimensionless form for the recursion relations
+(6.10) and (6.11):
+$$
+{F}_{1}^{n}=\cases{{\left.{{{F}_{1}^{n-1} \over {\rho }^{2}+{\left({z-{\zeta
+}_{1}}\right)}^{2}}}\right|}_{\left({{\bf x}_{ 1}^{n-1}}\right)}&: for $n$
+odd\cr {\left.{{{\alpha }^{-2}{F}_{1}^{n-1} \over {\rho }^{2}+{\left({z-{\zeta
+}_{2}}\right)}^{2}}}\right|}_{\left({{\bf x}_{ 1}^{n-1}}\right)}&: for $n$
+even\cr \hfill 1&: for $n=0$\cr} \eqn{} 
+$$
+and
+$$
+{F}_{2}^{n}=\cases{{\left.{{{\alpha }^{-2}{F}_{2}^{n-1} \over {\rho
+}^{2}+{\left({z-{\zeta }_{2}}\right)}^{2}}}\right|}_{\left({{\bf x}_{
+2}^{n-1}}\right)}&: for $n$ odd\cr {\left.{{{F}_{2}^{n-1} \over {\rho
+}^{2}+{\left({z-{\zeta }_{1}}\right)}^{2}}}\right|}_{\left({{\bf x}_{
+2}^{n-1}}\right)}&: for $n$ even\cr \hfill 1&: for $n=0$.\cr} \eqn{}
+$$
+
+Consider now, in light of the explicit form of the recurrence relations, the
+form of the $n^{th}$ term in the series (6.15).  Explicit calculation shows that
+the $\rho\rho$, $\rho z$, and $zz$ terms depend only on $\hat{A}_{\rho\rho}$,
+$\hat{A}_{\rho z}$, and $\hat{A}_{zz}$.  The $\rho\phi$ and $\phi z$ terms
+depend only on $\hat{A}_{\rho\phi}$ and $\hat{A}_{\phi z}$.  Finally, the
+$\phi\phi$ term depends only on $\hat{A}_{\phi\phi}$.  This means that the linear
+and angular momentum pieces of the inversion-symmetric extrinsic curvature are
+completely uncoupled and can be considered separately.  
+
+The two terms of concern in (6.25),
+$$
+{1 \over \rho }{\left({{\Re }^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\rho\phi}\qquad\hbox{and}\qquad{1 \over
+\rho }{\left({{\Re }^{\pm }\actson\!\left({{\hat{A} \over
+{a}_{1}}}\right)}\!\!\right)}_{\!\!\!\phi z}, \eqn{}
+$$
+are angular momentum terms and, as mentioned above, depend only on
+$\hat{A}_{\rho\phi}$ and $\hat{A}_{\phi z}$.  Looking at (6.23) and (6.24), we
+see that both terms contain overall factors of $\rho$.  This indicates that the
+factors of $1/\rho$ should be ``commuted'' with the inversion operator.  Consider
+the $n^{th}$ term of the first expression in (6.34). 
+$$ {1 \over \rho
+}{F}_{1}^{n}{\left[{{M}_{1}^{n}{\hat{A}}_{\left({{\bf x}_{\rm
+1}^{n}}\right)}{\tilde{M}}_{1}^{n}}\right]}_{\rho\phi}+{1 \over \rho
+}{F}_{2}^{n}{\left[{{M}_{2}^{n}{\hat{A}}_{\left({{\bf x}_{\rm
+2}^{n}}\right)}{\tilde{M}}_{2}^{n}}\right]}_{\rho\phi}. \eqn{} 
+$$
+If we denote the $\rho$ component of ${\bf x}^n_\alpha$ as $\rho^n_\alpha$, then
+it is straightforward to verify that 
+$$
+{1 \over \rho }={{F}_{\alpha }^{n} \over {\rho }_{\alpha }^{n}}. \eqn{}
+$$
+Equation (6.35) now becomes
+$$
+{\left({{F}_{1}^{n}}\right)}^{2}{\left[{{M}_{1}^{n}{\left[{{\hat{A} \over \rho
+}}\right]}_{\left({{\bf x}_{\rm
+1}^{n}}\right)}{\tilde{M}}_{1}^{n}}\right]}_{\rho\phi
+}+{\left({{F}_{2}^{n}}\right)}^{2}{\left[{{M}_{2}^{n}{\left[{{\hat{A} \over \rho
+}}\right]}_{\left({{\bf x}_{\rm
+2}^{n}}\right)}{\tilde{M}}_{2}^{n}}\right]}_{\rho\phi}, \eqn{}
+$$
+which is completely regular as the $\rho=0$ axis is approached since it depends
+only on $\hat{A}_{\rho\phi}$ and $\hat{A}_{\phi z}$, which both have overall
+factors of $\rho$.  The second expression in (6.34) can be handled in exactly the
+same manner.
+
+The components of the background extrinsic curvature can now be accurately
+calculated in cylindrical coordinates, with special care being given to the
+angular momentum terms.  If axisymmetry is not present, then a similar
+construction can be obtained in terms of Cartesian coordinates.  In this case,
+the linear and angular momentum components will not decouple, but there will be
+no coordinate singularities to deal with.
+\vfill
+\eject

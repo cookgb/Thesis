@@ -1,0 +1,352 @@
+\chapterhead {Chapter~\the\chapnum:  Solutions of the Momentum Constraint}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Solving the momentum constraint equations is the first step in constructing
+inversion-symmetric gravitational initial data.  If the initial-data slice is
+chosen to be maximal, or more generally if the trace of the extrinsic curvature
+is a constant on the initial slice, then the momentum constraint (4.2) decouples
+from the Hamiltonian constraint (4.1).  This is one of the prime strengths of
+the conformal decomposition of the constraints, and can be exploited in
+certain cases to find analytic solutions for the background extrinsic
+curvature.  When the initial slice is conformally and asymptotically flat, this
+decoupling also allows for the determination of two of the physical properties
+of the initial-data slice without knowing the complete initial data, as is shown
+below.
+
+The momentum contained in an asymptotically flat, initial-data slice can be
+calculated from the integral
+$$
+{\Pi }{}_{i}{\xi }{}^{i}{}_{(k)}={1 \over \kappa }\oint_{\infty
+}^{}\left({{K}{}_{i}{}^{j}-{\delta }_{i}^{j}K}\right){\xi
+}{}^{i}{}_{(k)}{d}^{2}{S}{}_{j}, \eqn{}
+$$
+where ${\xi^i}_{(k)}$ is a Killing vector of the spatial metric $\gamma_{ij}$ (York
+[1980]).  In the conformal imaging approach, the initial slice is conformally flat,
+as well as asymptotically flat.  Since the background metric is flat and the
+conformal factor must behave like (4.10) at infinity, the integral (5.1) can be
+expressed equivalently in terms of the background extrinsic curvature and the flat
+metric.  Recalling (4.5), we can now rewrite (5.1) as
+$$
+{\Pi }{}_{i}{\bar{\xi }}{}^{i}{}_{(k)}={1 \over \kappa }\oint_{\infty
+}^{}{\bar{A}}{}_{i}{}^{j}{\bar{\xi
+}}{}^{i}{}_{(k)}{d}^{2}{\bar{S}}{}_{j}. \eqn{}
+$$
+Here, the integral is in terms of the flat background metric, and
+${\bar\xi^i}{}_{(k)}$ is a Killing vector of the flat background metric $f_{ij}$ to
+which $\gamma_{ij}$ is asymptotic. If ${\bar\xi^i}{}_{(k)}$ is a translational
+Killing vector, then ${\Pi_i}{\bar\xi^i}{}_{(k)}$ is the linear momentum $P_k$.  In
+terms of Cartesian coordinates, the total {\it physical} linear momentum of a slice
+is given by 
+$$
+{P}{}^{i}={1 \over \kappa }\oint_{\infty
+}^{}{\bar{A}}{}^{i}{}^{j}{d}^{2}{\bar{S}}{}_{j}. \eqn{}
+$$
+If ${\bar\xi^i}{}_{(k)}$ is a rotational Killing vector, then
+${\Pi_i}{\bar\xi^i}{}_{(k)}$ is the angular momentum $S_k$.  In terms of Cartesian
+coordinates, the total {\it physical} angular momentum of a slice is given by
+$$
+{S}{}_{i}={1 \over \kappa }{\epsilon }{}_{i}{}_{j}{}_{k}\oint_{\infty
+}^{}{x}{}^{j}{\bar{A}}{}^{k}{}^{\ell }{d}^{2}{\bar{S}}{}_{\ell }.
+\eqn{}
+$$
+It should be noted that the angular momentum at infinity is not always well
+defined.  The angular momentum $S_k$ will be asymptotically gauge invariant,
+however, if ${\bar\xi^i}{}_{(k)}$ is an exact symmetry of the the physical metric
+$\gamma_{ij}$ ({\it cf}. York [1980]).  So, given a solution for the background
+extrinsic curvature, we see from (5.3) and (5.4) that two important properties of
+the physical initial-data set can be determined without knowing the full initial
+data, i.e., without solving the Hamiltonian constraint.
+
+In the context of the conformal imaging approach, we would like to find
+solutions to the momentum constraint (4.9) which satisfy the isometry condition
+(4.45) and represent black holes with linear momentum $P^i_\alpha$ and angular
+momentum $S^i_\alpha$ as determined by (5.3) and (5.4).  For the case of a single
+black hole, Bowen and York [1980] have found such solutions and they take the
+following form:
+$$
+\eqalign{{\bar{A}}^{\pm }_{ij}={3\kappa  \over 16\pi
+{r}^{2}}&\left[{{P}{}_{i}{n}{}_{j}+{P}{}_{j}{n}{}_{i}-\left({{f}{}_{i}{}_{j}-{n}{}_{i}{n}{}_{j}}\right){P}{}^{k}{n}{}_{k}}\right]\cr
+&\mp{3\kappa {a}^{2} \over 16\pi
+{r}^{4}}\left[{{P}{}_{i}{n}{}_{j}+{P}{}_{j}{n}{}_{i}+\left({{f}{}_{i}{}_{j}-5{n}{}_{i}{n}{}_{j}}\right){P}{}^{k}{n}{}_{k}}\right]\cr}
+\eqn{}
+$$
+and
+$$
+{\bar{A}}_{ij}={3\kappa  \over 8\pi {r}^{3}}\left[{{\epsilon
+}{}_{k}{}_{i}{}_{\ell }{S}{}^{\ell }{n}{}^{k}{n}{}_{j}+{\epsilon
+}{}_{k}{}_{j}{}_{\ell }{S}{}^{\ell }{n}{}^{k}{n}{}_{i}}\right]. \eqn{}
+$$
+Note, that we have dropped the subscript $\alpha$ on $a$, $r$, $n^i$, $P^i$, and
+$S^i$ since there is only one hole.  Equation (5.5) gives the background extrinsic
+curvature for a hole with linear momentum $P^i$ and is actually two solutions.  The
+solution $\bar{A}^+_{ij}$ satisfies the isometry condition (4.45) with the plus
+sign, and the solution $\bar{A}^-_{ij}$ satisfies the isometry condition (4.45)
+with the minus sign.  Only the $\Order(r^{-2})$ term in (5.5) carries linear momentum as
+can be seen by evaluating (5.3).  The second term is required for inversion
+symmetry.  The two terms are individually solutions of the momentum constraint
+(4.9a).  Equation (5.6) gives the background extrinsic curvature for a hole with
+angular momentum $S^i$.  This solution satisfies the isometry condition with the
+minus sign only and is its own inverse.
+
+The solutions (5.5) and (5.6) are longitudinal since they can be derived from a
+vector potential.  \'{O} Murchada and York [1976a] found solution to (4.9b) for
+the vector potential $W^i$ for the first term in (5.5) and for (5.6).  Bowen
+[1979a] found the solution giving the second term in (5.5).  The first term in
+(5.5), the part carrying linear momentum, is derived from the vector potential
+$$
+{W}{}^{i}=-{\kappa  \over 32\pi
+r}\left[{7{P}{}^{i}+{n}{}^{i}{n}{}_{j}{P}{}^{j}}\right]. \eqn{}
+$$
+The second part of (5.5) can also be derived from a vector potential.  It takes
+the form
+$$
+{W}{}^{i}={\kappa {a}^{2} \over 32\pi
+{r}^{3}}\left[{{P}{}^{i}-3{n}{}^{i}{n}{}_{j}{P}{}^{j}}\right]. \eqn{}
+$$
+As previously mentioned, this term carries no linear momentum and is present
+only to enforce inversion symmetry.  The solution representing a black hole with
+spin, (5.6), is derived from the vector potential
+$$
+W^i={\kappa  \over 8\pi r^2}{\epsilon^{ijk}}{n_j}{S_k}. \eqn{}
+$$
+
+The solutions (5.5) and (5.6) satisfy all of the conditions required by the
+conformal imaging approach and can be used with the Hamiltonian constraint to
+construct inversion-symmetric initial data for a single hole with linear and
+angular momentum.  Such initial data has been constructed by many researchers ({\it
+cf}.  York and Piran [1982], Choptuik and Unruh [1986], Rauber [1985], and Cook and
+York [1990]) and will be examined in later chapters.  I will proceed here with the
+question of how to construct an inversion-symmetric solution of the momentum
+constraint for systems with multiple black holes.
+
+This problem was addressed formally by Kulkarni, Shepley, and York [1983].  The
+approach is centered on the fact that the momentum constraint (4.9) is linear. 
+Since this is the case, a solution representing $N$ black holes, each with linear
+and angular momentum can be obtained from (5.5) and (5.6) as
+$$
+\eqalign{ \bar{A}_{ij}={3\kappa  \over 8\pi }\sum\limits_{\alpha=1}^{N}\left({
+{1 \over 2 r_\alpha^2} \left[{ P^\alpha_i n^\alpha_j+ P^\alpha_j n^\alpha_i- \left({
+f_{ij}-n^\alpha_i n^\alpha_j }\right) P_\alpha^k n^\alpha_k }\right] }\right.&\cr
+\left.{ +{1 \over r_\alpha^3} \left[{ \epsilon_{ki\ell} S_\alpha^\ell
+n_\alpha^k n^\alpha_j +\epsilon_{kj\ell} S_\alpha^\ell n_\alpha^k n^\alpha_i
+}\right] }\right)&.\cr } \eqn{} 
+$$ 
+Note that the second term in (5.5) has been omitted here.  The $N$ black holes are
+given individual linear and angular momenta $P^i_\alpha$ and $S^i_\alpha$ in the
+sense that if the holes are ``sufficiently far apart'', then they will have such
+momenta as measured by (5.3) and (5.4).  If the holes are close together, then all
+that can be measured is the total linear and angular momentum of the system.
+
+The background extrinsic curvature given by (5.10) is longitudinal and traceless
+and is a solution of the momentum constraint (4.9), however, it is not inversion
+symmetric through any of the holes as is required.  This is why the second
+term in (5.5) was not included for each hole in (5.10).  Even though (5.10) is not
+inversion symmetric, Kulkarni {\it et al}. [1983] have shown how to take this
+non-invertable extrinsic curvature and make it inversion symmetric through a method
+of images applicable to tensors.  I will outline the formal approach below.
+
+In order for the extrinsic curvature to be inversion symmetric, it must satisfy
+$$
+\eqalign{\bar{A}_{ij}\left({\bf x}\right) &=\Re_\alpha^\pm
+\actson\bar{A}_{ij}\left({\bf x}\right)\cr &=\pm {\left({{{a}_{\alpha } \over
+{r}_{\alpha }}}\right)}^{2}{\left({{\bf J}_{\alpha }}\right)}{}_{i}{}^{\ell
+}{\bar{A}}{}_{\ell }{}_{m}\left({{\bf J}_{\alpha }\left({\bf
+x}\right)}\right){\left({{\bf J}_{\alpha }}\right)}{}_{j}{}^{m}\cr}
+\eqn{}
+$$
+for all $\alpha$.  In order to simplify and clarify notation, I will drop the
+component indices and write (5.11) as
+$$
+\eqalign{\bar{A}\left({\bf x}\right) &={\Re }_{\alpha }^{\pm }\actson
+\bar{A}\left({\bf x}\right)\cr &=\pm {\left({{{a}_{\alpha } \over
+{r}_{\alpha }}}\right)}_{\left({\bf x}\right)}^{2}{\left[{{\bf J}_{\alpha
+}}\right]}_{\left({\bf x}\right)}\bar{A}\left({{\bf J}_{\alpha
+}\left({\bf x}\right)}\right){\left[{{\bf J}_{\alpha }}\right]}_{\left({\bf
+x}\right)}.\cr} \eqn{}
+$$
+Note that in order to distinguish the Jacobian from the transformation ${\bf
+J}_\alpha$, the Jacobian is enclosed in square brackets.  Let $M_{ij}({\bf x})$ be
+any second rank tensor field on $E^3$.  It is straightforward to show the following
+properties of the inversion operator $\Re^\pm_\alpha$ ({\it cf}. Kulkarni {\it et
+at} [1983]). 
+$$
+{\Re }_{\alpha }^{\pm }\actson {\Re }_{\alpha }^{\pm }=\Unitmatrix\,. \eqn{}
+$$
+$$
+{\left({{\Re }_{\alpha }^{\pm }\actson M}\right)}^{t}={\Re }_{\alpha }^{\pm
+}\actson \left({{M}^{t}}\right), \eqn{}
+$$
+where $M^t$ is the transpose of $M$.
+$$
+{\left[{Tr\left({{\Re }_{\alpha }^{\pm }\actson
+M}\right)}\right]}_{\left({\bf x}\right)} =\pm {\left({{{a}_{\alpha } \over
+{r}_{\alpha }}}\right)}_{\left({\bf x}\right)}^{6}\left[{{\left({Tr\,
+M}\right)}_{\left({{\bf J}_{\alpha }\left({\bf x}\right)}\right)}}\right], \eqn{}
+$$
+where $Tr\, M$ is the trace of $M$.
+$$
+\eqalign{ {\left[{ \bar{D}_j\left({\Re_\alpha^\pm\actson{M}^{ij}}\right)
+}\right]}_{\left({\bf x}\right)}  =\pm {\left({a_\alpha \over
+r_\alpha}\right)}_{\left({\bf x}\right)}^{6} &\Biggl\{{ {{\left({ {\bf J}_\alpha
+}\right)}_{\left( {\bf x} \right)}}_{k}{}^{i} {\left[{ \bar{D}_\ell M^{k\ell}
+}\right]}_{\left({{\bf J}_\alpha\left({\bf x}\right)}\right)} }\Biggr.\cr &
+\quad +\Biggl.{ 2{\left({{{n}_{\alpha }^{i} \over {r}_{\alpha
+}}}\right)}_{\left({\bf x}\right)}{\left[{ Tr\, M}\right]}_{\left({{\bf J}_{\alpha
+}\left({\bf x}\right)}\right)}}\Biggr\}.\cr} \eqn{} 
+$$
+
+If we start with a symmetric and traceless solution, $\bar{A}_{ij}$, to the momentum
+constraint (4.9a), then (5.14), (5.15), and (5.16) guarantee that the ``image'' of
+it, $\Re^\pm_\alpha\actson\bar{A}_{ij}$, will also be symmetric, traceless, and
+satisfy the momentum constraint.  Now consider the following operator:
+$$
+{\Re }^{\pm }=\Unitmatrix+\sum\limits_{\left\{{{\alpha }_{i}}\right\}}^{}
+\left({\prod\limits_{i=1}^{m} {\Re }_{{\alpha }_{i}}^{\pm }}\right).
+\eqn{}
+$$
+The notation here needs some elaboration.  The $\alpha_i$ label the holes as usual
+and the subscript $i$ takes on the values of $1,\ldots,N$.  The sum is over all
+unique sequences $\{\alpha_i\}$ of length $m$.  For any sequence, $\{\alpha_i\}$,
+one takes the product of ``image'' operators corresponding to that sequence.  From
+property (5.13), a sequence is unique if and only if $\alpha_i \not=
+\alpha_{i+1}$.  As an example of this operator, consider the case of a single
+hole.  The operator (5.17) takes, in this case, the form
+$$
+{\Re }^{\pm }=\Unitmatrix+{\Re }_{{\alpha }_{1}}^{\pm }. \eqn{}
+$$
+For two holes, it takes the form
+$$
+\eqalign{{\Re }^{\pm }=\Unitmatrix &+{\Re }_{{\alpha }_{1}}^{\pm }+{\Re }_{{\alpha
+}_{1}}^{\pm }\actson{\Re }_{{\alpha }_{2}}^{\pm }+{\Re }_{{\alpha }_{1}}^{\pm
+}\actson{\Re }_{{\alpha }_{2}}^{\pm }\actson{\Re }_{{\alpha }_{1}}^{\pm }+{\Re
+}_{{\alpha }_{1}}^{\pm }\actson{\Re }_{{\alpha }_{2}}^{\pm }\actson{\Re }_{{\alpha
+}_{1}}^{\pm }\actson{\Re }_{{\alpha }_{2}}^{\pm }+\cdots\cr &+{\Re }_{{\alpha
+}_{2}}^{\pm }+{\Re }_{{\alpha }_{2}}^{\pm }\actson{\Re }_{{\alpha }_{1}}^{\pm
+}+{\Re }_{{\alpha }_{2}}^{\pm }\actson{\Re }_{{\alpha }_{1}}^{\pm }\actson{\Re
+}_{{\alpha }_{2}}^{\pm }+{{\Re }_{{\alpha }_{2}}^{\pm }\actson\Re }_{{\alpha
+}_{1}}^{\pm }\actson{\Re }_{{\alpha }_{2}}^{\pm }\actson{\Re }_{{\alpha }_{1}}^{\pm
+}+\cdots.\cr} \eqn{}
+$$
+It can be easily verified from (5.13), that
+$$
+{\Re }_{\alpha }^{\pm }\actson {\Re }^{\pm }={\Re }^{\pm } \eqn{}
+$$
+for all $\alpha$ and so (5.17) can be called the inversion symmetry operator.  If it
+acts on any arbitrary second rank tensor $M_{ij}$, then the result will be inversion
+symmetric through all $N$ holes.  In particular, if $M_{ij}$ is symmetric,
+traceless, and satisfies the momentum constraint, then $\Re^\pm M_{ij}$ will be
+symmetric, traceless, satisfy the momentum constraint, and be inversion symmetric.
+
+The formal approach for obtaining an inversion-symmetric solution of the
+momentum constraint (4.9a) is now obvious.  Let $\hat{A}_{ij}$ represent a sum of
+single hole solutions to the momentum constraint.  The inversion-symmetric
+solution is then given by
+$$
+{\bar{A}}{}_{i}{}_{j}={\Re }^{\pm }\actson {\hat{A}}{}_{i}{}_{j}. \eqn{}
+$$
+In the case of a single hole, (5.21) will be $\hat{A}_{ij}$ plus a single image
+term.  Specifically, it will be a combination of (5.5) and (5.6).  If there is
+more than one hole, then (5.21) will consist of $\hat{A}_{ij}$ plus an infinite
+number of image terms.  In this case, one must be concerned with the convergence
+of this infinite series.  Kulkarni [1984] has shown that for any reasonable
+choice for $\hat{A}_{ij}$, the infinite series converges if the holes are far enough
+apart.  In particular, if there are just two holes, then the infinite series
+converges absolutely provided the inversion surfaces do not overlap.  This is in
+direct analogy with Misner's proof of convergence for the inversion-symmetric
+conformal factor on a time-symmetric initial slice (Misner [1963]).
+
+To continue, we need to specify an explicit form for $\hat{A}_{ij}$.  A first guess
+would be to use (5.10).  This would lead to an error in the computation of spins
+since the $\alpha^{th}$ spin term in (5.10) is the negative of its inverse through the
+$\alpha^{th}$ hole.  Using (5.10) in (5.21) would result in holes with twice the
+desired spin for each hole.  There is no problem with the terms containing linear
+momentum since the full, inversion-symmetric form is not used.  This error
+pertaining to the spin exists in Kulkarni {\it et al}. [1983], Kulkarni [1984], and
+York [1984].   Bowen, Rauber, and York [1984] correct for this error by redefining
+(5.21) with an overall factor of $1/2$.  This will work provided that the full,
+inversion-symmetric solutions containing linear momentum (5.5) are used.  One must
+be careful, however, to choose the correct sign in (5.5) to match that of (5.21). 
+The more elegant, and more computationally convenient method, is to define
+$\hat{A}_{ij}$ as 
+$$
+\eqalign{ \hat{A}_{ij}={3\kappa  \over 16\pi }\sum\limits_{\alpha=1}^{N}\left({
+{1 \over r_\alpha^2} \left[{ P^\alpha_i n^\alpha_j+ P^\alpha_j n^\alpha_i- \left({
+f_{ij}-n^\alpha_i n^\alpha_j }\right) P_\alpha^k n^\alpha_k }\right] }\right.&\cr
+\left.{ +{1 \over r_\alpha^3} \left[{ \epsilon_{ki\ell} S_\alpha^\ell
+n_\alpha^k n^\alpha_j +\epsilon_{kj\ell} S_\alpha^\ell n_\alpha^k n^\alpha_i
+}\right] }\right)&.\cr} \eqn{}
+$$
+
+Consider now, the total linear and angular momenta contained in the
+inversion-symmetric background extrinsic curvature defined by (5.17), (5.21), and
+(5.22).  $\bar{A}_{ij}$ will contain three types of terms.  First, it will contain
+$\hat{A}_{ij}$ itself.  It will also contain the self-image of each term in
+$\hat{A}_{ij}$.  Finally, it will contain arbitrary image terms.  Computing the
+total linear momentum (5.3) from $\hat{A}_{ij}$ yields the sum of the individual
+linear momenta $P^\alpha_i$.  As has already been mentioned, the self-image of the
+linear momentum terms carry no linear or angular momentum.
+
+If we next assume that none of the holes has any linear momentum, then the total
+angular momentum (5.4) contained in $\hat{A}_{ij}$ is simply half the sum of the
+individual angular momenta $S_{\alpha_i}$.  If we choose the isometry relation with
+the minus sign, then the self-image of the angular momentum terms again carries half
+the sum of the individual angular momenta $S_{\alpha_i}$.  This is why (5.22) is used
+instead of (5.10).  If the isometry relation with the plus sign is used, the
+angular momentum from the self-image terms will cancel that from $\hat{A}_{ij}$.  If
+the holes have non-zero linear momentum, then the linear momentum terms in
+$\hat{A}_{ij}$ can contain non-zero angular momentum although their self-image terms
+cannot.
+
+Remaining to be examined are the contributions to the total linear and angular
+momentum from the general image terms.  Bowen, Rauber, and York [1984] detail an
+elegant proof that no general image term can carry angular momentum.  Their
+proof, however, cannot be generalized to examine their linear momentum content. 
+Through tedious, explicit calculations, it can be shown that at large distances
+from the holes, the leading behavior of all of the general image terms is
+$\Order(r^{-6})$.  A term with this fall-off behavior contributes nothing to the
+integrals (5.3) and (5.4) and thus carries no linear or angular momentum.  This is a
+very powerful result.  It means that the total linear and angular momentum content
+of an initial-data slice can be computed without knowing the explicit form of the
+general image terms.  The only terms which contribute are the ``base'' extrinsic
+curvature $\hat{A}_{ij}$ and the self-image terms of the angular momentum terms
+(which are trivial).
+
+As a final note to the formalism for constructing inversion-symmetric extrinsic
+curvature solutions, it should be pointed out that the imaging is done on the
+purely longitudinal field $\hat{A}_{ij}$ and not the potential $W^i$.  For the case
+of a single black hole, the resulting, imaged field $\bar{A}_{ij}$ is still
+longitudinal.  In the case of multiple black holes, this does not seem to be the
+case.  Rauber [1985] has shown in a lengthy calculation that the resulting field
+$\bar{A}_{ij}$ is not derivable from a vector potential.  This implies that
+$\bar{A}_{ij}$ contains some transverse components.  This is not a problem since we
+are free to specify the transverse-tracefree content of the extrinsic curvature. 
+This is the reason that the less restrictive form of the momentum constraint (4.9a)
+has been retained and explains further the note that the assumption (4.7) would be
+relaxed.
+
+At this point, we have a {\it formalism} for the construction of
+inversion-symmetric, background extrinsic curvatures.  In order to find solutions to
+the Hamiltonian constraint, we must be able to move past the formalism and find a
+concrete method for computing these extrinsic curvatures.  In the case of a single
+hole, the resulting inversion-symmetric, background extrinsic curvature is given in
+(5.5) and (5.6).  If we consider more than one hole, the evaluation of an infinite
+series must be dealt with.
+
+The situation of primary concern is the two body problem so we need to find a
+method for calculating the extrinsic curvature for two holes.  Bowen, Rauber,
+and York [1984] have addressed this problem for a certain special case.  They
+considered the situation in which the two holes are of equal size, have no
+linear momentum, and have angular momenta which are equal in magnitude.  With
+the further restriction that the direction of the angular momenta be either
+aligned or anti-aligned with the axis between the two holes, they found an
+analytic expression for each term in the infinite series.  Even in this
+situation, which contains a high degree of symmetry, their method is tedious and
+results in an expression involving complicated combinations of hyperbolic and
+trigonometric functions.  If this approach is applied to the case of axially
+aligned linear momentum or to the case where the linear or angular momentum is
+not axisymmetric, then the method becomes completely intractable.  In order to
+proceed, another avenue must be taken.  The solution which I have found to the
+problem is to abandon the attempt to find an analytic expression for each term
+in the infinite series.  Instead, the solution lies in a constructive,
+computational approach which I detail in the next chapter.
+\vfill
+\eject

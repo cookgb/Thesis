@@ -1,0 +1,44 @@
+#
+# read data and compute relevant quantities
+readdata 1
+	data $1
+	read P1 1
+	read P 2
+	read S1 3
+	read S 4
+	read E 6
+	read L 8
+	read M 9
+	read Erad 13
+	read Reff 14
+	set Mc = sqrt(M*M + 0.25*S*S/(M*M))
+	set P1oM = P1/Mc
+	set PoM = P/Mc
+	set S1oM2 = S1/(Mc*Mc)
+	set SoM2 = S/(Mc*Mc)
+	set EoM = E/Mc
+	set LoM = L/Mc
+	set PfoM = P1oM + PoM
+	set SfoM2 = (S1 + S)/(M*M)
+	set ErestoM = sqrt(EoM*EoM - PfoM*PfoM)
+	set MfoM = M*sqrt(2 + 0.125*SfoM2*SfoM2)/Mc
+	set EradoM = ErestoM - MfoM
+	set eff = EradoM/ErestoM
+#
+# connect ($1,$2) with a spline curve and plot
+# points too.
+sdraw 2
+	define tempn (dimen($1))
+	set tempx = 0,$1[$tempn-1],($1[$tempn-1]/100)
+	spline $1 $2 tempx tempy
+	connect tempx tempy
+	expand 0.75
+	points $1 $2
+	expand 1
+#
+# label plot immediately after current point
+blabel 1
+	expand 0.35    ##### was 0.45
+	putlabel 6  \beta=$1
+	expand 1
+#

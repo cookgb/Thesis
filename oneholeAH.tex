@@ -1,0 +1,483 @@
+\chapterhead{Chapter~\the\chapnum:  Apparent Horizons for a Single Black Hole\cr
+with Linear or Angular Momentum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given the initial data for a single black hole with non-zero linear or angular
+momentum as described in Chapter~8, the apparent-horizon equation (11.11) can be
+solved to locate any apparent horizons on the initial-data slice.  Because part
+of the initial data is only known numerically, it will be necessary to solve
+(11.11) numerically.  As described in Chapter~11, this will be accomplished by
+posing the apparent-horizon equation as a boundary value problem.
+
+As stated in Chapter~11, the location of apparent horizons is determined by
+solving (11.11) for the scalar function $\tau$ of which the level surface
+$\tau=\tau_0$ is the apparent horizon.  For this approach to work, the functional
+form for $\tau$ must be chosen carefully.  The apparent horizons for the case of
+a single hole are expected to be located near to the minimal surface.  Using the
+logarithmically scaled dimensionless radial coordinates (8.1) from Chapter~8, an
+appropriate choice for $\tau$ is
+$$
+\tau (x,\theta ,\phi )=x-h(\theta ,\phi ). \eqn{}
+$$
+Choosing the level surface $\tau=0$ to locate the apparent horizon then means
+that the radius of the apparent horizon is given parametrically by
+$$
+x=h(\theta ,\phi ). \eqn{}
+$$
+From (11.10) we find that
+$$
+\lambda =a{e}^{h(\theta ,\phi )}{(1+{h}_{,\theta }^{2}+{h}_{,\phi
+}^{2}/{\sin}^{2}\theta )}^{-1/2} \eqn{}
+$$
+and
+$$
+{\bar{s}}{}^{i}={1 \over a{e}^{h(\theta ,\phi )}\sqrt {1+{h}_{,\theta
+}^{2}+{h}_{,\phi }^{2}/{\sin}^{2}\theta }}\left[{\matrix{1&{-h}_{,\theta
+}&{-h}_{,\phi }/{\sin}^{2}\theta \cr}}\right]. \eqn{}
+$$
+Note that any occurrence of the coordinate $x$ must be evaluated at
+$x=h(\theta,\phi)$.  From (12.4) it is seen that $\bar{s}^i$ is indeed an outward
+pointing unit normal from the point of view of an observer on the top sheet $(x >
+0)$.
+
+Since the initial-data slices constructed in Chapter~8 for a single hole are
+inversion symmetric, any solution of the apparent-horizon equation must have an
+inversion-symmetric counterpart.  To examine it's form, it is necessary to
+construct the isometry relations in our coordinate system.  From the coordinate
+transformations and from (4.31) it is easily seen that the isometry map takes
+the form
+$$
+(x=-x',\theta =\theta ',\varphi =\varphi '). \eqn{}
+$$
+We find then, that if (12.2) defines one apparent horizon, its inversion
+symmetric counterpart is located at
+$$
+x=-h(\theta ,\phi ) \eqn{}
+$$
+and the outward pointing unit normal is
+$$
+{\tilde{s}}{}^{i}={1 \over a{e}^{h(\theta ,\phi )}\sqrt {1+{h}_{,\theta
+}^{2}+{h}_{,\phi }^{2}/{\sin}^{2}\theta }}\left[{\matrix{-1&{-h}_{,\theta
+}&{-h}_{,\phi }/{\sin}^{2}\theta \cr}}\right]. \eqn{}
+$$
+The outward-pointing normal in (12.7) is outward pointing from the point of view
+of an observer on the bottom sheet $(x < 0)$.  Thus, the inversion-symmetric
+counterpart to an apparent horizon for the top sheet is an apparent horizon for
+the bottom sheet.
+
+To proceed in locating the apparent horizons for the initial-data sets
+constructed in Chapter~8, I will now restrict to the case of axisymmetry so the
+apparent-horizon function $h(\theta,\phi)$ now becomes a function only of
+$\theta$.  Expanding (11.11) in terms of (12.1) (and recalling $K=0$), we find
+$$
+\eqalign{{h}_{,\theta \theta }+\left[{\cot\theta +4{\psi }^{-1}{\psi }_{,\theta
+}}\right]&{h}_{,\theta }(1 +{h}_{,\theta }^{2})+\left[{-2-4{\psi }^{-1}{\psi
+}_{,x}}\right](1+{h}_{,\theta }^{2})\cr&-{e}^{-h}\sqrt {1+{h}_{,\theta
+}^{2}}{\psi }^{-4}\left[{{{\bar{A}}{}_{x}{}_{x} \over
+a}+{{\bar{A}}{}_{\theta }{}_{\theta } \over a}{h}_{,\theta
+}^{2}-2{{\bar{A}}{}_{x}{}_{\theta } \over a}{h}_{,\theta }}\right]=0.\cr}
+\eqn{}
+$$
+The domain in which (12.8) must be solved is $0\le\theta\le\pi$.  Axisymmetry
+demands that $\partial h/\partial\theta = 0$ on the boundaries $\theta=0,\pi$. 
+The demand that $\tau=0$ define the apparent horizon is imposed by evaluating all
+functions of $x$ ($\psi$, $\bar{A}_{ij}$, and the exponential function) at $x =
+h(\theta)$.  The functional forms for the components of the extrinsic curvature
+are given in (8.4), (8.5), and (8.6).  The functional form for the conformal
+factor $\psi$ is only known numerically.  This fact adds greatly to the
+difficulty in finding solutions to (12.8).
+
+A great deal about the solutions to (12.8) can be determined without actually
+solving this equation.  For the case of a hole with angular momentum, examining
+(8.6) shows that the three components of the extrinsic curvature which appear in
+(12.8) vanish identically.  If we consider the apparent-horizon equation in the
+case in which the extrinsic curvature vanishes, then from (11.7) we see that it
+reduces to the equation for an extremal surface (vanishing of the divergence of
+the normal vector field).  This means that in the case of a spinning hole, the
+apparent-horizon equation also reduces to an extremal-surface equation.  But we
+already know that the minimal surface will satisfy this equation and so we find
+that the minimal surface and the apparent horizon coincide.  York and Piran
+[1982] have previously noted this behavior for the apparent horizons for the
+spinning hole solutions.
+
+Solutions for a hole with linear momentum can be generated in one of two ways
+depending on the sign of the isometry condition imposed on the extrinsic
+curvature.  Considering the case of the isometry condition with the minus sign
+(same as for a spinning hole), then from (8.5) we see that $\bar{A}_{xx}$ and
+$\bar{A}_{\theta\theta}$ both vanish on the minimal surface.  If we consider the
+case of $h(\theta) = constant$, then (12.8) reduces again to an extremal surface
+equation and the surface $h=0$ is seen to satisfy the apparent-horizon equation. 
+While there is no evidence to suggest that other solutions exist, the
+non-linearity of (12.8) prevents them from being ruled out.  A numerical search
+for other solutions must be conducted to determine if the minimal surface truly
+is the apparent horizon.  York and Piran [1982] stated in error that 
+$\bar{A}_{ij}\bar{s}^i\bar{s}^j\not= 0$ on the minimal surface in this case, and
+thus that the minimal surface and apparent horizon cannot coincide.  They also
+claim to have found numerical solutions to the apparent-horizon equation which
+were not coincident with the minimal surface.  As I will show later, I have
+found no such solutions and believe that the minimal surface and apparent
+horizon do in fact coincide.
+
+The final case to consider is that of a hole with linear momentum constructed
+from an extrinsic curvature obeying the isometry condition with the plus sign. 
+Examination of (8.4) shows that $\bar{A}_{xx} = 0$ only if $P/a = 0$ which is
+simply the Schwarzschild solution.  This means that $h = 0$ cannot be a solution
+to the apparent-horizon equation and thus the minimal surface and apparent
+horizon cannot coincide.
+
+Some understanding of the form which the apparent horizon will take in this case
+can be obtained by examining the case of an infinitesimally boosted hole.  Bowen
+and York [1980] examined the effect of Lorentz boosting a Schwarzschild black
+hole to first order in the boost velocity.  After demanding that the boosted
+slice be maximal, the metric is found to be unchanged to first order in the
+boost velocity.  This metric is thus given in our coordinates by
+$$
+{g}{}_{i}{}_{j}={a}^{2}{\left({1+{e}^{-x}}\right)}^{4}{f}{}_{i}{}_{j}={a}^{2}{\psi
+}^{4}{f}{}_{i}{}_{j}. \eqn{}
+$$
+Again to first order, the boosted form of the extrinsic curvature is given by
+$$
+{A}{}_{i}{}_{j}={\psi }^{-2}{{\bar{A}}^{\pm }}{}_{i}{}_{j} \eqn{}
+$$
+where the two forms of (12.10) correspond to two possible inversion symmetric
+choices for the lapse function and $\bar{A}^\pm_{ij}$ is given by (5.5).  The
+momentum used in (12.10) is defined by $P^i = MV^i = 2aV^i$ where $V^i$ is the
+boost velocity of the hole.  A non-numerical, first order form for the apparent
+horizon equation can thus be obtained by using the Schwarzschild conformal
+factor from (12.9) and the extrinsic curvature $\bar{A}^+_{ij}$ given in (8.4). 
+The result is
+$$
+\eqalign{{h}_{,\theta \theta }&+\cot\theta {h}_{,\theta }(1+{h}_{,\theta
+}^{2})+\left[{-2+{2{e}^{-h/2} \over \cosh(h/2)}}\right](1+{h}_{,\theta }^{2})\cr
+&-{3(P/a) \over 16{\cosh}^{2}(h/2)}\sqrt {1+{h}_{,\theta
+}^{2}}\left[{\cosh h\cos\theta (2-{h}_{,\theta }^{2})+2\sinh h\sin\theta
+{h}_{,\theta }}\right]=0.\cr} \eqn{}
+$$
+If we assume that the horizon does not deviate far from the minimal surface
+during an infinitesimal boost, then we can expand (12.11) to first order in the
+apparent horizon function $h$.  The result is
+$$
+{1 \over \sin\theta }{\partial  \over \partial \theta }\left({\sin\theta
+{\partial h(\theta ) \over \partial \theta }}\right)-h(\theta )={3 \over 8}{P
+\over a}\cos\theta . \eqn{}
+$$
+The solution to (12.12) compatible with the boundary conditions is
+$$
+h(\theta )=-{1 \over 8}{P \over a}\cos\theta . \eqn{}
+$$
+(Note that the corresponding equation in Cook and York [1990] is incorrect by a
+factor of three.)  To first order in the standard radial coordinate, the
+apparent horizon is located at
+$$
+r=a(1-{1 \over 8}{P \over a}\cos\theta ) \eqn{}
+$$
+and we see that the apparent horizon takes the form of a {\it translation}
+$(P_\ell = \cos\theta;\ell=1)$ of the minimal surface.
+
+With some understanding of the expected behavior of the solutions to (12.8), I
+turn now to the problem of solving it numerically.  To simplify and clearify the
+expression, let me define the following quantities:
+$$
+\Ac(h,\theta ,\psi )\equiv \cot\theta +{4 \over \psi (h,\theta
+)}{\left.{{\partial \psi (x,\theta ) \over \partial \theta
+}}\right|}_{x=h(\theta )}, \eqn{}
+$$
+$$
+\Bc(h,\theta ,\psi )\equiv -2-{4 \over \psi (h,\theta )}{\left.{{\partial \psi
+(x,\theta ) \over \partial x}}\right|}_{x=h(\theta )}, \eqn{}
+$$
+and
+$$
+\Cc(h,\theta ,\psi )\equiv {{e}^{-h(\theta )} \over {\psi }_{(h,\theta
+)}^{4}}\sqrt {1+{\left({{\partial h \over \partial \theta }}\right)}^{2}}.
+\eqn{}
+$$
+The apparent-horizon equation now takes the form
+$$
+{h}_{,\theta \theta }+(\Ac{h}_{,\theta }+\Bc)(1+{h}_{,\theta
+}^{2})-\Cc\left[{{{\bar{A}}{}_{x}{}_{x} \over a}+{{\bar{A}}{}_{\theta
+}{}_{\theta } \over a}{h}_{,\theta }^{2}-2{{\bar{A}}{}_{x}{}_{\theta }
+\over a}{h}_{,\theta }}\right]=0\quad\hbox{for}\quad 0<\theta <\pi . \eqn{}
+$$
+On the boundaries at the $z$-axis, the limiting form of (12.18) can be obtained
+from L'H\^{o}pital's rule and the boundary condition that $h_{,\theta} = 0$.  The
+result is
+$$
+2{h}_{,\theta \theta }+\Bc-\Cc{{\bar{A}}{}_{x}{}_{x} \over
+a}=0\quad\hbox{for}\quad\theta =0,\pi . \eqn{}
+$$
+To difference (12.18) and (12.19), I first discretize the domain of the
+solution.  The discretization will take the following form:
+$$
+{\theta }_{j}\equiv j*{\delta }_{\theta
+}\qquad\hbox{where}\qquad j=0,\ldots,\Jind\quad\hbox{and}\quad{\delta }_{\theta
+}\equiv {\pi  \over \Jind}. \eqn{}
+$$
+The derivatives in (12.18) and (12.19) are differenced using second order
+central differencing.  Explicitly, this gives
+$$
+{\left.{{\partial h \over \partial \theta }}\right|}_{\theta ={\theta
+}_{j}}={{h}_{j+1}-{h}_{j-1} \over 2{\delta }_{\theta }}\equiv {\Dc}_{j} \eqn{}
+$$
+and
+$$
+{\left.{{{\partial }^{2}h \over {\partial \theta }^{2}}}\right|}_{\theta
+={\theta }_{j}}={{h}_{j+1}-2{h}_{j}+{h}_{j-1} \over {\delta }_{\theta }^{2}}.
+\eqn{}
+$$
+The set of nonlinear difference equations derived from (12.18) and (12.19) can
+be written as $\vecfunct_j[h] = 0$ where
+$$
+\eqalign{{\vecfunct}_{j}&[h]\equiv {1 \over {\delta }_{\theta
+}^{2}}({h}_{j+1}-2{h}_{j}+{h}_{j-1})+({\Ac}_{j}{\Dc}_{j}+{\Bc}_{j})(1+{\Dc}_{j}^{2})\cr
+&-{\Cc}_{j}\left[{{{\bar{A}}{}_{x}{}_{x}({h}_{j},{\theta }_{j}) \over
+a}+{{\bar{A}}{}_{\theta }{}_{\theta }({h}_{j},{\theta }_{j}) \over
+a}{\Dc}_{j}^{2}-2{{\bar{A}}{}_{x}{}_{\theta }({h}_{j},{\theta }_{j}) \over
+a}{\Dc}_{j}}\right]\cr}\quad\hbox{for}\quad j=1,\ldots,\Jind-1, \eqn{}
+$$
+$$
+{\vecfunct}_{0}[h]\equiv {4 \over {\delta }_{\theta
+}^{2}}({h}_{1}-{h}_{0})+{\Bc}_{0}-{\Cc}_{0}{{\bar{A}}{}_{x}{}_{x}({h}_{0},{\theta
+}_{0}) \over a}, \eqn{}
+$$
+and
+$$
+{\vecfunct}_{\Jind}[h]\equiv {4 \over {\delta }_{\theta
+}^{2}}({h}_{\Jind-1}-{h}_{\Jind})+{\Bc}_{\Jind}-
+{\Cc}_{\Jind}{{\bar{A}}{}_{x}{}_{x}({h}_{\Jind},{\theta }_{\Jind}) \over a}.
+\eqn{}
+$$
+Because of their nonlinearity, these difference equations cannot be solved
+directly.  As in the case of the differenced Hamiltonian constraint, the
+nonlinear difference equations can be solved iteratively by the Newton-Raphson
+method for nonlinear systems described in (8.24)--(8.28).  The linearized
+coefficient matrix $\coeffmatrix_{ab}$ is far more complicated for the
+apparent-horizon difference equations than it is for the case of the Hamiltonian
+constraint.  For clarity, I give them explicitly.  Let me first define the
+following quantities:
+$$
+{\Ac^\prime}_{j}\equiv {\partial {\Ac} \over \partial{h}_{j}}={4 \over {\psi
+}_{({\tilde{h}}_{j},{\theta }_{j})}^{2}}{\left[{-\left({{\partial \psi (x,\theta
+) \over \partial x}}\right)\left({{\partial \psi (x,\theta ) \over \partial
+\theta }}\right)+\psi (x,\theta )\left({{{\partial }^{2}\psi (x,\theta ) \over
+\partial x\partial \theta }}\right)}\right]}_{\matrix{x={\tilde{h}}_{j}\cr
+\theta ={\theta }_{j}\cr}}, \eqn{}
+$$
+$$
+{\Bc^\prime}_{j}\equiv {\partial {\Bc} \over \partial{h}_{j}}={4 \over {\psi
+}_{({\tilde{h}}_{j},{\theta }_{j})}^{2}}{\left[{{\left({{\partial \psi (x,\theta
+) \over \partial x}}\right)}^{2}-\psi (x,\theta )\left({{{\partial }^{2}\psi
+(x,\theta ) \over {\partial
+x}^{2}}}\right)}\right]}_{\matrix{x={\tilde{h}}_{j}\cr \theta ={\theta
+}_{j}\cr}}, \eqn{}
+$$
+$$
+{\Cc^\prime}_{j}\equiv {\partial {\Cc} \over \partial{h}_{j}}={\Cc}_{j}
+(1+{\Bc}_{j}), \eqn{}
+$$
+and
+$$
+{\bar{A}^\prime}{}_{\ell }{}_{m}\equiv {\left.{{\partial {\bar{A}}{}_{\ell
+}{}_{m} \over \partial x}}\right|}_{\matrix{x={\tilde{h}}_{j}\cr \theta ={\theta
+}_{j}\cr}} \eqn{}
+$$
+where $\tilde{h}$ is the current estimate for the apparent horizon function.  The
+non-zero elements of the linearized coefficient matrix are
+$$
+\eqalign{{\coeffmatrix}_{j,j}[\tilde{h}]=-{2 \over {\delta }_{\theta
+}^{2}}+({\Ac^\prime}_{j}{\Dc}_{j}+{\Bc^\prime}_{j})(1+{\Dc}_{j}^{2}) -
+{\Cc}_{j}\left[{{{\bar{A}^\prime}{}_{x}{}_{x} \over a}+{{\bar{A}^\prime}{}_{\theta
+}{}_{\theta } \over a}{\Dc}_{j}^{2}-2{{\bar{A}^\prime}{}_{x}{}_{\theta } \over
+a}{\Dc}_{j}}\right]\hfill&\cr
++{\Cc^\prime}_{j}\left[{{{\bar{A}}{}_{x}{}_{x}({\tilde{h}}_{j},{\theta }_{j})
+\over a}+{{\bar{A}}{}_{\theta }{}_{\theta }({\tilde{h}}_{j},{\theta }_{j}) \over
+a}{\Dc}_{j}^{2}-2{{\bar{A}}{}_{x}{}_{\theta }({\tilde{h}}_{j},{\theta }_{j})
+\over a}{\Dc}_{j}}\right]\hfill&\cr \quad\hbox{for}\quad j=1,\ldots,\Jind-1,&\cr}
+\eqn{}
+$$
+$$
+{\coeffmatrix}_{j,j}[\tilde{h}]=-{4 \over {\delta }_{\theta
+}^{2}}+{\Bc^\prime}_{j}-{\Cc}_{j}\left[{{{\bar{A}^\prime}{}_{x}{}_{x} \over
+a}+(1+{\Bc}_{j}){{\bar{A}}{}_{x}{}_{x}({\tilde{h}}_{j},{\theta }_{j}) \over
+a}}\right]\quad\hbox{for}\quad j=0,\Jind, \eqn{}
+$$
+$$
+\eqalign{{\coeffmatrix}_{j,j\pm 1}[\tilde{h}]={1 \over {\delta }_{\theta
+}^{2}}\pm \left\{{{\Ac}_{j}{1+{\Dc}_{j}^{2} \over 2{\delta }_{\theta
+}}+({\Ac}_{j}{\Dc}_{j}+{\Bc}_{j}){{\Dc}_{j} \over {\delta }_{\theta
+}}-{{\Cc}_{j} \over (1+{\Dc}_{j}^{2}){\delta }_{\theta
+}}\left[{{{\bar{A}}{}_{x}{}_{x}({\tilde{h}}_{j},{\theta }_{j}) \over
+a}{{\Dc}_{j} \over 2}}\right.}\right.\hfill&\cr
+\left.{\left.{+{{\bar{A}}{}_{\theta }{}_{\theta }({\tilde{h}}_{j},{\theta }_{j})
+\over a}{(3{\Dc}_{j}^{2}+2){\Dc}_{j} \over 2}-{{\bar{A}}{}_{x}{}_{\theta
+}({\tilde{h}}_{j},{\theta }_{j}) \over
+a}(2{\Dc}_{j}^{2}+1)}\right]}\right\}\hfill&\cr \quad\hbox{for}\quad
+j=1,\ldots,\Jind-1,&\cr} \eqn{}
+$$
+and
+$$
+{\coeffmatrix}_{0,1}[\tilde{h}]={4 \over {\delta }_{\theta
+}^{2}}\qquad\hbox{and}\qquad{\coeffmatrix}_{\Jind,\Jind-1}[\tilde{h}]={4 \over
+{\delta }_{\theta }^{2}}. \eqn{}
+$$
+Inspection of the linearized coefficient matrix shows it to be tridiagonal and
+so it can be easily inverted directly by a tridiagonal matrix solver.
+
+There is one difficult point in evaluating the intermediate functions (12.15),
+(12.16), and (12.17) and their derivatives (12.26), (12.27), and (12.28).  These
+functions depend upon the conformal factor $\psi$ and its derivatives which are
+known only numerically on a discrete mesh.  From the form of the discretization
+of the conformal factor $\psi$ (8.13) and (8.14), and from the form of the
+discretization of the apparent-horizon function $h$ (12.20), it is apparent that
+the discretization of $h$ can be chosen to match that of the conformal factor. 
+This means that the conformal factor and its derivatives need only be evaluated
+along lines of constant $\theta$ on which values of the conformal factor are
+known numerically.  Unfortunately, the radial position at which the conformal
+factor must be evaluated is not discretized and will, in general, not occur at a
+location at which the conformal factor is known.  The evaluation of the
+conformal factor will thus require interpolation in the radial direction.
+
+The main criterion for choosing an interpolation algorithm is the requirement
+that the conformal factor and its derivatives be continuous functions.  From
+(12.15), (12.16), (12.26), and (12.27) we find that the highest order radial
+derivative needed is a second derivative.  Interpolation by cubic splines
+({\it cf}. Press {\it et al}. [1988]) has sufficient smoothness so that its
+second derivatives are continuous (though not smooth) and I have chosen to use
+this approach for the radial interpolation.  The radial derivatives can be
+evaluated by analytically differentiating the cubic spline interpolation
+formula.  Angular derivatives of the conformal factor can be evaluated using
+second order centered difference approximations.
+
+The possibility of the introduction of high frequency noise must always be
+considered when numerical data is differentiated.  The use of cubic splines and
+the analytic differentiation of these, rather than the numerical data itself, 
+helps to eliminate possible high frequency noise in radial derivatives.  Another
+step which can be taken to eliminate such effects is to factor out the gross
+variations in the numerical data into an analytic prefactor (Piran [1988]).  For
+the case of the one-hole initial-data sets, such a factorization can take the
+form
+$$
+\psi (x,\theta )=f(x)\Nc(x,\theta )\qquad\hbox{where}\qquad f(x)\equiv 1+{1 \over
+2}{E \over a}{e}^{-x}. \eqn{}
+$$
+The prefactor $f(x)$ is simply the conformal factor for a time-symmetric solution
+with scaled total energy $E/a$.  By factoring this out of the numerical solution,
+the resulting numerical data $\Nc(x,\theta)$ will be a more slowly varying
+function of $x$ and the interpolation of this data will be less prone to high
+frequency noise.  No extra effort was needed to reduce noise for the numerical
+derivatives in the $\theta$ direction since the conformal factor is already a
+slowly varying function in this direction.
+
+One final point needs to be explained regarding the evaluation of the conformal
+factor and its derivatives.  The Hamiltonian constraint was solved over the
+finite range of $0\le x\leÊx_f$ and $0\le\theta\le\pi/2$.  The range over which
+the apparent-horizon equation must be solved is $0\le\theta\le\pi$.  The
+extension of the numerical data to cover this region is easily achieved since
+$$
+\psi (x,\theta )=\psi (x,\pi -\theta )\qquad\hbox{for}\qquad\pi /2\le \theta \le
+\pi . \eqn{} $$
+It will also be necessary to evaluate the conformal factor for $x < 0$.  Values
+in this range can be obtained from the isometry condition (4.53).  Written in
+terms of the logarithmically scaled radial coordinates we find
+$$
+\psi (x,\theta )={e}^{\left|{x}\right|}\psi (\left|{x}\right|,\theta )\qquad\hbox{for}\qquad
+x<0. \eqn{}
+$$
+Finally, if the conformal factor is needed in the region outside the outer
+boundary of the domain $x > x_f$, this can be approximated by (7.13) (same as
+$f(x)$ from (12.34)) which is the basis for the outer boundary condition imposed
+at $x_f$.
+
+A computer code based on the method described above was constructed to solve for
+the apparent-horizon function $h(\theta)$ and was used to locate the apparent
+horizons on all of the initial-data sets described in Chapter~8.  In addition to
+computing the location of the apparent horizon, the code also computed the area
+and mass (via (8.33)) of the apparent horizon.  The integral for the area of the
+apparent horizon is obtained by starting with the physical metric for the
+initial-data slice
+$$
+d{s}^{2}={a}^{2}{e}^{2x}{\psi }^{4}({dx}^{2}+{d\theta }^{2}+{\sin}^{2}\theta
+{d\phi }^{2}) \eqn{}
+$$
+and using the parametrically defined location of the apparent horizon (12.2) to
+reduce (12.37) to the induced metric on the apparent horizon
+$$
+d{s}^{2}={a}^{2}{e}^{2h(\theta )}{\psi }_{(h(\theta ),\theta
+)}^{4}((1+{h}_{,\theta }^{2}){d\theta }^{2}+{\sin}^{2}\theta {d\phi }^{2}).
+\eqn{}
+$$
+From (12.38), the integral for the physical area of the apparent horizon is
+given in dimensionless form by
+$$
+{{A}_{\scriptscriptstyle AH} \over {a}^{2}}=2\pi \int_{0}^{\pi }{\psi
+}_{(h(\theta ),\theta )}^{4}{e}^{2h(\theta )}\sqrt {1+{h}_{,\theta
+}^{2}}\sin\theta d\theta . \eqn{}
+$$
+
+For the case of a hole with linear or angular momentum generated from an
+extrinsic curvature obeying the isometry condition with the minus sign, no
+solutions except the one coincident with the minimal surface were found.  Other
+solutions were sought by varying the initial guess for the location of the
+apparent horizon.  Convergence to the minimal surface solution was always
+direct, with no indication of other possible solutions.
+
+For the case of a hole with linear momentum generated from an extrinsic
+curvature obeying the isometry condition with the plus sign, a single solution,
+not coincident with the minimal surface, was found for each initial-data set. 
+The apparent-horizon function for the case of $P/a = 10$ is shown in
+Figure~12.1.  The general sinusoidal shape is inherent for all values of the
+momentum.  In fact, to within the truncation error of the problem, the solution
+is given by $$
+h(\theta )=\Hc(P/a)\cos\theta \eqn{}
+$$
+where the amplitude $\Hc$ is a function of the scaled momentum only.  Table~12.1
+lists the masses for the minimal surface $M_{\scriptscriptstyle MS}$ and the
+apparent horizon $M_{\scriptscriptstyle AH}$ along with the value of the
+amplitude $\Hc$ and its standard deviation $\sigma$ resulting from a
+least-squares fit of the numerical data for $h(\theta)$ to the functional form
+(12.40).
+
+%%\figlabel{3.375truein}{Figure~12.1:  Apparent-horizon function $h(\theta)$ for a
+%%hole with\cr linear momentum $P/a=10$ generated by $\bar{A}^+_{ij}$.}
+\figlabelpdf{3.375truein}{Figure~12.1:  Apparent-horizon function $h(\theta)$ for a
+hole with\cr linear momentum $P/a=10$ generated by $\bar{A}^+_{ij}$.}{AHplots/AH.pdf}
+
+\vskip 0.25truein
+$$
+\vbox{\offinterlineskip
+\hrule
+\halign{\quad\hfil#\hfil\quad&\vrule#&
+\strut\quad\hfil#\hfil\quad&
+\quad\hfil#\hfil\quad&\vrule#&
+\strut\quad\hfil#\hfil\quad&
+\quad\hfil#\hfil\quad\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+$P/a$ &&	$M_{\scriptscriptstyle MS}/a$ & $M_{\scriptscriptstyle AH}/a$ &&	$\Hc$ &	$\sigma$\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+	1.0	&& 2.113	& 2.119	&& $-0.112291$	& 0.000012\cr
+	2.5	&& 2.470	& 2.496	&& $-0.206398$	& 0.000087\cr
+	5.0	&& 3.069	& 3.121	&& $-0.269071$	& 0.00021\cr
+	7.5	&& 3.589	& 3.662	&& $-0.295948$	& 0.00029\cr
+	10.0	&& 4.049	& 4.138	&& $-0.310731$	& 0.00034\cr
+	12.5	&& 4.463	& 4.567	&& $-0.320063$	& 0.00039\cr
+	15.0	&& 4.843	& 4.959	&& $-0.326486$	& 0.00041\cr
+17.5	&& 5.195	& 5.324	&& $-0.331175$	& 0.00043\cr
+\omit&height2pt&\omit&\omit&&\omit&\omit\cr
+\noalign{\hrule}
+\noalign{\smallskip}
+\multispan7 \hfil Table~12.1:  Minimal-surface mass and apparent-horizon
+mass\hfil\cr \multispan7 \hfil for a hole with linear momentum $P$ generatedfrom
+$\bar{A}^+_{ij}$.\hfil\cr
+\multispan7 \hfil Also tabulated are the  apparent-horizon amplitude $\Hc$\hfil\cr
+\multispan7 \hfil and its standard deviation $\sigma$.\hfil\cr}}
+$$
+
+It is seen immediately that the area of the apparent horizon is always greater
+than that of the minimal surface as it must be.  We also see that the slope of
+the apparent-horizon amplitude $\Hc$ is very close to $-1/8$ at $P/a  = 1$ and,
+so, matches well to the solution for an infinitesimally boosted hole. 
+Further interpretation of these results will be held for the next chapter.
+
+\vfill
+\eject

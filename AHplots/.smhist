@@ -1,0 +1,80 @@
+erase
+makeplot
+help device
+list device
+device postencap AH.epsf
+makeplot
+device x11
+macro read AH.plot
+device x11
+makeplot
+list device
+help device postscript
+help postscript
+device postscript
+makeplot
+device x11
+device postscript AH.ps
+makeplot
+device x11
+macro read AH.plot
+list device
+device postencap AH2.eps
+makeplot
+device x11
+makeplot
+macro read AH.fig
+device postencap AH2.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH2.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH2.eps
+makeplot
+device x11
+quit
+device x11
+macro read AH.fig
+makeplot
+macro read AH.fig
+makeplot
+macro read AH.fig
+makeplot
+device postencap AH.eps
+makeplot
+device x11
+quit
+device postencap AH.eps
+device x11
+macro read AH.fig
+makeplot
+device postencap AH.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH.eps
+makeplot
+device x11
+macro read AH.fig
+device postencap AH.eps
+makeplot
+device x11
+quit
+macro read AH.fig
+device x11
+makeplot
+device postport AH.eps
+makeplot
+device x11
+quit
